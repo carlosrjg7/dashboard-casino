@@ -1,0 +1,100 @@
+<!-- Stats Cards Component -->
+<div class="stats-cards">
+  <div class="stats-cards__slider" id="statsSlider">
+    <!-- Card 1: Clientes Jugando -->
+    <div class="stats-card stats-card--dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CLIENTES JUGANDO AHORA</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1,125</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 75%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio semanal mayor 850%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Apuesta Promedio -->
+    <div class="stats-card stats-card--darken">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">APUESTA PROMEDIO</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">50</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--success"
+              style="width: 60%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Incremento semanal mayor 454%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Ocupación -->
+    <div class="stats-card stats-card--primary">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">OCUPACIÓN</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--white"
+              style="width: 45%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de máquinas 12 Libre</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Cupones Libres -->
+    <div class="stats-card stats-card--gray-dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CUPONES LIBRES</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">0</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 0%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de cupones (ON)</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls (Mobile only) -->
+  <div class="stats-cards__controls">
+    <button
+      class="stats-cards__btn stats-cards__btn--prev"
+      id="statsPrev"
+      aria-label="Anterior"
+    >
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button
+      class="stats-cards__btn stats-cards__btn--next"
+      id="statsNext"
+      aria-label="Siguiente"
+    >
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>

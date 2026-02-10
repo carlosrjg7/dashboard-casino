@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    <!-- Navbar Component -->
+<header class="navbar">
+  <div class="navbar__container">
+    <!-- Mobile Menu Toggle -->
+    <div class="navbar__container-brand">
+      <button
+        class="navbar__menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <img
+          src="../dist/images/logo-nav.png"
+          alt="COLOSSUS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">COLOSSUS<sub>v.2</sub></span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar__search">
+        <i class="bi bi-search navbar__search-icon"></i>
+        <input
+          type="text"
+          class="navbar__search-input"
+          placeholder="Búsqueda general"
+        />
+      </div>
+
+      <!-- Right Section -->
+      <div class="navbar__actions">
+        <!-- Notifications -->
+        <button class="navbar__notification" aria-label="Notificaciones">
+          <i class="bi bi-bell"></i>
+          <span class="navbar__notification-badge">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="navbar__container-user">
+      <button class="navbar__user-button" aria-label="Menú de usuario">
+        <div class="navbar__user-avatar">A</div>
+        <span class="navbar__user-name">Admin. Rodas/ISG</span>
+        <i class="bi bi-chevron-down navbar__user-arrow"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    <!-- Hero Header Component -->
+<section class="hero-header">
+  <div class="hero-header__container">
+    <!-- Left: Game Info -->
+    <div class="hero-header__game">
+      <div class="hero-header__game-icon">
+        <i class="bi bi-controller"></i>
+      </div>
+      <div class="hero-header__game-info">
+        <div class="hero-header__game-title">Latin Games</div>
+        <div class="hero-header__game-subtitle">Madgalena</div>
+      </div>
+    </div>
+
+    <!-- Center: Page Info -->
+    <div class="hero-header__page">
+      <div class="hero-header__page-image">
+        <img src="../dist/images/img-cupons.png" alt="Cupones" />
+      </div>
+      <div class="hero-header__page-info">
+        <div>
+          <h1 class="hero-header__page-title">Cupones</h1>
+          <p class="hero-header__page-subtitle">Asignación manual</p>
+          <button class="hero-header__tutorial-btn">Tutorial</button>
+        </div>
+
+        <!-- Right: Breadcrumb -->
+        <nav class="hero-header__breadcrumb" aria-label="Breadcrumb">
+          <ol class="hero-header__breadcrumb-list">
+            <li
+              class="hero-header__breadcrumb-item hero-header__breadcrumb-item--active"
+            >
+              <a href="#" class="hero-header__breadcrumb-link">Inicio</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link">Cupones</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link"
+                >Asignación manual</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        <!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+  <!-- Sidebar Header -->
+  <div class="sidebar__header">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">L</div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-title">Latin Games</span>
+        <span class="sidebar__logo-subtitle">Madgalena</span>
+      </div>
+    </div>
+    <button class="sidebar__toggle" id="sidebarToggle" aria-label="Cerrar menú">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar__nav">
+    <h3 class="sidebar__nav-title">Menú de Navegación</h3>
+
+    <ul class="sidebar__menu">
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-people"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-printer"></i>
+          <span>Configuración de impresión</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item sidebar__menu-item--active">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-gift"></i>
+          <span>Cupones</span>
+        </a>
+
+        <!-- Submenu -->
+        <ul class="sidebar__submenu">
+          <li class="sidebar__submenu-item sidebar__submenu-item--active">
+            <a href="#" class="sidebar__submenu-link">
+              <i class="bi bi-circle-fill"></i>
+              <span>Asignación manual de cupones</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span>Otorgar cupones</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-basket"></i>
+          <span>Cupones virtuales</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-globe"></i>
+          <span>En línea</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-grid"></i>
+          <span>Layout</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-file-text"></i>
+          <span>Reporte de cupones</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-shield-check"></i>
+          <span>Super Administrador</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--   <!-- Sidebar Collapse Button 
+  <button class="sidebar__collapse" aria-label="Colapsar sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button> -->
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <section class="dashboard9-section">
+          <!-- Filter Consulta Component -->
+          <div class="filter-consulta-d9">
+            <div class="filter-consulta-d9__header">
+              <h3 class="filter-consulta-d9__title">Filtro de consulta</h3>
+            </div>
+
+            <div class="filter-consulta-d9__body">
+              <div class="filter-consulta-d9__row">
+                <div class="filter-consulta-d9__group">
+                  <label class="filter-consulta-d9__label">Jugador</label>
+                  <select class="filter-consulta-d9__select">
+                    <option>Seleccione un cliente</option>
+                    <option>Abel Huayhua Abregu</option>
+                    <option>Abigail Yohana Bazar Morales</option>
+                    <option>Abildo Eulelio Valbuena Murillo</option>
+                  </select>
+                </div>
+
+                <div class="filter-consulta-d9__group">
+                  <label class="filter-consulta-d9__label">PEP</label>
+                  <select class="filter-consulta-d9__select">
+                    <option>PEP</option>
+                    <option>SI</option>
+                    <option>NO</option>
+                  </select>
+                </div>
+
+                <div class="filter-consulta-d9__group">
+                  <label class="filter-consulta-d9__label">Activo</label>
+                  <select class="filter-consulta-d9__select">
+                    <option>SI</option>
+                    <option>NO</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-consulta-d9__footer">
+              <button class="filter-consulta-d9__search-btn">
+                <i class="bi bi-search"></i> Buscar
+              </button>
+            </div>
+          </div>
+
+          <!-- Player Tracking List Component -->
+          <div class="player-tracking">
+            <div class="player-tracking__header">
+              <h3 class="player-tracking__title">
+                Listado general de clientes player tracking
+              </h3>
+              <div class="player-tracking__actions">
+                <button class="player-tracking__btn" aria-label="Expandir">
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button class="player-tracking__btn" aria-label="Actualizar">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button class="player-tracking__btn" aria-label="Minimizar">
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="player-tracking__btn player-tracking__btn--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="player-tracking__body">
+              <div class="player-tracking__pagination">
+                <select class="player-tracking__rows-select">
+                  <option>20</option>
+                  <option>50</option>
+                  <option>100</option>
+                  <option>200</option>
+                </select>
+              </div>
+
+              <div class="player-tracking__scroll">
+                <table class="player-tracking__table">
+                  <thead class="player-tracking__thead">
+                    <tr>
+                      <th class="player-tracking__th">
+                        ID
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Cliente
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Documento
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Cumpleaños
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Edad
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Sexo
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Email
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Teléfono
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        PEP
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Cliente desde
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Aportado
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Ganado
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Jackpots
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">
+                        Puntos
+                        <div class="player-tracking__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="player-tracking__th">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody class="player-tracking__tbody">
+                    <tr class="player-tracking__row">
+                      <td class="player-tracking__td">2415</td>
+                      <td class="player-tracking__td">Abel Huayhua Abregu</td>
+                      <td class="player-tracking__td">07191781</td>
+                      <td class="player-tracking__td">1955-03-09</td>
+                      <td class="player-tracking__td">70</td>
+                      <td class="player-tracking__td">M</td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td">SI</td>
+                      <td class="player-tracking__td">2024-06-30</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0</td>
+                      <td class="player-tracking__td">
+                        <a href="#" class="player-tracking__link-edit"
+                          >Editar</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="player-tracking__row">
+                      <td class="player-tracking__td">1865</td>
+                      <td class="player-tracking__td">
+                        Abigail Yohana Bazar Morales
+                      </td>
+                      <td class="player-tracking__td">48299182</td>
+                      <td class="player-tracking__td">1994-04-24</td>
+                      <td class="player-tracking__td">31</td>
+                      <td class="player-tracking__td">F</td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td">NO</td>
+                      <td class="player-tracking__td">2023-11-23</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0</td>
+                      <td class="player-tracking__td">
+                        <a href="#" class="player-tracking__link-edit"
+                          >Editar</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="player-tracking__row">
+                      <td class="player-tracking__td">2345</td>
+                      <td class="player-tracking__td">
+                        Abildo Eulelio Valbuena Murillo
+                      </td>
+                      <td class="player-tracking__td">14322721</td>
+                      <td class="player-tracking__td">2024-05-28</td>
+                      <td class="player-tracking__td">1</td>
+                      <td class="player-tracking__td">M</td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td">NO</td>
+                      <td class="player-tracking__td">2024-05-28</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0</td>
+                      <td class="player-tracking__td">
+                        <a href="#" class="player-tracking__link-edit"
+                          >Ver más</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="player-tracking__row">
+                      <td class="player-tracking__td">727</td>
+                      <td class="player-tracking__td">
+                        Adan Tarazona Montanez
+                      </td>
+                      <td class="player-tracking__td">25805859</td>
+                      <td class="player-tracking__td">1998-09-10</td>
+                      <td class="player-tracking__td">27</td>
+                      <td class="player-tracking__td">M</td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td">NO</td>
+                      <td class="player-tracking__td">2022-06-01</td>
+                      <td class="player-tracking__td">24,103.60</td>
+                      <td class="player-tracking__td">22,643.35</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0</td>
+                      <td class="player-tracking__td">
+                        <a href="#" class="player-tracking__link-edit"
+                          >Editar</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="player-tracking__row">
+                      <td class="player-tracking__td">1639</td>
+                      <td class="player-tracking__td">
+                        Adriana Esmeralda Boza Altamirano
+                      </td>
+                      <td class="player-tracking__td">72055285</td>
+                      <td class="player-tracking__td">1976-08-04</td>
+                      <td class="player-tracking__td">49</td>
+                      <td class="player-tracking__td">F</td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td"></td>
+                      <td class="player-tracking__td">NO</td>
+                      <td class="player-tracking__td">2023-06-28</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0.00</td>
+                      <td class="player-tracking__td">0</td>
+                      <td class="player-tracking__td">
+                        <a href="#" class="player-tracking__link-edit"
+                          >Ver más</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="player-tracking__footer">
+                <nav class="player-tracking__pagination-nav">
+                  <button class="player-tracking__pagination-btn" disabled>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <span class="player-tracking__pagination-info">1 de 10</span>
+                  <button class="player-tracking__pagination-btn">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

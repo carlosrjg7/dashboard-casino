@@ -1,0 +1,101 @@
+<!-- Machines Summary Component -->
+<div class="machines-summary">
+  <div class="machines-summary__header">
+    <h3 class="machines-summary__title">Resumen de máquinas</h3>
+    <div class="machines-summary__actions">
+      <button class="machines-summary__btn" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="machines-summary__btn" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="machines-summary__btn" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="machines-summary__btn machines-summary__btn--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="machines-summary__body">
+    <!-- Count Header -->
+    <div class="machines-summary__count-header">
+      <i class="bi bi-file-earmark"></i>
+      <span class="machines-summary__count-label">Cantidad de máquinas:</span>
+      <span class="machines-summary__count-value">47</span>
+    </div>
+
+    <!-- Progress Items -->
+    <div class="machines-summary__items">
+      <!-- Item 1: Transmitiendolo -->
+      <div class="machines-summary__item">
+        <div class="machines-summary__item-row">
+          <div class="machines-summary__item-icon">
+            <i class="bi bi-wifi"></i>
+          </div>
+          <span class="machines-summary__item-label">Transmitiendolo:</span>
+          <span class="machines-summary__item-value">2</span>
+        </div>
+        <div class="machines-summary__progress-wrapper">
+          <div class="machines-summary__progress">
+            <div class="machines-summary__progress-bar">
+              <div
+                class="machines-summary__progress-fill machines-summary__progress-fill--success"
+                style="width: 4.25%"
+              ></div>
+            </div>
+            <span class="machines-summary__progress-text">4.25%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Jugando -->
+      <div class="machines-summary__item">
+        <div class="machines-summary__item-row">
+          <div class="machines-summary__item-icon">
+            <i class="bi bi-joystick"></i>
+          </div>
+          <span class="machines-summary__item-label">Jugando:</span>
+          <span class="machines-summary__item-value">0</span>
+        </div>
+        <div class="machines-summary__progress-wrapper">
+          <div class="machines-summary__progress">
+            <div class="machines-summary__progress-bar">
+              <div
+                class="machines-summary__progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="machines-summary__progress-text">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Tarjetas -->
+      <div class="machines-summary__item">
+        <div class="machines-summary__item-row">
+          <div class="machines-summary__item-icon">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <span class="machines-summary__item-label">Tarjetas:</span>
+          <span class="machines-summary__item-value">0</span>
+        </div>
+        <div class="machines-summary__progress-wrapper">
+          <div class="machines-summary__progress">
+            <div class="machines-summary__progress-bar">
+              <div
+                class="machines-summary__progress-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+            <span class="machines-summary__progress-text">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

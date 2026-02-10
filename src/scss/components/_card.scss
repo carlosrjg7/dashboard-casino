@@ -1,0 +1,238 @@
+// =====================================================
+// CARD COMPONENT
+// =====================================================
+
+.card {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-md;
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $bg-head-stats;
+    border-bottom: 1px solid $border-color;
+    max-height: rem(46);
+    @include flex(row, center, space-between, $spacing-md);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $text-muted;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    overflow-x: auto;
+
+    &--center {
+      @include flex-center;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Variant: Dark Header + Green Button
+  // -----------------------------------------------------
+  &--dark-header {
+    .card__header {
+      background-color: $gray-900;
+      color: $white;
+    }
+
+    .card__title {
+      color: $white;
+    }
+
+    .card__btn--success {
+      background-color: $success-color;
+      color: $white;
+      border: none;
+      border-radius: $border-radius;
+      font-size: rem(11);
+      font-weight: $font-weight-semibold;
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      @include transition(all, 0.2s, ease);
+
+      &:hover {
+        background-color: darken($success-color, 8%);
+      }
+    }
+  }
+
+  // -----------------------------------------------------
+  // Variant: Users List Card
+  // -----------------------------------------------------
+  &--users {
+    .card__header {
+      background-color: $gray-900;
+      color: $white;
+      height: rem(46);
+    }
+
+    .card__title {
+      color: $white;
+      font-size: rem(14);
+    }
+
+    .card__badge {
+      background-color: $success-color;
+      color: $white;
+      font-size: rem(11);
+      font-weight: $font-weight-semibold;
+      padding: 0.25rem 0.5rem;
+      border-radius: $border-radius;
+      white-space: nowrap;
+    }
+
+    .card__body {
+      padding: $spacing-lg $spacing-xl;
+
+      @include media-between(xl, xxxl) {
+        padding: $spacing-lg $spacing-md;
+      }
+    }
+
+    .card__grid {
+      display: grid;
+      gap: rem(14);
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      margin: 0 auto;
+      justify-items: center;
+
+      @include media-up(md) {
+        max-width: rem(350);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: rem(16);
+      }
+
+      @include media-between(xl, xxxl) {
+        max-width: rem(400);
+        gap: rem(8);
+        grid-template-columns: repeat(2, minmax(165px, 1fr));
+      }
+    }
+
+    .card__user {
+      border: 1px solid $border-color;
+      border-radius: $border-radius-md;
+      padding: $spacing-sm;
+      @include flex(row, center, flex-start, $spacing-sm);
+      background-color: $white;
+      max-height: rem(70);
+      width: 100%;
+
+      @include media-up(sm) {
+        width: rem(165);
+      }
+    }
+
+    .card__avatar {
+      height: rem(47);
+      width: rem(47);
+      border-radius: 50%;
+      background-color: $gray-300;
+      @include flex-center;
+      color: $text-muted;
+      font-size: rem(14);
+      flex-shrink: 0;
+    }
+
+    .card__meta {
+      @include flex(column, flex-start, center, 0.125rem);
+      min-width: 0;
+    }
+
+    .card__name {
+      font-size: rem(11);
+      font-weight: $font-weight-semibold;
+      color: $dark-color;
+      margin: 0;
+      line-height: 0.6rem;
+    }
+
+    .card__subtext {
+      font-size: rem(8);
+      color: $text-muted;
+      margin: 0;
+      line-height: 0.5rem;
+    }
+
+    .card__stars {
+      color: $warning-color;
+      font-size: rem(7);
+      line-height: 1;
+    }
+
+    .card__tag {
+      display: inline-block;
+      font-size: rem(8);
+      font-weight: $font-weight-semibold;
+      padding: rem(0) rem(8);
+      border-radius: $border-radius;
+      border: 1px solid $border-color;
+      color: $text-muted;
+      background-color: $gray-100;
+      line-height: 1rem;
+
+      &--vip {
+        color: $dark-color;
+        background-color: $warning-color;
+        border-color: $warning-color;
+      }
+
+      &--new {
+        color: $white;
+        background-color: $primary-blue;
+        border-color: $primary-blue;
+      }
+    }
+
+    .card__footer {
+      margin-top: $spacing-lg;
+      @include flex(row, center, center, 0);
+    }
+
+    .card__footer-btn {
+      border: 1px solid $border-color;
+      background-color: $white;
+      color: $text-muted;
+      font-size: rem(12);
+      padding: 0.35rem 0.75rem;
+      border-radius: $border-radius;
+      cursor: pointer;
+      @include transition(all, 0.2s, ease);
+
+      &:hover {
+        color: $primary-blue;
+        border-color: $primary-blue;
+      }
+    }
+  }
+}

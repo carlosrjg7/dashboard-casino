@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <!-- Left Side - Blue Background with Image -->
+      <div class="login-left">
+        <div class="login-left-content">
+          <div class="main-text">
+            <h1>Simplificamos procesos, impulsamos la productividad.</h1>
+          </div>
+
+          <div class="bottom-content">
+            <p class="subtitle">
+              Operaciones más ágiles.<br />
+              <b>Resultados más rentables.</b>
+            </p>
+            <div class="branding">
+              <span class="colossus-text">COLOSSUS 2.0 by</span>
+              <img
+                src="../dist/images/isg-logo.png"
+                alt="ISG Logo"
+                class="isg-logo"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'inline';
+                "
+              />
+              <span class="isg-text" style="display: none"
+                >ISG ONE STEP AHEAD</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Login Form -->
+      <div class="login-right">
+        <div class="login-form-container">
+          <div class="login-header">
+            <div class="logo-container">
+              <img
+                src="./../dist/images/logo.png  "
+                alt="Colossus Logo"
+                class="colossus-logo"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <div class="logo-text" style="display: none">
+                <h2>COLOSSUS<br /><span>SISTEMS</span></h2>
+                <p class="by-text">by ISG</p>
+              </div>
+            </div>
+            <p class="by-text">by ISG</p>
+            <p class="tagline">Ingresar al panel de control</p>
+          </div>
+
+          <form class="login-form">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="usuario"
+                placeholder="Usuario"
+                required
+              />
+              <i class="bi bi-person-fill"></i>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Contraseña"
+                required
+              />
+              <i class="bi bi-lock-fill"></i>
+            </div>
+
+            <div class="remember-me pb-4">
+              <input type="checkbox" id="rememberMe" />
+              <label for="rememberMe">Recuérdame</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-login">
+              Iniciar sesión
+            </button>
+
+            
+
+            <div class="login-links">
+              <a href="#" class="error-link">¿No tienes cuenta?</a>
+              <a href="#" class="register-link">Regístrate aquí</a>
+            </div>
+          </form>
+          <div class="login-footer">
+            <span class="login-divider"></span>
+            <p>&copy; 2022 Todos los Derechos Reservados ISG</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

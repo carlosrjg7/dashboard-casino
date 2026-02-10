@@ -1,0 +1,249 @@
+// =====================================================
+// NAVBAR COMPONENT
+// =====================================================
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background-color: $navbar-bg;
+  box-shadow: $navbar-shadow;
+  // z-index: 1000;
+  width: 100%;
+
+  // -----------------------------------------------------
+  // Container
+  // -----------------------------------------------------
+  &__container {
+    height: 100%;
+    width: 100%;
+    padding: 0 $spacing-xxl;
+    @include flex(row, center, space-between, $spacing-md);
+
+    &-brand {
+      flex: 1;
+      padding: 0 $spacing-md;
+      @include flex(row, center, start, $spacing-xl);
+
+      @include media-up(lg) {
+        padding: 0 $spacing-xl;
+      }
+    }
+
+    &-user {
+      padding: 0 $spacing-md;
+      @include media-up(lg) {
+        padding: 0 $spacing-xl;
+      }
+    }
+  }
+
+  // -----------------------------------------------------
+  // Mobile Menu Toggle
+  // -----------------------------------------------------
+  &__menu-toggle {
+    background: none;
+    border: none;
+    color: $dark-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: $spacing-xs;
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $primary-blue;
+    }
+
+    @include media-up(lg) {
+      display: none;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Logo
+  // -----------------------------------------------------
+  &__logo {
+    @include flex(row, center, flex-start, $spacing-xs);
+
+    @include media-down(lg) {
+      flex: 1;
+    }
+  }
+
+  &__logo-img {
+    width: rem(75);
+    height: rem(75);
+    object-fit: contain;
+  }
+
+  &__logo-text {
+    font-family: $font-family-heading;
+    font-size: 1.125rem;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    letter-spacing: 0.05em;
+    margin-left: rem(16);
+
+    sub {
+      font-size: 0.75rem;
+      color: $text-muted;
+      margin-left: 0.125rem;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Search Bar
+  // -----------------------------------------------------
+  &__search {
+    position: relative;
+    flex: 1;
+    // max-width: 25rem;
+    max-width: rem(221);
+
+    @include media-down(md) {
+      display: none;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: $spacing-md;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $text-muted;
+    font-size: 1rem;
+  }
+
+  &__search-input {
+    width: 100%;
+    height: rem(36);
+    padding: $spacing-sm $spacing-md $spacing-sm 2.75rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    font-size: rem(14);
+    background-color: $gray-100;
+    @include transition(border-color, 0.2s, ease);
+
+    &:focus {
+      outline: none;
+      border-color: $primary-blue;
+      background-color: $white;
+    }
+
+    @include placeholder {
+      color: $text-muted;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Actions
+  // -----------------------------------------------------
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-md);
+  }
+
+  // -----------------------------------------------------
+  // Notifications
+  // -----------------------------------------------------
+  &__notification {
+    position: relative;
+    background: none;
+    border: none;
+    color: $dark-color;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: $spacing-xs;
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  &__notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    padding: 0 0.25rem;
+    background-color: $primary-color;
+    color: $white;
+    font-size: 0.625rem;
+    font-weight: $font-weight-bold;
+    border-radius: 0.5625rem;
+    @include flex-center;
+  }
+
+  // -----------------------------------------------------
+  // User Dropdown
+  // -----------------------------------------------------
+  &__user {
+    position: relative;
+  }
+
+  &__user-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include flex(row, center, flex-start, $spacing-sm);
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+
+  &__user-avatar {
+    width: rem(46);
+    height: rem(46);
+    border-radius: 6%;
+    overflow: hidden;
+    @include flex-center;
+    background-color: $bg-gray-25;
+    color: $primary-color;
+    font-size: rem(32);
+    font-weight: $font-weight-bold;
+
+    i {
+      font-size: 2rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__user-name {
+    font-size: 0.875rem;
+    color: $blue-text;
+    font-weight: $font-weight-bold;
+
+    @include media-down(md) {
+      display: none;
+    }
+  }
+
+  &__user-arrow {
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    color: $primary-blue;
+    @include transition(transform, 0.2s, ease);
+
+    @include media-down(md) {
+      display: none;
+    }
+
+    &::before {
+      font-weight: $font-weight-bold !important;
+    }
+  }
+}

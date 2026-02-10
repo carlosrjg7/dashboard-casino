@@ -1,0 +1,89 @@
+// =====================================================
+// CHARTS COMPONENT
+// =====================================================
+
+.charts {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  &__grid {
+    display: grid;
+    gap: $spacing-lg;
+
+    // Mobile: 1 column
+    grid-template-columns: 1fr;
+
+    // Desktop: 3 columns (2 wide + 1 narrow)
+    @include media-up(lg) {
+      grid-template-columns: 2fr 2fr 1fr;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Chart Card
+// -----------------------------------------------------
+.chart-card {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow-sm;
+  overflow: hidden;
+
+  &--circle {
+    @include media-up(lg) {
+      grid-column: span 1;
+    }
+  }
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $bg-head-stats;
+    border-bottom: 1px solid $border-color;
+    max-height: rem(46);
+    @include flex(row, center, space-between, $spacing-md);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $text-muted;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    min-height: 15.625rem; // 250px
+
+    canvas {
+      max-width: 100%;
+      height: auto !important;
+    }
+
+    &--center {
+      @include flex-center;
+      min-height: 18.75rem; // 300px
+    }
+  }
+}

@@ -1,0 +1,642 @@
+// =====================================================
+// DASHBOARD3 LAYOUT GRID
+// =====================================================
+
+.dashboard3-grid {
+  display: grid;
+  grid-template-areas:
+    "filters"
+    "summary"
+    "details";
+  gap: $spacing-lg;
+  width: 100%;
+
+  grid-template-columns: 1fr;
+
+  & > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    gap: $spacing-md;
+    overflow-x: hidden;
+  }
+
+  @include media-up(lg) {
+    grid-template-columns: minmax(0, 0.333fr) minmax(0, 0.667fr);
+    grid-template-areas:
+      "filters summary"
+      "details details";
+    gap: $spacing-lg;
+  }
+
+  &__filters {
+    grid-area: filters;
+
+    order: 1;
+  }
+
+  &__summary {
+    grid-area: summary;
+    order: 2;
+  }
+
+  &__details {
+    grid-area: details;
+    order: 3;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .filters-panel,
+  .summary-card,
+  .details-table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .summary-card canvas {
+    max-width: 100% !important;
+    display: block;
+  }
+
+  .summary-card__body,
+  .details-table__body {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .summary-card__body {
+    padding-bottom: $spacing-sm;
+  }
+
+  .summary-card canvas {
+    min-width: rem(460) !important;
+  }
+
+  .details-table__table {
+    min-width: rem(520);
+  }
+
+  .summary-card__body::-webkit-scrollbar,
+  .details-table__body::-webkit-scrollbar {
+    height: rem(6);
+  }
+
+  .summary-card__body::-webkit-scrollbar-thumb,
+  .details-table__body::-webkit-scrollbar-thumb {
+    background-color: $primary-blue;
+    border-radius: rem(8);
+  }
+
+  .summary-card__body::-webkit-scrollbar-track,
+  .details-table__body::-webkit-scrollbar-track {
+    background-color: $gray-300;
+    border-radius: rem(8);
+  }
+}
+
+// =====================================================
+// FILTERS PANEL COMPONENT
+// =====================================================
+
+.filters-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-lg;
+  width: 100%;
+
+  @include media-breakpoint-down(lg) {
+    margin-bottom: $spacing-md;
+  }
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $dark-color;
+    border-bottom: 1px solid $border-color;
+    @include flex(row, center, space-between, $spacing-md);
+    height: rem(46);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $white;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $white;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+
+  &__btn--close {
+    border-color: rgba($white, 0.6);
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    flex: 1;
+  }
+
+  &__group {
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__group--half {
+    width: 100%;
+  }
+
+  &__group-row {
+    @include flex(row, flex-start, flex-start, $spacing-md);
+    flex-wrap: wrap;
+    margin-bottom: $spacing-lg;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+
+    .filters-panel__group {
+      flex: 1;
+      min-width: rem(150);
+      margin-bottom: 0;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__group-row:last-child {
+    margin-bottom: 0;
+  }
+
+  &__label {
+    display: block;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    color: $blue-dark;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: rem(12);
+    font-family: $font-family-base;
+    background-color: $white;
+    color: $dark-color;
+    @include transition(border-color, 0.2s, ease);
+    height: rem(32);
+
+    &:focus {
+      outline: none;
+      border-color: $primary-blue;
+      box-shadow: 0 0 0 0.2rem rgba($primary-blue, 0.25);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  &__select {
+    cursor: pointer;
+    background-color: $bg-select;
+    border: none;
+    color: $white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFFFFF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-sm center;
+    background-size: rem(16);
+    padding-right: rem(32);
+    appearance: none;
+  }
+
+  &__footer {
+    padding: $spacing-md $spacing-lg;
+    border-top: 1px solid $border-color;
+    @include flex(row, center, flex-end);
+  }
+
+  &__filter-btn {
+    background-color: $blue-text;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    @include flex(row, center, center, $spacing-sm);
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: darken($blue-text, 6%);
+    }
+
+    &:active {
+      background-color: $blue-dark;
+    }
+
+    i {
+      font-size: rem(14);
+    }
+  }
+}
+
+@include media-up(lg) {
+  .filters-panel {
+    height: rem(500);
+    position: relative;
+
+    &__body {
+      height: rem(454);
+      overflow: hidden;
+    }
+
+    &__footer {
+      border-top: 0;
+      padding: 0;
+      position: absolute;
+      right: $spacing-lg;
+      bottom: $spacing-lg;
+    }
+
+    &__group--half {
+      width: 50%;
+    }
+  }
+}
+
+// =====================================================
+// SUMMARY CARD COMPONENT
+// =====================================================
+
+.summary-card {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-lg;
+  width: 100%;
+  min-height: rem(403);
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $bg-head-stats;
+    border-bottom: 1px solid $border-color;
+    @include flex(row, center, space-between, $spacing-md);
+    height: rem(46);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $dark-color;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $dark-color;
+      border-color: rgba($dark-color, 0.7);
+    }
+  }
+
+  &__btn--close {
+    border-color: rgba($dark-color, 0.5);
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    @include flex-center;
+    min-height: rem(350);
+    position: relative;
+    flex: 1;
+  }
+
+  &__menu {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    background: transparent;
+    border: none;
+    color: $text-muted;
+    font-size: rem(16);
+    cursor: pointer;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: rem(240) !important;
+  }
+}
+
+@include media-up(lg) {
+  .summary-card {
+    height: rem(500);
+
+    &__body {
+      height: rem(454);
+    }
+
+    canvas {
+      height: rem(300) !important;
+    }
+  }
+}
+
+// =====================================================
+// DETAILS TABLE COMPONENT
+// =====================================================
+
+.details-table {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-lg;
+  width: 100%;
+  overflow: hidden;
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $bg-head-stats;
+    border-bottom: 1px solid $border-color;
+    @include flex(row, center, space-between, $spacing-md);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn-icon {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $dark-color;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      border-color: rgba($dark-color, 0.7);
+    }
+  }
+
+  &__btn-icon--close {
+    border-color: rgba($dark-color, 0.5);
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    overflow-x: auto;
+  }
+
+  &__pagination {
+    margin-bottom: $spacing-md;
+    @include flex(row, center, flex-start);
+  }
+
+  &__rows-select {
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: $border-radius-sm;
+    font-size: rem(12);
+    font-family: $font-family-base;
+    background-color: $bg-select;
+    color: $white;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFFFFF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-sm center;
+    background-size: rem(16);
+    padding-right: rem(32);
+    appearance: none;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: rem(12);
+  }
+
+  &__thead {
+    background-color: $gray-200;
+    text-align: center;
+  }
+
+  &__th {
+    padding: $spacing-md;
+    text-align: left;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    white-space: nowrap;
+    cursor: pointer;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: $gray-200;
+    }
+  }
+
+  &__sort {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: $spacing-xs;
+    line-height: 1;
+
+    i {
+      font-size: rem(9);
+      color: $blue-text;
+      margin-top: rem(-2);
+    }
+  }
+
+  &__filters-row {
+    background-color: $gray-100;
+
+    th {
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+
+  &__filter-input {
+    width: 100%;
+    height: rem(22);
+    padding: 0 rem(6);
+    border: 1px solid $border-color;
+    border-radius: rem(4);
+    background-color: #f3f6ff;
+    font-size: rem(11);
+  }
+
+  &__tbody {
+    tr:nth-child(odd) {
+      background-color: $white;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba($gray-100, 0.5);
+    }
+  }
+
+  &__row {
+    border-bottom: 1px solid $border-color;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: rgba($primary-blue, 0.05);
+    }
+  }
+
+  &__td {
+    padding: $spacing-md;
+    color: $dark-color;
+    text-align: center;
+  }
+
+  &__pagination-nav {
+    margin-top: $spacing-lg;
+    @include flex(row, center, center, $spacing-sm);
+  }
+
+  &__pagination-btn {
+    background-color: $gray-100;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    color: $dark-color;
+    width: rem(32);
+    height: rem(32);
+    cursor: pointer;
+    @include flex-center;
+    @include transition(background-color color, 0.2s, ease);
+
+    &:hover:not(:disabled) {
+      background-color: $primary-blue;
+      border-color: $primary-blue;
+      color: $white;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__pagination-info {
+    padding: 0 $spacing-sm;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+  }
+
+  &__footer {
+    padding: $spacing-md $spacing-lg;
+    @include flex(row, center, flex-start, $spacing-md);
+    gap: $spacing-md;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__btn {
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    @include flex(row, center, center, $spacing-sm);
+    @include transition(background-color, 0.2s, ease);
+
+    i {
+      font-size: rem(14);
+    }
+
+    &--primary {
+      background-color: $blue-text;
+      color: $white;
+
+      &:hover {
+        background-color: $medium-blue;
+      }
+
+      &:active {
+        background-color: $blue-dark;
+      }
+    }
+
+    &--warning {
+      background-color: $warning-color;
+      color: $dark-color;
+
+      &:hover {
+        background-color: darken($warning-color, 5%);
+      }
+
+      &:active {
+        background-color: darken($warning-color, 10%);
+      }
+    }
+  }
+}

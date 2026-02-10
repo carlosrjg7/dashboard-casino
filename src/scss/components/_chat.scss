@@ -1,0 +1,233 @@
+// =====================================================
+// CHAT HISTORY COMPONENT
+// =====================================================
+
+.card__body--chat {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-history {
+  flex: 1;
+  padding: $spacing-lg;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &::-webkit-scrollbar {
+    width: rem(6);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $border-color;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: $gray-400;
+    }
+  }
+}
+
+.chat-message {
+  display: flex;
+  gap: $spacing-md;
+  align-items: flex-end;
+  animation: slideIn 0.3s ease-out;
+
+  &--other {
+    justify-content: flex-start;
+
+    .chat-message__content {
+      background-color: rgba(217, 217, 217, 0.33);
+      color: $dark-color;
+      border-radius: rem(8);
+    }
+  }
+
+  &--self {
+    justify-content: flex-end;
+
+    .chat-message__content {
+      background-color: rgba(186, 237, 240, 0.4);
+      color: $dark-color;
+      border-radius: rem(8);
+    }
+
+    .chat-message__user-section {
+      order: 2;
+    }
+
+    .chat-message__content {
+      order: 1;
+    }
+  }
+
+  &__user-section {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    align-items: center;
+    min-width: rem(60);
+
+    &--self {
+      align-items: center;
+    }
+  }
+
+  &__avatar {
+    width: rem(47);
+    height: rem(47);
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  &__username {
+    font-size: rem(8);
+    font-weight: $font-weight-semibold;
+    color: $text-muted;
+    text-align: center;
+    line-height: 1.2;
+    max-width: rem(60);
+    word-break: normal;
+    white-space: nowrap;
+    width: 100%;
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    &--admin {
+      background-color: $primary-blue;
+      color: $white;
+      padding: 0.25rem 0.2rem;
+      border-radius: $border-radius;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    max-width: rem(350);
+  }
+
+  &__text {
+    padding: $spacing-sm $spacing-md 0;
+    margin: 0;
+    font-size: rem(12);
+    line-height: 1.5;
+    word-wrap: break-word;
+    border-radius: rem(8);
+  }
+
+  &__time {
+    font-size: rem(10);
+    color: $text-muted;
+    padding: 0 $spacing-md;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(rem(10));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: $spacing-lg;
+  border-top: 1px solid $border-color;
+  background-color: $gray-100;
+
+  &__icons {
+    @include flex(column, center, flex-start, 0);
+  }
+
+  &__icon-btn {
+    width: rem(25.5);
+    height: rem(25.5);
+    border: 1px solid $border-color;
+    background-color: $white;
+
+    cursor: pointer;
+    color: $text-muted;
+    @include flex-center;
+    font-size: rem(14);
+    @include transition(all, 0.2s, ease);
+
+    &:hover {
+      color: $primary-blue;
+      border-color: $primary-blue;
+      background-color: rgba($primary-blue, 0.05);
+    }
+
+    &.first {
+      border-radius: $border-radius-md 0 0 0;
+    }
+
+    &.second {
+      border-radius: 0 0 0 $border-radius-md;
+    }
+  }
+
+  &__field {
+    flex: 1;
+    padding: $spacing-sm $spacing-md;
+    border-color: $border-color;
+    border-style: solid;
+    border-width: 1px 0;
+    border-radius: 0;
+    font-family: $font-family-base;
+    font-size: rem(12);
+    color: $dark-color;
+    outline: none;
+    height: rem(51);
+    @include transition(border-color, 0.2s, ease);
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      border-color: $primary-blue;
+      box-shadow: 0 0 0 rem(3) rgba($primary-blue, 0.1);
+    }
+  }
+
+  &__btn {
+    padding: 0.35rem 1rem;
+    background-color: $blue-dark;
+    color: $white;
+    border: none;
+    border-radius: 0 $border-radius-md $border-radius-md 0;
+    font-size: rem(12);
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    height: rem(51);
+    @include transition(all, 0.2s, ease);
+
+    &:hover {
+      background-color: darken($blue-dark, 8%);
+      transform: translateY(rem(-2));
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

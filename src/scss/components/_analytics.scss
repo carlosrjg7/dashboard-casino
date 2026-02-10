@@ -1,0 +1,263 @@
+// =====================================================
+// ANALYTICS CARD COMPONENT
+// =====================================================
+
+.analytics-section {
+  width: 100%;
+  margin-bottom: $spacing-xl;
+
+  &__grid {
+    display: grid;
+    gap: $spacing-lg;
+    grid-template-columns: 1fr;
+
+    @include media-up(lg) {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-auto-rows: rem(403);
+    }
+  }
+}
+
+// -----------------------------------------------
+// Analytics Card
+// -----------------------------------------------
+.analytics-card {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow-sm;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: rem(403);
+  padding: $spacing-md;
+
+  &__header {
+    width: 100%;
+    flex-shrink: 0;
+
+    @include media-down(lg) {
+      @include flex(row, flex-start, space-between, $spacing-md);
+    }
+
+    @include media-up(lg) {
+      @include flex(row, center, space-between, $spacing-md);
+    }
+  }
+
+  &__header-content {
+    @include flex(column, flex-start, space-between, $spacing-xs);
+
+    @include media-down(lg) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: rem(27);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    color: $text-muted;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  &__legend {
+    @include flex(row, center, flex-start, $spacing-xs);
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include media-down(lg) {
+      white-space: nowrap;
+    }
+
+    &-footer {
+      margin-top: $spacing-md;
+    }
+  }
+
+  &__legend-item {
+    @include flex(row, center, flex-start, $spacing-xs);
+    font-size: rem(11);
+  }
+
+  &__legend-color {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 0.125rem;
+    flex-shrink: 0;
+
+    &--blue {
+      background-color: $primary-blue;
+    }
+
+    &--cian {
+      background-color: #4db8ff;
+    }
+  }
+
+  &__legend-label {
+    color: $text-muted;
+    font-weight: $font-weight-normal;
+  }
+
+  &__body {
+    background-color: $white;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .circle__content {
+      @include flex-center;
+      width: 100%;
+      height: 100%;
+    }
+
+    canvas {
+      max-width: 100%;
+      max-height: 100% !important;
+      height: auto !important;
+
+      &.circle {
+        @include media-down(md) {
+          max-width: rem(205);
+          margin: 0 auto;
+        }
+
+        @include media-up(md) {
+          max-width: rem(205);
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &__body--map {
+    @include flex(column, flex-start, space-between, $spacing-md);
+  }
+
+  // Variante para contenido centrado
+  &--center {
+    .analytics-card__body {
+      @include flex-center;
+      min-height: 15rem;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Analytics Map + List
+// -----------------------------------------------------
+.analytics-map {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  border-radius: $border-radius-md;
+  @include flex-center;
+  flex-shrink: 0;
+  // height: rem(212);
+
+  @include media-up(md) {
+    max-height: rem(170);
+  }
+
+  &__image {
+    width: 100%;
+    height: rem(170);
+    object-fit: contain;
+    opacity: 0.9;
+  }
+
+  &__pin {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.05);
+
+    &--peru {
+      background-color: #3b82f6;
+      left: 37%;
+      top: 68%;
+    }
+
+    &--colombia {
+      background-color: #4caf50;
+      left: 37%;
+      top: 60%;
+    }
+
+    &--usa {
+      background-color: #ef4444;
+      left: 38%;
+      top: 40%;
+    }
+  }
+}
+
+.analytics-list {
+  width: 100%;
+  @include flex(column, flex-start, center, 0.375rem);
+
+  &__item {
+    width: 100%;
+    border-radius: $border-radius;
+    padding: 0.375rem 0.625rem;
+    @include flex(row, center, space-between, $spacing-sm);
+    font-size: rem(11);
+    font-weight: $font-weight-semibold;
+    color: $white;
+
+    &--peru {
+      background-color: #a9bdfc;
+      .analytics-list__value {
+        background-color: $primary-blue;
+      }
+    }
+
+    &--colombia {
+      background-color: #bfe3b8;
+      .analytics-list__value {
+        background-color: #2e7d32;
+      }
+    }
+
+    &--usa {
+      background-color: #f6b0ad;
+      .analytics-list__value {
+        background-color: #e53935;
+      }
+    }
+
+    &--others {
+      background-color: #133e5c;
+      .analytics-list__value {
+        background-color: #0f2d43;
+      }
+    }
+  }
+
+  &__index,
+  &__label {
+    color: $white;
+  }
+
+  &__label {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__value {
+    padding: 0.2rem 0.45rem;
+    border-radius: $border-radius-sm;
+    font-size: rem(11);
+  }
+}

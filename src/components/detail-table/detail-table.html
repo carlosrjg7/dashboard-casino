@@ -1,0 +1,174 @@
+<!-- Detail Table Component -->
+<div class="detail-table">
+  <div class="detail-table__header">
+    <h3 class="detail-table__title">Detalle de Cupones</h3>
+    <div class="detail-table__actions">
+      <button class="detail-table__btn-icon" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="detail-table__btn-icon" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="detail-table__btn-icon" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="detail-table__btn-icon detail-table__btn-icon--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="detail-table__body">
+    <div class="detail-table__pagination">
+      <select class="detail-table__rows-select">
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+      </select>
+    </div>
+
+    <div class="detail-table__scroll">
+      <table class="detail-table__table">
+        <thead class="detail-table__thead">
+          <tr>
+            <th class="detail-table__th">
+              N°
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Cliente
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Documento
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Cupones
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Tipo
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Acumulados
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Impresos
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Pendientes
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Asignados
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">
+              Otorgados
+              <span class="detail-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="detail-table__th">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="detail-table__tbody">
+          <tr class="detail-table__row">
+            <td class="detail-table__td">1</td>
+            <td class="detail-table__td">Prueba, Sistemas Colossus</td>
+            <td class="detail-table__td">12345678</td>
+            <td class="detail-table__td">PRUEBA 1</td>
+            <td class="detail-table__td">Virtual</td>
+            <td class="detail-table__td">44</td>
+            <td class="detail-table__td">1</td>
+            <td class="detail-table__td">0</td>
+            <td class="detail-table__td">44</td>
+            <td class="detail-table__td">0</td>
+            <td class="detail-table__td">
+              <a href="#" class="detail-table__link">Detalle</a>
+            </td>
+          </tr>
+          <tr class="detail-table__row">
+            <td class="detail-table__td">2</td>
+            <td class="detail-table__td">Prueba, Sistemas Colossus</td>
+            <td class="detail-table__td">12345678</td>
+            <td class="detail-table__td">PRUEBA 2</td>
+            <td class="detail-table__td">Físico</td>
+            <td class="detail-table__td">30</td>
+            <td class="detail-table__td">18</td>
+            <td class="detail-table__td">12</td>
+            <td class="detail-table__td">24</td>
+            <td class="detail-table__td">6</td>
+            <td class="detail-table__td">
+              <a href="#" class="detail-table__link">Imprimir</a><br />
+              <a href="#" class="detail-table__link">Detalle</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="detail-table__pagination-nav">
+      <button class="detail-table__pagination-btn" aria-label="Primera página">
+        <i class="bi bi-chevron-double-left"></i>
+      </button>
+      <button class="detail-table__pagination-btn" aria-label="Página anterior">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="detail-table__pagination-info">1</span>
+      <button
+        class="detail-table__pagination-btn"
+        aria-label="Siguiente página"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <button class="detail-table__pagination-btn" aria-label="Última página">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="detail-table__footer">
+    <button class="detail-table__btn detail-table__btn--primary">
+      <i class="bi bi-search"></i> BUSCAR
+    </button>
+    <button class="detail-table__btn detail-table__btn--warning">
+      <i class="bi bi-gift"></i> OTORGAR CUPÓN
+    </button>
+  </div>
+</div>

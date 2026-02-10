@@ -1,0 +1,286 @@
+<div class="users-cards-grid">
+  <!-- Chat History Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Historial de chat</h4>
+      <span class="card__badge">4 mensajes</span>
+    </div>
+
+    <div class="card__body card__body--chat">
+      <div class="chat-history">
+        <!-- Mensaje recibido -->
+        <div class="chat-message chat-message--other">
+          <div class="chat-message__user-section">
+            <img
+              src="../dist/images/user-icon.png"
+              alt="Erick Loja"
+              class="chat-message__avatar"
+            />
+            <span class="chat-message__username">Erick Loja</span>
+          </div>
+          <div class="chat-message__content">
+            <p class="chat-message__text">
+              Hola, detecté que dos máquinas de sala VIP están mostrando un
+              retraso en la actualización del contador. ¿Podrían revisarlo, por
+              favor?
+            </p>
+            <span class="chat-message__time">Ayer 11:23 pm</span>
+          </div>
+        </div>
+
+        <!-- Mensaje enviado (Super Admin) -->
+        <div class="chat-message chat-message--self">
+          <div class="chat-message__content">
+            <p class="chat-message__text">
+              Listo, Erick. El equipo técnico ya revisó las máquinas y ambas
+              están funcionando correctamente. Se reinició el módulo de conteo
+              para estabilizar los datos.
+            </p>
+            <span class="chat-message__time">8:12 am</span>
+          </div>
+          <div
+            class="chat-message__user-section chat-message__user-section--self"
+          >
+            <img
+              src="../dist/images/user-icon.png"
+              alt="Super Admin"
+              class="chat-message__avatar"
+            />
+            <span class="chat-message__username chat-message__username--admin"
+              >Super Admin</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <div class="chat-input__icons">
+          <button
+            class="chat-input__icon-btn first"
+            aria-label="Agregar imagen"
+          >
+            <i class="bi bi-camera"></i>
+          </button>
+          <button
+            class="chat-input__icon-btn second"
+            aria-label="Agregar enlace"
+          >
+            <i class="bi bi-link-45deg"></i>
+          </button>
+        </div>
+        <input
+          type="text"
+          class="chat-input__field"
+          placeholder="Escribe tu mensaje aquí"
+        />
+        <button class="chat-input__btn">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Agenda de hoy</h4>
+    </div>
+
+    <div class="card__body card__body--calendar">
+      <div class="calendar-widget">
+        <div class="calendar-widget__header">
+          <button class="calendar-widget__nav" aria-label="Mes anterior">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <h3 class="calendar-widget__title">DICIEMBRE</h3>
+          <button class="calendar-widget__nav" aria-label="Mes siguiente">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="calendar-widget__weekdays">
+          <div class="calendar-widget__weekday">LUNES</div>
+          <div class="calendar-widget__weekday">MARTES</div>
+          <div class="calendar-widget__weekday">MIÉRCOLES</div>
+          <div class="calendar-widget__weekday">JUEVES</div>
+          <div class="calendar-widget__weekday">VIERNES</div>
+          <div class="calendar-widget__weekday">SÁBADO</div>
+          <div class="calendar-widget__weekday">DOMINGO</div>
+        </div>
+
+        <div class="calendar-widget__days">
+          <div class="calendar-widget__day"></div>
+          <div class="calendar-widget__day"></div>
+          <div class="calendar-widget__day">1</div>
+          <div class="calendar-widget__day">2</div>
+          <div class="calendar-widget__day">3</div>
+          <div class="calendar-widget__day">4</div>
+          <div class="calendar-widget__day">5</div>
+          <div class="calendar-widget__day">8</div>
+          <div class="calendar-widget__day">9</div>
+          <div class="calendar-widget__day">10</div>
+          <div class="calendar-widget__day">11</div>
+          <div class="calendar-widget__day calendar-widget__day--active">
+            12
+          </div>
+          <div class="calendar-widget__day">13</div>
+          <div class="calendar-widget__day">14</div>
+          <div class="calendar-widget__day">15</div>
+          <div class="calendar-widget__day">16</div>
+          <div class="calendar-widget__day">17</div>
+          <div class="calendar-widget__day">18</div>
+          <div class="calendar-widget__day">19</div>
+          <div class="calendar-widget__day">20</div>
+          <div class="calendar-widget__day">21</div>
+          <div class="calendar-widget__day">22</div>
+          <div class="calendar-widget__day">23</div>
+          <div class="calendar-widget__day">24</div>
+          <div class="calendar-widget__day">25</div>
+          <div class="calendar-widget__day">26</div>
+          <div class="calendar-widget__day">27</div>
+          <div class="calendar-widget__day">28</div>
+          <div class="calendar-widget__day">29</div>
+          <div class="calendar-widget__day">30</div>
+          <div class="calendar-widget__day">31</div>
+          <div class="calendar-widget__day">1</div>
+          <div class="calendar-widget__day">2</div>
+          <div class="calendar-widget__day">3</div>
+          <div class="calendar-widget__day">4</div>
+        </div>
+      </div>
+
+      <div class="calendar-footer">
+        <div class="calendar-footer__item">
+          <input
+            type="text"
+            class="calendar-footer__input"
+            value="Reporte de ventas"
+            readonly
+          />
+          <span class="calendar-footer__time">9:00 am</span>
+        </div>
+        <div class="calendar-footer__item">
+          <input
+            type="text"
+            class="calendar-footer__input"
+            value="Reunión con el equipo de ventas"
+            readonly
+          />
+          <span class="calendar-footer__time calendar-footer__time--dark"
+            >2:45 pm</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Usuarios Registrados Recientemente</h4>
+      <span class="card__badge">24 nuevos</span>
+    </div>
+
+    <div class="card__body">
+      <div class="card__grid">
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Savory Posh</p>
+            <p class="card__subtext">Máquina #12</p>
+            <div class="card__stars">★★★★★</div>
+            <span class="card__tag card__tag--vip">Cliente VIP</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Ancient Caviar</p>
+            <p class="card__subtext">Máquina #5</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Marble Lungs</p>
+            <p class="card__subtext">Máquina #21</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag">Cliente regular</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__footer">
+        <button class="card__footer-btn">Ver todos</button>
+      </div>
+    </div>
+  </div>
+</div>

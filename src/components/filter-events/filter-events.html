@@ -1,0 +1,85 @@
+<!-- Filter Events Component -->
+<div class="filter-events">
+  <div class="filter-events__header">
+    <h3 class="filter-events__title">Filtro de consulta</h3>
+    <div class="filter-events__actions">
+      <button class="filter-events__btn" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="filter-events__btn" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="filter-events__btn" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="filter-events__btn filter-events__btn--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="filter-events__body">
+    <div class="filter-events__row">
+      <div class="filter-events__group">
+        <label class="filter-events__label">Fecha Desde</label>
+        <div class="filter-events__date-input">
+          <input type="date" class="filter-events__input" value="01/01/2025" />
+          <i class="bi bi-calendar-event filter-events__date-icon"></i>
+        </div>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Fecha Hasta</label>
+        <div class="filter-events__date-input">
+          <input type="date" class="filter-events__input" value="13/12/2025" />
+          <i class="bi bi-calendar-event filter-events__date-icon"></i>
+        </div>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Máquina</label>
+        <select class="filter-events__select">
+          <option>Máquina</option>
+          <option>Máquina 1</option>
+          <option>Máquina 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Tipo</label>
+        <select class="filter-events__select">
+          <option>Tipo de evento</option>
+          <option>Tipo 1</option>
+          <option>Tipo 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Protocolo</label>
+        <select class="filter-events__select">
+          <option>Protocolo</option>
+          <option>Protocolo 1</option>
+          <option>Protocolo 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Evento</label>
+        <select class="filter-events__select">
+          <option>Huellas</option>
+          <option>Evento 1</option>
+          <option>Evento 2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-events__footer">
+      <button class="filter-events__filter-btn">
+        <i class="bi bi-sliders"></i> Filtrar
+      </button>
+    </div>
+  </div>
+</div>

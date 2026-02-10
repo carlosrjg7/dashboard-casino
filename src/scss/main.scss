@@ -1,0 +1,98 @@
+// Import Bootstrap first
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import Google Fonts
+@import "fonts";
+
+// Import SCSS functions
+@import "functions";
+
+// Import custom variables
+@import "variables";
+
+// Import mixins (responsive, flexbox, etc.)
+@import "mixins";
+
+// Import layouts
+@import "layouts/dashboard-layout";
+
+// Import layout styles
+@import "layout";
+
+// Import component styles
+@import "components";
+@import "components/hero-header";
+@import "components/sidebar";
+@import "components/navbar";
+@import "components/stats-cards";
+@import "components/tabs";
+@import "components/filters";
+@import "components/charts";
+@import "components/analytics";
+@import "components/card";
+@import "components/data-table";
+@import "components/resume";
+@import "components/chat";
+@import "components/calendar";
+@import "components/dashboard3";
+@import "components/dashboard4";
+@import "components/dashboard5";
+@import "components/dashboard6";
+@import "components/dashboard7";
+@import "components/dashboard8";
+@import "components/dashboard9";
+@import "components/dashboard10";
+
+// Import page styles
+@import "pages/login";
+@import "pages/dashboard";
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $dark-color;
+  background-color: $light-color;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  transition: $transition-fast;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Utility classes
+.text-muted {
+  color: $secondary-color !important;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    $primary-color 0%,
+    darken($primary-color, 15%) 100%
+  );
+}
+
+.shadow-sm {
+  box-shadow: $box-shadow-sm !important;
+}
+
+.shadow {
+  box-shadow: $box-shadow !important;
+}
+
+.shadow-lg {
+  box-shadow: $box-shadow-lg !important;
+}

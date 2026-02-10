@@ -1,0 +1,153 @@
+// =====================================================
+// EJEMPLO DE USO DE MIXINS RESPONSIVE
+// =====================================================
+
+.ejemplo-seccion {
+  background-color: lightblue;
+  padding: 2rem;
+
+  // Ocultar en mobile (menos de 768px)
+  @include hide-mobile;
+
+  // Alternativa: Ocultar solo en mobile
+  // @include show-desktop-only;
+}
+
+.ejemplo-menu-mobile {
+  // Mostrar solo en mobile
+  @include show-mobile-only;
+
+  padding: 1rem;
+  background: white;
+}
+
+.ejemplo-card {
+  padding: 1rem;
+
+  // Cambiar padding según el tamaño de pantalla
+  @include media-up(md) {
+    padding: 2rem;
+  }
+
+  @include media-up(lg) {
+    padding: 3rem;
+  }
+}
+
+.ejemplo-grid {
+  // Grid automático responsive
+  @include grid-auto(250px, 1.5rem);
+
+  // En mobile, 1 columna
+  @include media-down(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ejemplo-flex {
+  // Centrar contenido con flex
+  @include flex-center;
+
+  // O flex personalizado
+  // @include flex(column, center, space-between, 1rem);
+}
+
+.ejemplo-texto {
+  // Truncar texto con ellipsis
+  @include truncate;
+
+  // O truncar en 3 líneas
+  // @include truncate-lines(3);
+}
+
+.ejemplo-boton {
+  // Transición suave
+  @include transition(all, 0.3s, ease-in-out);
+
+  // Efectos de hover
+  @include hover {
+    transform: scale(1.05);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+.ejemplo-imagen {
+  // Mantener aspecto 16:9
+  @include aspect-ratio(16, 9);
+  object-fit: cover;
+}
+
+// =====================================================
+// EJEMPLO COMPLETO: SIDEBAR RESPONSIVE
+// =====================================================
+
+.sidebar {
+  background: $dark-color;
+  padding: 1rem;
+
+  // En mobile, ocultar por defecto
+  @include media-down(lg) {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  // En desktop, siempre visible
+  @include media-up(lg) {
+    position: static;
+    width: 250px;
+  }
+}
+
+.mobile-menu-toggle {
+  // Mostrar solo en mobile y tablet
+  @include show-mobile-only;
+
+  @include media-up(lg) {
+    display: none !important;
+  }
+}
+
+// =====================================================
+// EJEMPLO: STATS CARDS RESPONSIVE
+// =====================================================
+
+.stats-container {
+  // Grid automático responsive
+  @include grid-auto(280px, 1.5rem);
+
+  // En mobile pequeño, forzar 1 columna
+  @include media-down(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  @include flex(column, center, center, 1rem);
+  padding: 1.5rem;
+  background: white;
+  border-radius: $border-radius;
+  @include shadow(sm);
+
+  @include hover {
+    @include shadow(md);
+    transform: translateY(-2px);
+  }
+
+  .stat-value {
+    font-size: 2rem;
+
+    // Texto más pequeño en mobile
+    @include media-down(sm) {
+      font-size: 1.5rem;
+    }
+  }
+}

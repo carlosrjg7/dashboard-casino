@@ -1,0 +1,67 @@
+// =====================================================
+// DASHBOARD LAYOUT
+// =====================================================
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+
+  @include media-up(lg) {
+    flex-direction: row;
+  }
+
+  /*   position: relative;
+  // min-height: calc(100vh - $navbar-height - 6rem);
+  // Espacio para navbar y hero header
+  background-color: $light-color;
+  padding-left: 0;
+
+  // Mobile: Sin padding por el sidebar
+  @include media-down(lg) {
+    padding-left: 0;
+  }
+
+  // Desktop: Padding para el sidebar
+  @include media-up(lg) {
+    padding-left: $sidebar-width;
+  } */
+
+  // Sidebar Overlay (mobile only)
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 750;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all, 0.3s, ease);
+
+    @include media-down(lg) {
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @include media-up(lg) {
+      display: none;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Content Area
+  // -----------------------------------------------------
+  &__content {
+    padding: $spacing-md;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+
+    @include media-up(lg) {
+      max-width: calc(100% - #{$sidebar-width});
+    }
+  }
+}

@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    <!-- Navbar Component -->
+<header class="navbar">
+  <div class="navbar__container">
+    <!-- Mobile Menu Toggle -->
+    <div class="navbar__container-brand">
+      <button
+        class="navbar__menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <img
+          src="../dist/images/logo-nav.png"
+          alt="COLOSSUS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">COLOSSUS<sub>v.2</sub></span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar__search">
+        <i class="bi bi-search navbar__search-icon"></i>
+        <input
+          type="text"
+          class="navbar__search-input"
+          placeholder="Búsqueda general"
+        />
+      </div>
+
+      <!-- Right Section -->
+      <div class="navbar__actions">
+        <!-- Notifications -->
+        <button class="navbar__notification" aria-label="Notificaciones">
+          <i class="bi bi-bell"></i>
+          <span class="navbar__notification-badge">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="navbar__container-user">
+      <button class="navbar__user-button" aria-label="Menú de usuario">
+        <div class="navbar__user-avatar">A</div>
+        <span class="navbar__user-name">Admin. Rodas/ISG</span>
+        <i class="bi bi-chevron-down navbar__user-arrow"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    <!-- Hero Header Component -->
+<section class="hero-header">
+  <div class="hero-header__container">
+    <!-- Left: Game Info -->
+    <div class="hero-header__game">
+      <div class="hero-header__game-icon">
+        <i class="bi bi-controller"></i>
+      </div>
+      <div class="hero-header__game-info">
+        <div class="hero-header__game-title">Latin Games</div>
+        <div class="hero-header__game-subtitle">Madgalena</div>
+      </div>
+    </div>
+
+    <!-- Center: Page Info -->
+    <div class="hero-header__page">
+      <div class="hero-header__page-image">
+        <img src="../dist/images/img-cupons.png" alt="Cupones" />
+      </div>
+      <div class="hero-header__page-info">
+        <div>
+          <h1 class="hero-header__page-title">Cupones</h1>
+          <p class="hero-header__page-subtitle">Asignación manual</p>
+          <button class="hero-header__tutorial-btn">Tutorial</button>
+        </div>
+
+        <!-- Right: Breadcrumb -->
+        <nav class="hero-header__breadcrumb" aria-label="Breadcrumb">
+          <ol class="hero-header__breadcrumb-list">
+            <li
+              class="hero-header__breadcrumb-item hero-header__breadcrumb-item--active"
+            >
+              <a href="#" class="hero-header__breadcrumb-link">Inicio</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link">Cupones</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link"
+                >Asignación manual</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        <!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+  <!-- Sidebar Header -->
+  <div class="sidebar__header">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">L</div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-title">Latin Games</span>
+        <span class="sidebar__logo-subtitle">Madgalena</span>
+      </div>
+    </div>
+    <button class="sidebar__toggle" id="sidebarToggle" aria-label="Cerrar menú">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar__nav">
+    <h3 class="sidebar__nav-title">Menú de Navegación</h3>
+
+    <ul class="sidebar__menu">
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-people"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-printer"></i>
+          <span>Configuración de impresión</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item sidebar__menu-item--active">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-gift"></i>
+          <span>Cupones</span>
+        </a>
+
+        <!-- Submenu -->
+        <ul class="sidebar__submenu">
+          <li class="sidebar__submenu-item sidebar__submenu-item--active">
+            <a href="#" class="sidebar__submenu-link">
+              <i class="bi bi-circle-fill"></i>
+              <span>Asignación manual de cupones</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span>Otorgar cupones</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-basket"></i>
+          <span>Cupones virtuales</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-globe"></i>
+          <span>En línea</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-grid"></i>
+          <span>Layout</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-file-text"></i>
+          <span>Reporte de cupones</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-shield-check"></i>
+          <span>Super Administrador</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--   <!-- Sidebar Collapse Button 
+  <button class="sidebar__collapse" aria-label="Colapsar sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button> -->
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <!-- Resumen -->
+        <div class="resume">
+  <div class="resume__title">
+    <h3>Panel de control</h3>
+    <span>Resumen general del sistema</span>
+  </div>
+  <div class="resume__breadcrumbs">
+    <span>Sistema</span><span>Dashboard</span>
+  </div>
+</div>
+
+
+        <!-- Stats Cards -->
+        <!-- Stats Cards Component -->
+<div class="stats-cards">
+  <div class="stats-cards__slider" id="statsSlider">
+    <!-- Card 1: Clientes Jugando -->
+    <div class="stats-card stats-card--dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CLIENTES JUGANDO AHORA</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1,125</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 75%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio semanal mayor 850%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Apuesta Promedio -->
+    <div class="stats-card stats-card--darken">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">APUESTA PROMEDIO</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">50</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--success"
+              style="width: 60%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Incremento semanal mayor 454%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Ocupación -->
+    <div class="stats-card stats-card--primary">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">OCUPACIÓN</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--white"
+              style="width: 45%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de máquinas 12 Libre</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Cupones Libres -->
+    <div class="stats-card stats-card--gray-dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CUPONES LIBRES</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">0</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 0%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de cupones (ON)</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls (Mobile only) -->
+  <div class="stats-cards__controls">
+    <button
+      class="stats-cards__btn stats-cards__btn--prev"
+      id="statsPrev"
+      aria-label="Anterior"
+    >
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button
+      class="stats-cards__btn stats-cards__btn--next"
+      id="statsNext"
+      aria-label="Siguiente"
+    >
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+
+        <!-- Charts Section -->
+        <section class="analytics-section">
+  <div class="analytics-section__grid">
+    <div class="analytics-card">
+      <div class="analytics-card__header">
+        <div class="analytics-card__header-content">
+          <h4 class="analytics-card__title">Analítica de Visitantes</h4>
+          <span class="analytics-card__subtitle">
+            Actividad histórica de clientes en salas
+          </span>
+        </div>
+
+        <div class="analytics-card__legend">
+          <div class="analytics-card__legend-item">
+            <span
+              class="analytics-card__legend-color analytics-card__legend-color--blue"
+            ></span>
+            <span class="analytics-card__legend-label">Clientes Únicos</span>
+          </div>
+          <div class="analytics-card__legend-item">
+            <span
+              class="analytics-card__legend-color analytics-card__legend-color--cian"
+            ></span>
+            <span class="analytics-card__legend-label">Visitas en sala</span>
+          </div>
+        </div>
+      </div>
+      <div class="analytics-card__body">
+        <canvas id="chartVisitantes" width="400" height="200"></canvas>
+      </div>
+    </div>
+    <div class="analytics-card">
+      <div class="analytics-card__header">
+        <div class="analytics-card__header-content">
+          <h4 class="analytics-card__title">1,225,729</h4>
+          <span class="analytics-card__subtitle"> Clientes registrados</span>
+        </div>
+      </div>
+      <div class="analytics-card__body">
+        <div class="circle__content">
+          <canvas
+            id="chartAsignacion"
+            width="250"
+            height="250"
+            class="circle"
+          ></canvas>
+        </div>
+      </div>
+      <div class="analytics-card__legend-footer">
+        <div class="analytics-card__legend-item">
+          <span
+            class="analytics-card__legend-color analytics-card__legend-color--blue"
+          ></span>
+          <span class="analytics-card__legend-label"
+            >34.0% Clientes Únicos</span
+          >
+        </div>
+        <div class="analytics-card__legend-item">
+          <span
+            class="analytics-card__legend-color analytics-card__legend-color--cian"
+          ></span>
+          <span class="analytics-card__legend-label"
+            >56.0% Visitas en sala</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="analytics-card analytics-card--map">
+      <div class="analytics-card__body analytics-card__body--map">
+        <div class="analytics-map">
+          <img
+            src="../dist/images/world-map.svg"
+            alt="Mapa de visitantes"
+            class="analytics-map__image"
+          />
+          <span class="analytics-map__pin analytics-map__pin--peru"></span>
+          <span class="analytics-map__pin analytics-map__pin--colombia"></span>
+          <span class="analytics-map__pin analytics-map__pin--usa"></span>
+        </div>
+
+        <div class="analytics-list">
+          <div class="analytics-list__item analytics-list__item--peru">
+            <span class="analytics-list__index">1.</span>
+            <span class="analytics-list__label">Perú</span>
+            <span class="analytics-list__value">65.40%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--colombia">
+            <span class="analytics-list__index">2.</span>
+            <span class="analytics-list__label">Colombia</span>
+            <span class="analytics-list__value">18.75%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--usa">
+            <span class="analytics-list__index">3.</span>
+            <span class="analytics-list__label">Estados unidos</span>
+            <span class="analytics-list__value">10.20%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--others">
+            <span class="analytics-list__index">4.</span>
+            <span class="analytics-list__label">Otros</span>
+            <span class="analytics-list__value">5.65%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- users Section -->
+        <div class="users-cards-grid">
+  <!-- Chat History Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Historial de chat</h4>
+      <span class="card__badge">4 mensajes</span>
+    </div>
+
+    <div class="card__body card__body--chat">
+      <div class="chat-history">
+        <!-- Mensaje recibido -->
+        <div class="chat-message chat-message--other">
+          <div class="chat-message__user-section">
+            <img
+              src="../dist/images/user-icon.png"
+              alt="Erick Loja"
+              class="chat-message__avatar"
+            />
+            <span class="chat-message__username">Erick Loja</span>
+          </div>
+          <div class="chat-message__content">
+            <p class="chat-message__text">
+              Hola, detecté que dos máquinas de sala VIP están mostrando un
+              retraso en la actualización del contador. ¿Podrían revisarlo, por
+              favor?
+            </p>
+            <span class="chat-message__time">Ayer 11:23 pm</span>
+          </div>
+        </div>
+
+        <!-- Mensaje enviado (Super Admin) -->
+        <div class="chat-message chat-message--self">
+          <div class="chat-message__content">
+            <p class="chat-message__text">
+              Listo, Erick. El equipo técnico ya revisó las máquinas y ambas
+              están funcionando correctamente. Se reinició el módulo de conteo
+              para estabilizar los datos.
+            </p>
+            <span class="chat-message__time">8:12 am</span>
+          </div>
+          <div
+            class="chat-message__user-section chat-message__user-section--self"
+          >
+            <img
+              src="../dist/images/user-icon.png"
+              alt="Super Admin"
+              class="chat-message__avatar"
+            />
+            <span class="chat-message__username chat-message__username--admin"
+              >Super Admin</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <div class="chat-input__icons">
+          <button
+            class="chat-input__icon-btn first"
+            aria-label="Agregar imagen"
+          >
+            <i class="bi bi-camera"></i>
+          </button>
+          <button
+            class="chat-input__icon-btn second"
+            aria-label="Agregar enlace"
+          >
+            <i class="bi bi-link-45deg"></i>
+          </button>
+        </div>
+        <input
+          type="text"
+          class="chat-input__field"
+          placeholder="Escribe tu mensaje aquí"
+        />
+        <button class="chat-input__btn">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Agenda de hoy</h4>
+    </div>
+
+    <div class="card__body card__body--calendar">
+      <div class="calendar-widget">
+        <div class="calendar-widget__header">
+          <button class="calendar-widget__nav" aria-label="Mes anterior">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <h3 class="calendar-widget__title">DICIEMBRE</h3>
+          <button class="calendar-widget__nav" aria-label="Mes siguiente">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="calendar-widget__weekdays">
+          <div class="calendar-widget__weekday">LUNES</div>
+          <div class="calendar-widget__weekday">MARTES</div>
+          <div class="calendar-widget__weekday">MIÉRCOLES</div>
+          <div class="calendar-widget__weekday">JUEVES</div>
+          <div class="calendar-widget__weekday">VIERNES</div>
+          <div class="calendar-widget__weekday">SÁBADO</div>
+          <div class="calendar-widget__weekday">DOMINGO</div>
+        </div>
+
+        <div class="calendar-widget__days">
+          <div class="calendar-widget__day"></div>
+          <div class="calendar-widget__day"></div>
+          <div class="calendar-widget__day">1</div>
+          <div class="calendar-widget__day">2</div>
+          <div class="calendar-widget__day">3</div>
+          <div class="calendar-widget__day">4</div>
+          <div class="calendar-widget__day">5</div>
+          <div class="calendar-widget__day">8</div>
+          <div class="calendar-widget__day">9</div>
+          <div class="calendar-widget__day">10</div>
+          <div class="calendar-widget__day">11</div>
+          <div class="calendar-widget__day calendar-widget__day--active">
+            12
+          </div>
+          <div class="calendar-widget__day">13</div>
+          <div class="calendar-widget__day">14</div>
+          <div class="calendar-widget__day">15</div>
+          <div class="calendar-widget__day">16</div>
+          <div class="calendar-widget__day">17</div>
+          <div class="calendar-widget__day">18</div>
+          <div class="calendar-widget__day">19</div>
+          <div class="calendar-widget__day">20</div>
+          <div class="calendar-widget__day">21</div>
+          <div class="calendar-widget__day">22</div>
+          <div class="calendar-widget__day">23</div>
+          <div class="calendar-widget__day">24</div>
+          <div class="calendar-widget__day">25</div>
+          <div class="calendar-widget__day">26</div>
+          <div class="calendar-widget__day">27</div>
+          <div class="calendar-widget__day">28</div>
+          <div class="calendar-widget__day">29</div>
+          <div class="calendar-widget__day">30</div>
+          <div class="calendar-widget__day">31</div>
+          <div class="calendar-widget__day">1</div>
+          <div class="calendar-widget__day">2</div>
+          <div class="calendar-widget__day">3</div>
+          <div class="calendar-widget__day">4</div>
+        </div>
+      </div>
+
+      <div class="calendar-footer">
+        <div class="calendar-footer__item">
+          <input
+            type="text"
+            class="calendar-footer__input"
+            value="Reporte de ventas"
+            readonly
+          />
+          <span class="calendar-footer__time">9:00 am</span>
+        </div>
+        <div class="calendar-footer__item">
+          <input
+            type="text"
+            class="calendar-footer__input"
+            value="Reunión con el equipo de ventas"
+            readonly
+          />
+          <span class="calendar-footer__time calendar-footer__time--dark"
+            >2:45 pm</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Card Component -->
+  <div class="card card--users">
+    <div class="card__header">
+      <h4 class="card__title">Usuarios Registrados Recientemente</h4>
+      <span class="card__badge">24 nuevos</span>
+    </div>
+
+    <div class="card__body">
+      <div class="card__grid">
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Savory Posh</p>
+            <p class="card__subtext">Máquina #12</p>
+            <div class="card__stars">★★★★★</div>
+            <span class="card__tag card__tag--vip">Cliente VIP</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Ancient Caviar</p>
+            <p class="card__subtext">Máquina #5</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Marble Lungs</p>
+            <p class="card__subtext">Máquina #21</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag">Cliente regular</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+
+        <div class="card__user">
+          <div class="card__avatar">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="card__meta">
+            <p class="card__name">Blank Bloke</p>
+            <p class="card__subtext">Máquina #7</p>
+            <div class="card__stars">★★★</div>
+            <span class="card__tag card__tag--new">Nuevo cliente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__footer">
+        <button class="card__footer-btn">Ver todos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

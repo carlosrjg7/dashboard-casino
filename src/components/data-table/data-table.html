@@ -1,0 +1,185 @@
+<!-- Data Table Component -->
+<div class="data-table">
+  <div class="card">
+    <div class="card__header">
+      <h4 class="card__title">Detalles de Cupones</h4>
+      <div class="card__actions">
+        <button class="card__btn" aria-label="Configuración">
+          <i class="bi bi-fullscreen"></i>
+        </button>
+        <button class="card__btn" aria-label="Configuración">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <button class="card__btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="card__btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="card__body">
+      <!-- Filter tabs/options here if needed -->
+
+      <div class="data-table__scroll">
+        <table class="table table-bordered data-table__table">
+          <thead>
+            <tr>
+              <th colspan="1" class="data-table__th-group">&nbsp;</th>
+              <th colspan="1" class="data-table__th-group">
+                <div class="data-table__th-content-box">
+                  <span>Máquina y/o Serie</span>
+                </div>
+              </th>
+              <th colspan="1" class="data-table__th-group">
+                <div class="data-table__th-content-box">
+                  <span>Por Cliente</span>
+                </div>
+              </th>
+              <th colspan="4" class="data-table__th-group">
+                <div class="data-table__th-content">
+                  <div class="data-table__filters">
+                    <div class="data-table__filter-group">
+                      <label class="data-table__radio">
+                        <input
+                          type="radio"
+                          name="filter"
+                          value="todos"
+                          checked
+                        />
+                        <span>TODOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="impresos" />
+                        <span>IMPRESOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="incompletos" />
+                        <span>INCOMPLETOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="asignado" />
+                        <span>ASIGNADO</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="sin-asignar" />
+                        <span>SIN ASIGNAR</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="pendientes" />
+                        <span>PENDIENTES</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>#</th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Máquina y/o Serie</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Sesión</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Apostado</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Cupones</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Imprimir cliente</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Acciones</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <div class="data-table__cell-machine">
+                  <strong>#35 SANZ42#BFF211</strong>
+                  <small>PRUEBA SISTEMA COLOSSUS 112345678</small>
+                </div>
+              </td>
+              <td>
+                <div class="data-table__cell-session">
+                  <i class="bi bi-clock"></i> 04:00
+                  <br />
+                  <small><i class="bi bi-calendar3"></i> Apuesta: 10:50</small>
+                </div>
+              </td>
+              <td>
+                <span class="data-table__badge">$0</span>
+              </td>
+              <td>
+                <div class="data-table__cell-coupons">
+                  <i class="bi bi-award"></i> Impresos: 0
+                  <br />
+                  <i class="bi bi-clock-history"></i> Pendientes: 3
+                </div>
+              </td>
+              <td>
+                <i class="bi bi-printer data-table__icon"></i>
+              </td>
+              <td>
+                <div class="data-table__cell-actions">
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Editar"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Ver"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Imprimir"
+                  >
+                    <i class="bi bi-printer"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Más opciones"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="data-table__footer">
+    <button class="data-table__footer-btn data-table__footer-btn--buscar">
+      <i class="bi bi-sliders2"></i>
+      BUSCAR
+    </button>
+    <button class="data-table__footer-btn data-table__footer-btn--listo">
+      <i class="bi bi-printer"></i>
+      ESTADO IMPRESORA
+    </button>
+  </div>
+</div>

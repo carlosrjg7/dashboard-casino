@@ -1,0 +1,87 @@
+<!-- Filters Component -->
+<div class="filters">
+  <div class="filters__header">
+    <h4 class="filters__title">ASIGNACIÓN</h4>
+  </div>
+  <div class="filters__body">
+    <form class="filters__body__form">
+      <div class="filters__section">
+        <div class="filters__row">
+          <!-- Fecha Desde -->
+          <div class="filters__col filters__col--custom">
+            <label class="filters__label" for="fechaDesde">Fecha Desde</label>
+            <input
+              type="date"
+              id="fechaDesde"
+              class="filters__input"
+              value="2023-01-01"
+            />
+          </div>
+
+          <!-- Fecha Hasta -->
+          <div class="filters__col filters__col--custom">
+            <label class="filters__label" for="fechaHasta">Fecha Hasta</label>
+            <input
+              type="date"
+              id="fechaHasta"
+              class="filters__input"
+              value="2023-12-31"
+            />
+          </div>
+        </div>
+
+        <div class="filters__row">
+          <!-- Máquina -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="maquina">Máquina</label>
+            <select id="maquina" class="filters__select">
+              <option value="">Seleccionar una máquina</option>
+              <option value="1">Máquina 1</option>
+              <option value="2">Máquina 2</option>
+            </select>
+          </div>
+
+          <!-- Jugador -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="jugador">Jugador</label>
+            <select id="jugador" class="filters__select">
+              <option value="">Seleccionar un Jugador</option>
+              <option value="1">Jugador 1</option>
+            </select>
+          </div>
+
+          <!-- Estado de la Sesión -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="estadoSesion"
+              >Estado de la Sesión</label
+            >
+            <select id="estadoSesion" class="filters__select">
+              <option value="">Seleccionar</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+
+          <!-- Cupones Pendientes -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="cuponesPendientes"
+              >Cupones Pendientes</label
+            >
+            <select id="cuponesPendientes" class="filters__select">
+              <option value="">Seleccionar</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters__actions">
+          <button type="button" class="filters__btn filters__btn--filter">
+            <i class="bi bi-funnel"></i>
+            Filtrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

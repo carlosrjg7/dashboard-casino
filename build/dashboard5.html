@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    <!-- Navbar Component -->
+<header class="navbar">
+  <div class="navbar__container">
+    <!-- Mobile Menu Toggle -->
+    <div class="navbar__container-brand">
+      <button
+        class="navbar__menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <img
+          src="../dist/images/logo-nav.png"
+          alt="COLOSSUS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">COLOSSUS<sub>v.2</sub></span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar__search">
+        <i class="bi bi-search navbar__search-icon"></i>
+        <input
+          type="text"
+          class="navbar__search-input"
+          placeholder="Búsqueda general"
+        />
+      </div>
+
+      <!-- Right Section -->
+      <div class="navbar__actions">
+        <!-- Notifications -->
+        <button class="navbar__notification" aria-label="Notificaciones">
+          <i class="bi bi-bell"></i>
+          <span class="navbar__notification-badge">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="navbar__container-user">
+      <button class="navbar__user-button" aria-label="Menú de usuario">
+        <div class="navbar__user-avatar">A</div>
+        <span class="navbar__user-name">Admin. Rodas/ISG</span>
+        <i class="bi bi-chevron-down navbar__user-arrow"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    <!-- Hero Header Component -->
+<section class="hero-header">
+  <div class="hero-header__container">
+    <!-- Left: Game Info -->
+    <div class="hero-header__game">
+      <div class="hero-header__game-icon">
+        <i class="bi bi-controller"></i>
+      </div>
+      <div class="hero-header__game-info">
+        <div class="hero-header__game-title">Latin Games</div>
+        <div class="hero-header__game-subtitle">Madgalena</div>
+      </div>
+    </div>
+
+    <!-- Center: Page Info -->
+    <div class="hero-header__page">
+      <div class="hero-header__page-image">
+        <img src="../dist/images/img-cupons.png" alt="Cupones" />
+      </div>
+      <div class="hero-header__page-info">
+        <div>
+          <h1 class="hero-header__page-title">Cupones</h1>
+          <p class="hero-header__page-subtitle">Asignación manual</p>
+          <button class="hero-header__tutorial-btn">Tutorial</button>
+        </div>
+
+        <!-- Right: Breadcrumb -->
+        <nav class="hero-header__breadcrumb" aria-label="Breadcrumb">
+          <ol class="hero-header__breadcrumb-list">
+            <li
+              class="hero-header__breadcrumb-item hero-header__breadcrumb-item--active"
+            >
+              <a href="#" class="hero-header__breadcrumb-link">Inicio</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link">Cupones</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link"
+                >Asignación manual</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        <!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+  <!-- Sidebar Header -->
+  <div class="sidebar__header">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">L</div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-title">Latin Games</span>
+        <span class="sidebar__logo-subtitle">Madgalena</span>
+      </div>
+    </div>
+    <button class="sidebar__toggle" id="sidebarToggle" aria-label="Cerrar menú">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar__nav">
+    <h3 class="sidebar__nav-title">Menú de Navegación</h3>
+
+    <ul class="sidebar__menu">
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-people"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-printer"></i>
+          <span>Configuración de impresión</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item sidebar__menu-item--active">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-gift"></i>
+          <span>Cupones</span>
+        </a>
+
+        <!-- Submenu -->
+        <ul class="sidebar__submenu">
+          <li class="sidebar__submenu-item sidebar__submenu-item--active">
+            <a href="#" class="sidebar__submenu-link">
+              <i class="bi bi-circle-fill"></i>
+              <span>Asignación manual de cupones</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span>Otorgar cupones</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-basket"></i>
+          <span>Cupones virtuales</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-globe"></i>
+          <span>En línea</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-grid"></i>
+          <span>Layout</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-file-text"></i>
+          <span>Reporte de cupones</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-shield-check"></i>
+          <span>Super Administrador</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--   <!-- Sidebar Collapse Button 
+  <button class="sidebar__collapse" aria-label="Colapsar sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button> -->
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <!-- Tabs -->
+        <!-- Tabs Component -->
+<div class="tabs">
+  <div class="tabs__nav">
+    <button class="tabs__button tabs__button--active" data-tab="asignacion">
+      ASIGNACIÓN
+    </button>
+    <button class="tabs__button" data-tab="historial">HISTORIAL</button>
+    <button class="tabs__button" data-tab="eventos">EVENTOS</button>
+    <button class="tabs__button" data-tab="maquinas">MÁQUINAS</button>
+    <button class="tabs__button" data-tab="layout">LAYOUT</button>
+  </div>
+</div>
+
+
+        <!-- Section: Eventos -->
+        <section class="dashboard5-section">
+          <!-- Filter Events -->
+          <!-- Filter Events Component -->
+<div class="filter-events">
+  <div class="filter-events__header">
+    <h3 class="filter-events__title">Filtro de consulta</h3>
+    <div class="filter-events__actions">
+      <button class="filter-events__btn" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="filter-events__btn" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="filter-events__btn" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="filter-events__btn filter-events__btn--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="filter-events__body">
+    <div class="filter-events__row">
+      <div class="filter-events__group">
+        <label class="filter-events__label">Fecha Desde</label>
+        <div class="filter-events__date-input">
+          <input type="date" class="filter-events__input" value="01/01/2025" />
+          <i class="bi bi-calendar-event filter-events__date-icon"></i>
+        </div>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Fecha Hasta</label>
+        <div class="filter-events__date-input">
+          <input type="date" class="filter-events__input" value="13/12/2025" />
+          <i class="bi bi-calendar-event filter-events__date-icon"></i>
+        </div>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Máquina</label>
+        <select class="filter-events__select">
+          <option>Máquina</option>
+          <option>Máquina 1</option>
+          <option>Máquina 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Tipo</label>
+        <select class="filter-events__select">
+          <option>Tipo de evento</option>
+          <option>Tipo 1</option>
+          <option>Tipo 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Protocolo</label>
+        <select class="filter-events__select">
+          <option>Protocolo</option>
+          <option>Protocolo 1</option>
+          <option>Protocolo 2</option>
+        </select>
+      </div>
+
+      <div class="filter-events__group">
+        <label class="filter-events__label">Evento</label>
+        <select class="filter-events__select">
+          <option>Huellas</option>
+          <option>Evento 1</option>
+          <option>Evento 2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-events__footer">
+      <button class="filter-events__filter-btn">
+        <i class="bi bi-sliders"></i> Filtrar
+      </button>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Events Table -->
+          <!-- Events Table Component -->
+<div class="events-table">
+  <div class="events-table__header">
+    <h3 class="events-table__title">Lista de máquinas online</h3>
+    <div class="events-table__actions">
+      <button class="events-table__btn-icon" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="events-table__btn-icon" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="events-table__btn-icon" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="events-table__btn-icon events-table__btn-icon--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="events-table__body">
+    <div class="events-table__pagination">
+      <select class="events-table__rows-select">
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+      </select>
+    </div>
+
+    <div class="events-table__scroll">
+      <table class="events-table__table">
+        <thead class="events-table__thead">
+          <tr>
+            <th class="events-table__th">
+              N°
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Fecha
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Máquina
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Cod. Evento
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Alerta
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Evento
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Fuente
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Acciones
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="events-table__tbody">
+          <tr class="events-table__row">
+            <td class="events-table__td">1</td>
+            <td class="events-table__td">2025/11/23 11:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">32</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-exclamation-triangle-fill events-table__alert-icon"
+              ></i>
+            </td>
+            <td class="events-table__td">Puerta principal cerrada</td>
+            <td class="events-table__td">Máquina</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">2</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1002</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot desconectado del sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">3</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1001</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot conectado al sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">4</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1000</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">El contador es cero</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">5</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">835</td>
+            <td class="events-table__td">1002</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot desconectado del sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="events-table__pagination-nav">
+      <button class="events-table__pagination-btn" aria-label="Primera página">
+        <i class="bi bi-chevron-double-left"></i>
+      </button>
+      <button class="events-table__pagination-btn" aria-label="Página anterior">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="events-table__pagination-info">1</span>
+      <button
+        class="events-table__pagination-btn"
+        aria-label="Siguiente página"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <button class="events-table__pagination-btn" aria-label="Última página">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="events-table__footer">
+    <button class="events-table__btn events-table__btn--primary">
+      <i class="bi bi-search"></i> BUSCAR
+    </button>
+    <button class="events-table__btn events-table__btn--warning">
+      <i class="bi bi-gift"></i> OTORGAR CUPÓN
+    </button>
+  </div>
+</div>
+
+        </section>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

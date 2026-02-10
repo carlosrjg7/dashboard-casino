@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    <!-- Navbar Component -->
+<header class="navbar">
+  <div class="navbar__container">
+    <!-- Mobile Menu Toggle -->
+    <div class="navbar__container-brand">
+      <button
+        class="navbar__menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <img
+          src="../dist/images/logo-nav.png"
+          alt="COLOSSUS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">COLOSSUS<sub>v.2</sub></span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar__search">
+        <i class="bi bi-search navbar__search-icon"></i>
+        <input
+          type="text"
+          class="navbar__search-input"
+          placeholder="Búsqueda general"
+        />
+      </div>
+
+      <!-- Right Section -->
+      <div class="navbar__actions">
+        <!-- Notifications -->
+        <button class="navbar__notification" aria-label="Notificaciones">
+          <i class="bi bi-bell"></i>
+          <span class="navbar__notification-badge">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="navbar__container-user">
+      <button class="navbar__user-button" aria-label="Menú de usuario">
+        <div class="navbar__user-avatar">A</div>
+        <span class="navbar__user-name">Admin. Rodas/ISG</span>
+        <i class="bi bi-chevron-down navbar__user-arrow"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    <!-- Hero Header Component -->
+<section class="hero-header">
+  <div class="hero-header__container">
+    <!-- Left: Game Info -->
+    <div class="hero-header__game">
+      <div class="hero-header__game-icon">
+        <i class="bi bi-controller"></i>
+      </div>
+      <div class="hero-header__game-info">
+        <div class="hero-header__game-title">Latin Games</div>
+        <div class="hero-header__game-subtitle">Madgalena</div>
+      </div>
+    </div>
+
+    <!-- Center: Page Info -->
+    <div class="hero-header__page">
+      <div class="hero-header__page-image">
+        <img src="../dist/images/img-cupons.png" alt="Cupones" />
+      </div>
+      <div class="hero-header__page-info">
+        <div>
+          <h1 class="hero-header__page-title">Cupones</h1>
+          <p class="hero-header__page-subtitle">Asignación manual</p>
+          <button class="hero-header__tutorial-btn">Tutorial</button>
+        </div>
+
+        <!-- Right: Breadcrumb -->
+        <nav class="hero-header__breadcrumb" aria-label="Breadcrumb">
+          <ol class="hero-header__breadcrumb-list">
+            <li
+              class="hero-header__breadcrumb-item hero-header__breadcrumb-item--active"
+            >
+              <a href="#" class="hero-header__breadcrumb-link">Inicio</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link">Cupones</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link"
+                >Asignación manual</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        <!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+  <!-- Sidebar Header -->
+  <div class="sidebar__header">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">L</div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-title">Latin Games</span>
+        <span class="sidebar__logo-subtitle">Madgalena</span>
+      </div>
+    </div>
+    <button class="sidebar__toggle" id="sidebarToggle" aria-label="Cerrar menú">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar__nav">
+    <h3 class="sidebar__nav-title">Menú de Navegación</h3>
+
+    <ul class="sidebar__menu">
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-people"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-printer"></i>
+          <span>Configuración de impresión</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item sidebar__menu-item--active">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-gift"></i>
+          <span>Cupones</span>
+        </a>
+
+        <!-- Submenu -->
+        <ul class="sidebar__submenu">
+          <li class="sidebar__submenu-item sidebar__submenu-item--active">
+            <a href="#" class="sidebar__submenu-link">
+              <i class="bi bi-circle-fill"></i>
+              <span>Asignación manual de cupones</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span>Otorgar cupones</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-basket"></i>
+          <span>Cupones virtuales</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-globe"></i>
+          <span>En línea</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-grid"></i>
+          <span>Layout</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-file-text"></i>
+          <span>Reporte de cupones</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-shield-check"></i>
+          <span>Super Administrador</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--   <!-- Sidebar Collapse Button 
+  <button class="sidebar__collapse" aria-label="Colapsar sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button> -->
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <!-- Tabs -->
+        <!-- Tabs Component -->
+<div class="tabs">
+  <div class="tabs__nav">
+    <button class="tabs__button tabs__button--active" data-tab="asignacion">
+      ASIGNACIÓN
+    </button>
+    <button class="tabs__button" data-tab="historial">HISTORIAL</button>
+    <button class="tabs__button" data-tab="eventos">EVENTOS</button>
+    <button class="tabs__button" data-tab="maquinas">MÁQUINAS</button>
+    <button class="tabs__button" data-tab="layout">LAYOUT</button>
+  </div>
+</div>
+
+
+        <!-- Stats Cards -->
+        <!-- Stats Cards Component -->
+<div class="stats-cards">
+  <div class="stats-cards__slider" id="statsSlider">
+    <!-- Card 1: Clientes Jugando -->
+    <div class="stats-card stats-card--dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CLIENTES JUGANDO AHORA</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1,125</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 75%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio semanal mayor 850%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Apuesta Promedio -->
+    <div class="stats-card stats-card--darken">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">APUESTA PROMEDIO</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">50</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--success"
+              style="width: 60%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Incremento semanal mayor 454%</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Ocupación -->
+    <div class="stats-card stats-card--primary">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">OCUPACIÓN</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">1</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div
+              class="progress-bar__fill progress-bar__fill--white"
+              style="width: 45%"
+            ></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de máquinas 12 Libre</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Cupones Libres -->
+    <div class="stats-card stats-card--gray-dark">
+      <div class="stats-card__header">
+        <h3 class="stats-card__title">CUPONES LIBRES</h3>
+      </div>
+      <div class="stats-card__body">
+        <div class="stats-card__value">0</div>
+        <div class="stats-card__progress">
+          <div class="progress-bar">
+            <div class="progress-bar__fill" style="width: 0%"></div>
+          </div>
+          <span class="stats-card__progress-text"
+            >Promedio total de cupones (ON)</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls (Mobile only) -->
+  <div class="stats-cards__controls">
+    <button
+      class="stats-cards__btn stats-cards__btn--prev"
+      id="statsPrev"
+      aria-label="Anterior"
+    >
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button
+      class="stats-cards__btn stats-cards__btn--next"
+      id="statsNext"
+      aria-label="Siguiente"
+    >
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+
+        <!-- Filters -->
+        <!-- Filters Component -->
+<div class="filters">
+  <div class="filters__header">
+    <h4 class="filters__title">ASIGNACIÓN</h4>
+  </div>
+  <div class="filters__body">
+    <form class="filters__body__form">
+      <div class="filters__section">
+        <div class="filters__row">
+          <!-- Fecha Desde -->
+          <div class="filters__col filters__col--custom">
+            <label class="filters__label" for="fechaDesde">Fecha Desde</label>
+            <input
+              type="date"
+              id="fechaDesde"
+              class="filters__input"
+              value="2023-01-01"
+            />
+          </div>
+
+          <!-- Fecha Hasta -->
+          <div class="filters__col filters__col--custom">
+            <label class="filters__label" for="fechaHasta">Fecha Hasta</label>
+            <input
+              type="date"
+              id="fechaHasta"
+              class="filters__input"
+              value="2023-12-31"
+            />
+          </div>
+        </div>
+
+        <div class="filters__row">
+          <!-- Máquina -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="maquina">Máquina</label>
+            <select id="maquina" class="filters__select">
+              <option value="">Seleccionar una máquina</option>
+              <option value="1">Máquina 1</option>
+              <option value="2">Máquina 2</option>
+            </select>
+          </div>
+
+          <!-- Jugador -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="jugador">Jugador</label>
+            <select id="jugador" class="filters__select">
+              <option value="">Seleccionar un Jugador</option>
+              <option value="1">Jugador 1</option>
+            </select>
+          </div>
+
+          <!-- Estado de la Sesión -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="estadoSesion"
+              >Estado de la Sesión</label
+            >
+            <select id="estadoSesion" class="filters__select">
+              <option value="">Seleccionar</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+
+          <!-- Cupones Pendientes -->
+          <div class="filters__col filters__col--quarter">
+            <label class="filters__label" for="cuponesPendientes"
+              >Cupones Pendientes</label
+            >
+            <select id="cuponesPendientes" class="filters__select">
+              <option value="">Seleccionar</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters__actions">
+          <button type="button" class="filters__btn filters__btn--filter">
+            <i class="bi bi-funnel"></i>
+            Filtrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+        <!-- Charts Section -->
+        <!-- Charts Component -->
+<div class="charts">
+  <div class="charts__grid">
+    <!-- Chart 1: Resumen de Máquinas -->
+    <div class="chart-card">
+      <div class="chart-card__header">
+        <h4 class="chart-card__title">Resumen de Máquinas</h4>
+        <div class="chart-card__actions">
+          <button class="chart-card__btn" aria-label="Configuración">
+            <i class="bi bi-fullscreen"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Cerrar">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="chart-card__body">
+        <canvas id="chartMaquinas" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart 2: Resumen de Impresión -->
+    <div class="chart-card">
+      <div class="chart-card__header">
+        <h4 class="chart-card__title">Resumen de Impresión</h4>
+        <div class="chart-card__actions">
+          <button class="chart-card__btn" aria-label="Configuración">
+            <i class="bi bi-fullscreen"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Cerrar">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="chart-card__body">
+        <canvas id="chartImpresion" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart 3: Resumen de Asignación -->
+    <div class="chart-card chart-card--circle">
+      <div class="chart-card__header">
+        <h4 class="chart-card__title">Resumen de Asignación</h4>
+        <div class="chart-card__actions">
+          <button class="chart-card__btn" aria-label="Configuración">
+            <i class="bi bi-fullscreen"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-arrow-clockwise"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Minimizar">
+            <i class="bi bi-dash"></i>
+          </button>
+          <button class="chart-card__btn" aria-label="Cerrar">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="chart-card__body chart-card__body--center">
+        <canvas id="chartAsignacion" width="150" height="150"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Data Table -->
+        <!-- Data Table Component -->
+<div class="data-table">
+  <div class="card">
+    <div class="card__header">
+      <h4 class="card__title">Detalles de Cupones</h4>
+      <div class="card__actions">
+        <button class="card__btn" aria-label="Configuración">
+          <i class="bi bi-fullscreen"></i>
+        </button>
+        <button class="card__btn" aria-label="Configuración">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <button class="card__btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="card__btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="card__body">
+      <!-- Filter tabs/options here if needed -->
+
+      <div class="data-table__scroll">
+        <table class="table table-bordered data-table__table">
+          <thead>
+            <tr>
+              <th colspan="1" class="data-table__th-group">&nbsp;</th>
+              <th colspan="1" class="data-table__th-group">
+                <div class="data-table__th-content-box">
+                  <span>Máquina y/o Serie</span>
+                </div>
+              </th>
+              <th colspan="1" class="data-table__th-group">
+                <div class="data-table__th-content-box">
+                  <span>Por Cliente</span>
+                </div>
+              </th>
+              <th colspan="4" class="data-table__th-group">
+                <div class="data-table__th-content">
+                  <div class="data-table__filters">
+                    <div class="data-table__filter-group">
+                      <label class="data-table__radio">
+                        <input
+                          type="radio"
+                          name="filter"
+                          value="todos"
+                          checked
+                        />
+                        <span>TODOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="impresos" />
+                        <span>IMPRESOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="incompletos" />
+                        <span>INCOMPLETOS</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="asignado" />
+                        <span>ASIGNADO</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="sin-asignar" />
+                        <span>SIN ASIGNAR</span>
+                      </label>
+                      <label class="data-table__radio">
+                        <input type="radio" name="filter" value="pendientes" />
+                        <span>PENDIENTES</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th>#</th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Máquina y/o Serie</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Sesión</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Apostado</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Cupones</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Imprimir cliente</span>
+                </div>
+              </th>
+              <th>
+                <div class="data-table__th-content">
+                  <span>Acciones</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <div class="data-table__cell-machine">
+                  <strong>#35 SANZ42#BFF211</strong>
+                  <small>PRUEBA SISTEMA COLOSSUS 112345678</small>
+                </div>
+              </td>
+              <td>
+                <div class="data-table__cell-session">
+                  <i class="bi bi-clock"></i> 04:00
+                  <br />
+                  <small><i class="bi bi-calendar3"></i> Apuesta: 10:50</small>
+                </div>
+              </td>
+              <td>
+                <span class="data-table__badge">$0</span>
+              </td>
+              <td>
+                <div class="data-table__cell-coupons">
+                  <i class="bi bi-award"></i> Impresos: 0
+                  <br />
+                  <i class="bi bi-clock-history"></i> Pendientes: 3
+                </div>
+              </td>
+              <td>
+                <i class="bi bi-printer data-table__icon"></i>
+              </td>
+              <td>
+                <div class="data-table__cell-actions">
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Editar"
+                  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Ver"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Imprimir"
+                  >
+                    <i class="bi bi-printer"></i>
+                  </button>
+                  <button
+                    class="data-table__action-btn data-table__action-btn--primary"
+                    aria-label="Más opciones"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="data-table__footer">
+    <button class="data-table__footer-btn data-table__footer-btn--buscar">
+      <i class="bi bi-sliders2"></i>
+      BUSCAR
+    </button>
+    <button class="data-table__footer-btn data-table__footer-btn--listo">
+      <i class="bi bi-printer"></i>
+      ESTADO IMPRESORA
+    </button>
+  </div>
+</div>
+
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

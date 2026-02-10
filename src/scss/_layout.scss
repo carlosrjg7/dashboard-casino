@@ -1,0 +1,69 @@
+// Layout styles
+
+// Container
+.container-fluid {
+  padding-right: $spacer;
+  padding-left: $spacer;
+}
+
+// Sidebar
+.sidebar {
+  min-height: 100vh;
+  background-color: $dark-color;
+  color: $light-color;
+  transition: $transition-base;
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1rem;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+// Header/Navbar
+.main-header {
+  background-color: #fff;
+  box-shadow: $box-shadow-sm;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+// Main content area
+.main-content {
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+// Dashboard layout
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+
+  .sidebar-wrapper {
+    flex: 0 0 250px;
+    max-width: 250px;
+  }
+
+  .content-wrapper {
+    flex: 1;
+    background-color: $light-color;
+  }
+}
+
+// Footer
+.main-footer {
+  background-color: #fff;
+  padding: 1rem;
+  border-top: 1px solid #dee2e6;
+  margin-top: auto;
+}

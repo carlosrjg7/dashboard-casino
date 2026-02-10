@@ -1,0 +1,216 @@
+// =====================================================
+// HERO HEADER COMPONENT
+// =====================================================
+
+.hero-header {
+  position: relative;
+  background: linear-gradient(135deg, $blue-sidebar 0%, $blue-dark 100%);
+  overflow: hidden;
+  height: rem(130);
+  // padding: $spacing-md;
+
+  @include media-up(md) {
+    // padding: $spacing-lg $spacing-xl;
+  }
+
+  // -----------------------------------------------------
+  // Container
+  // -----------------------------------------------------
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    height: rem(130);
+    @include flex(row, center, space-between, 0);
+    flex-wrap: wrap;
+
+    @include media-down(md) {
+      gap: $spacing-md;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Game Info
+  // -----------------------------------------------------
+
+  &__game {
+    @include flex(row, center, flex-start, $spacing-md);
+    background: url("../images/bg-game.svg");
+    width: rem(245);
+    height: rem(130);
+    padding: $spacing-md $spacing-lg;
+
+    @include show-desktop-only;
+  }
+
+  &__game-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba($white, 0.1);
+    border-radius: $border-radius-lg;
+    @include flex-center;
+    font-size: 1.5rem;
+    color: $white;
+
+    @include media-down(md) {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__game-info {
+    @include flex(column, flex-start, center, 0.125rem);
+  }
+
+  &__game-title {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    color: $white;
+
+    @include media-down(md) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__game-subtitle {
+    font-size: 0.875rem;
+    color: rgba($white, 0.7);
+
+    @include media-down(md) {
+      font-size: 0.75rem;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Page Info
+  // -----------------------------------------------------
+  &__page {
+    @include flex(row, center, flex-start, $spacing-md);
+    flex: 1;
+    background-image: url("../images/bg-hero-m.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding: $spacing-md $spacing-lg;
+
+    @include media-down(md) {
+      order: -1;
+      width: 100%;
+    }
+
+    @include media-up(lg) {
+      background-image: url("../images/bg-hero.svg");
+    }
+  }
+
+  &__page-image {
+    width: rem(96);
+    height: rem(96);
+    background-color: rgba($white, 0.1);
+    border-radius: $border-radius-lg;
+    // padding: $spacing-sm;
+    @include flex-center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include media-down(md) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__page-info {
+    @include flex(column, flex-start, center, 0.25rem);
+  }
+
+  &__page-title {
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    color: $white;
+    margin: 0;
+
+    @include media-down(md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__page-subtitle {
+    font-size: 0.875rem;
+    color: rgba($white, 0.7);
+    margin: 0;
+
+    @include media-down(md) {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__tutorial-btn {
+    margin-top: 0.25rem;
+    padding: 0.375rem 1rem;
+    background-color: $primary-blue;
+    color: $white;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 0.75rem;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    @include transition(all, 0.2s, ease);
+
+    &:hover {
+      background-color: darken($primary-blue, 10%);
+      transform: translateY(-0.0625rem);
+    }
+  }
+
+  // -----------------------------------------------------
+  // Breadcrumb
+  // -----------------------------------------------------
+  &__breadcrumb {
+    @include media-down(md) {
+      width: 100%;
+    }
+  }
+
+  &__breadcrumb-list {
+    @include flex(row, center, flex-start, $spacing-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__breadcrumb-item {
+    font-size: 0.875rem;
+    color: rgba($white, 0.7);
+
+    &:not(:last-child)::after {
+      content: "/";
+      margin-left: $spacing-xs;
+      color: rgba($white, 0.5);
+    }
+
+    &--active > * {
+      color: $white !important;
+      font-weight: $font-weight-semibold !important;
+    }
+
+    @include media-down(md) {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__breadcrumb-link {
+    color: rgba($white, 0.7);
+    text-decoration: none;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+}

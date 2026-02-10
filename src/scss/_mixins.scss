@@ -1,0 +1,256 @@
+// =====================================================
+// MIXINS PARA RESPONSIVE DESIGN
+// =====================================================
+
+// Breakpoints (deben coincidir con las variables)
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+);
+
+// -----------------------------------------------------
+// MEDIA QUERIES
+// -----------------------------------------------------
+
+// Mixin para media query hacia arriba (desde el breakpoint en adelante)
+// Uso: @include media-up(md) { ... }
+@mixin media-up($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value == 0 {
+    @content;
+  } @else {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+// Mixin para media query hacia abajo (hasta el breakpoint)
+// Uso: @include media-down(md) { ... }
+@mixin media-down($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @media (max-width: $value - 1px) {
+    @content;
+  }
+}
+
+// Mixin para media query entre dos breakpoints
+// Uso: @include media-between(sm, lg) { ... }
+@mixin media-between($lower, $upper) {
+  $lower-value: map-get($breakpoints, $lower);
+  $upper-value: map-get($breakpoints, $upper);
+
+  @media (min-width: $lower-value) and (max-width: $upper-value - 1px) {
+    @content;
+  }
+}
+
+// -----------------------------------------------------
+// UTILIDADES DE VISIBILIDAD
+// -----------------------------------------------------
+
+// Ocultar en mobile (menos de 768px)
+// Uso: @include hide-mobile;
+@mixin hide-mobile {
+  @include media-down(md) {
+    display: none !important;
+  }
+}
+
+// Mostrar solo en mobile
+// Uso: @include show-mobile-only;
+@mixin show-mobile-only {
+  display: block;
+
+  @include media-up(md) {
+    display: none !important;
+  }
+}
+
+// Ocultar en tablet (768px - 991px)
+// Uso: @include hide-tablet;
+@mixin hide-tablet {
+  @include media-between(md, lg) {
+    display: none !important;
+  }
+}
+
+// Mostrar solo en tablet
+// Uso: @include show-tablet-only;
+@mixin show-tablet-only {
+  display: none;
+
+  @include media-between(md, lg) {
+    display: block !important;
+  }
+}
+
+// Ocultar en desktop (más de 992px)
+// Uso: @include hide-desktop;
+@mixin hide-desktop {
+  @include media-up(lg) {
+    display: none !important;
+  }
+}
+
+// Mostrar solo en desktop
+// Uso: @include show-desktop-only;
+@mixin show-desktop-only {
+  display: none;
+
+  @include media-up(lg) {
+    display: block !important;
+  }
+}
+
+// -----------------------------------------------------
+// FLEXBOX MIXINS
+// -----------------------------------------------------
+
+// Flex centrado (horizontal y vertical)
+// Uso: @include flex-center;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex con dirección y gap
+// Uso: @include flex(column, center, flex-start, 1rem);
+@mixin flex($direction: row, $align: stretch, $justify: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// -----------------------------------------------------
+// GRID MIXINS
+// -----------------------------------------------------
+
+// Grid básico
+// Uso: @include grid(3, 1rem);
+@mixin grid($columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Grid responsive automático
+// Uso: @include grid-auto(250px, 1rem);
+@mixin grid-auto($min-width: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// -----------------------------------------------------
+// UTILIDADES GENERALES
+// -----------------------------------------------------
+
+// Truncar texto con ellipsis
+// Uso: @include truncate;
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Truncar texto en múltiples líneas
+// Uso: @include truncate-lines(3);
+@mixin truncate-lines($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Aspecto ratio (para imágenes/videos)
+// Uso: @include aspect-ratio(16, 9);
+@mixin aspect-ratio($width: 16, $height: 9) {
+  aspect-ratio: $width / $height;
+
+  @supports not (aspect-ratio: 1) {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: percentage($height / $width);
+    }
+  }
+}
+
+// Resetear lista
+// Uso: @include reset-list;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Transición personalizada
+// Uso: @include transition(all, 0.3s, ease-in-out);
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Box shadow presets
+// Uso: @include shadow(md);
+@mixin shadow($level: md) {
+  @if $level == sm {
+    box-shadow: $box-shadow-sm;
+  } @else if $level == md {
+    box-shadow: $box-shadow;
+  } @else if $level == lg {
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Hover effect
+// Uso: @include hover { color: red; }
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// Placeholder styles
+// Uso: @include placeholder { color: gray; }
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}

@@ -1,0 +1,63 @@
+<!-- Filter Coupon Component -->
+<div class="filter-coupon">
+  <div class="filter-coupon__header">
+    <h4 class="filter-coupon__title">Filtro de consulta</h4>
+  </div>
+
+  <div class="filter-coupon__body">
+    <div class="filter-coupon__row">
+      <div class="filter-coupon__group">
+        <label class="filter-coupon__label">Fecha Desde</label>
+        <input
+          type="date"
+          class="filter-coupon__input"
+          value="01/01/2025"
+          aria-label="Fecha desde"
+        />
+      </div>
+
+      <div class="filter-coupon__group">
+        <label class="filter-coupon__label">Fecha Hasta</label>
+        <input
+          type="date"
+          class="filter-coupon__input"
+          value="13/12/2025"
+          aria-label="Fecha hasta"
+        />
+      </div>
+
+      <div class="filter-coupon__group">
+        <label class="filter-coupon__label">Estado</label>
+        <select class="filter-coupon__select" aria-label="Estado">
+          <option>ACTIVOS</option>
+          <option>Inactivos</option>
+          <option>Todos</option>
+        </select>
+      </div>
+
+      <div class="filter-coupon__group">
+        <label class="filter-coupon__label">Cupón</label>
+        <select class="filter-coupon__select" aria-label="Cupón">
+          <option>Seleccione un cupón</option>
+          <option>Cupón 1</option>
+          <option>Cupón 2</option>
+        </select>
+      </div>
+
+      <div class="filter-coupon__group">
+        <label class="filter-coupon__label">Jugador</label>
+        <select class="filter-coupon__select" aria-label="Jugador">
+          <option>Seleccione un cliente</option>
+          <option>Cliente 1</option>
+          <option>Cliente 2</option>
+        </select>
+      </div>
+
+      <div class="filter-coupon__actions">
+        <button class="filter-coupon__filter-btn">
+          <i class="bi bi-funnel"></i> Filtrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

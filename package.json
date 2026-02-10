@@ -1,0 +1,22 @@
+{
+  "name": "dashboard-vania",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss/main.scss dist/css/main.css --load-path=node_modules --watch",
+    "html": "npx html-include src/pages build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "gulp-file-include": "^2.3.0"
+  }
+}

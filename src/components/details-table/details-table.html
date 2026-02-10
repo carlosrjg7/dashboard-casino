@@ -1,0 +1,147 @@
+<div class="details-table">
+  <div class="details-table__header">
+    <h3 class="details-table__title">Detalle de Cupones</h3>
+    <div class="details-table__actions">
+      <button class="details-table__btn-icon" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="details-table__btn-icon" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="details-table__btn-icon" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="details-table__btn-icon details-table__btn-icon--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="details-table__body">
+    <div class="details-table__pagination">
+      <select class="details-table__rows-select">
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+      </select>
+    </div>
+
+    <table class="details-table__table">
+      <thead class="details-table__thead">
+        <tr>
+          <th class="details-table__th">
+            N°
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Cliente
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Documento
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Cupón
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Tipo
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Cantidad de cupones
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Cupones impresos
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+          <th class="details-table__th">
+            Cupones pendientes
+            <span class="details-table__sort">
+              <i class="bi bi-caret-up-fill"></i>
+              <i class="bi bi-caret-down-fill"></i>
+            </span>
+          </th>
+        </tr>
+        <tr class="details-table__filters-row">
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+          <th><input class="details-table__filter-input" type="text" /></th>
+        </tr>
+      </thead>
+      <tbody class="details-table__tbody">
+        <tr class="details-table__row">
+          <td class="details-table__td">957</td>
+          <td class="details-table__td">Prueba, Sistemas Colossus</td>
+          <td class="details-table__td">12345678</td>
+          <td class="details-table__td">Prueba 2</td>
+          <td class="details-table__td">Físico</td>
+          <td class="details-table__td">6</td>
+          <td class="details-table__td">1</td>
+          <td class="details-table__td">5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="details-table__pagination-nav">
+      <button class="details-table__pagination-btn" aria-label="Primera página">
+        <i class="bi bi-chevron-double-left"></i>
+      </button>
+      <button
+        class="details-table__pagination-btn"
+        aria-label="Página anterior"
+      >
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="details-table__pagination-info">1</span>
+      <button
+        class="details-table__pagination-btn"
+        aria-label="Siguiente página"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <button class="details-table__pagination-btn" aria-label="Última página">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="details-table__footer">
+  <button class="details-table__btn details-table__btn--primary">
+    <i class="bi bi-search"></i> BUSCAR
+  </button>
+  <button class="details-table__btn details-table__btn--warning">
+    <i class="bi bi-gift"></i> OTORGAR CUPÓN
+  </button>
+</div>

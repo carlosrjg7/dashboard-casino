@@ -1,0 +1,244 @@
+// =====================================================
+// SIDEBAR COMPONENT
+// =====================================================
+
+.sidebar {
+  height: 100%;
+  min-height: 100vh;
+  background-color: $sidebar-bg;
+  color: $sidebar-text;
+  z-index: 800;
+  @include transition(transform, 0.3s, ease-in-out);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  // Mobile: Hidden by default, slide in when active
+  @include media-down(lg) {
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: $sidebar-width;
+    transform: translateX(100%);
+    box-shadow: $box-shadow-lg;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+
+  // Desktop: Always visible
+  @include media-up(lg) {
+    width: $sidebar-width;
+    transform: translateX(0);
+  }
+
+  // -----------------------------------------------------
+  // Sidebar Header
+  // -----------------------------------------------------
+  &__header {
+    background-image: url("../images/bg-game.svg");
+    height: rem(130);
+    padding: $spacing-lg $spacing-md;
+    border-bottom: 1px solid rgba($white, 0.1);
+    @include flex(row, center, space-between, $spacing-sm);
+
+    @include media-up(lg) {
+      padding: $spacing-xl $spacing-md;
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include flex(row, center, flex-start, $spacing-md);
+    flex: 1;
+  }
+
+  &__logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: $white;
+    color: $primary-blue;
+    border-radius: $border-radius-md;
+    @include flex-center;
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    flex-shrink: 0;
+  }
+
+  &__logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.2;
+  }
+
+  &__logo-title {
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    color: $white;
+  }
+
+  &__logo-subtitle {
+    font-size: 0.75rem;
+    color: rgba($white, 0.7);
+  }
+
+  &__toggle {
+    background: #33333380;
+    height: 2rem;
+    width: 2rem;
+    border-radius: $border-radius-md;
+    border: none;
+    color: $white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: $spacing-xs;
+    @include flex-center;
+    @include transition(opacity, 0.2s, ease);
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include media-up(lg) {
+      display: none;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Sidebar Navigation
+  // -----------------------------------------------------
+  &__nav {
+    flex: 1;
+    padding: $spacing-lg 0;
+    overflow-y: auto;
+  }
+
+  &__nav-title {
+    font-size: 0.875rem;
+    font-weight: $font-weight-bold;
+    color: rgba($white, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 $spacing-md $spacing-md;
+    margin: 0;
+  }
+
+  // -----------------------------------------------------
+  // Menu
+  // -----------------------------------------------------
+  &__menu {
+    @include reset-list;
+    padding: 0;
+  }
+
+  &__menu-item {
+    position: relative;
+
+    &--active {
+      > .sidebar__menu-link {
+        background-color: $sidebar-active;
+        color: $white;
+      }
+    }
+  }
+
+  &__menu-link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-lg;
+    color: rgba($white, 0.85);
+    text-decoration: none;
+    @include transition(background-color, 0.2s, ease);
+    font-size: 0.9375rem;
+
+    &:hover {
+      background-color: $sidebar-hover;
+      color: $white;
+    }
+
+    i {
+      font-size: 1.125rem;
+      width: 1.5rem;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  // -----------------------------------------------------
+  // Submenu
+  // -----------------------------------------------------
+  &__submenu {
+    @include reset-list;
+    padding: $spacing-sm 0;
+    background-color: rgba($black, 0.2);
+  }
+
+  &__submenu-item {
+    &--active {
+      .sidebar__submenu-link {
+        background-color: rgba($white, 0.15);
+        color: $white;
+        border-left: 3px solid $success-color;
+      }
+    }
+  }
+
+  &__submenu-link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg $spacing-sm 3.5rem;
+    color: rgba($white, 0.75);
+    text-decoration: none;
+    font-size: 0.875rem;
+    @include transition(background-color, 0.2s, ease);
+    border-left: 3px solid transparent;
+
+    &:hover {
+      background-color: rgba($white, 0.1);
+      color: $white;
+    }
+
+    i {
+      font-size: 0.375rem;
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+}
+
+// -----------------------------------------------------
+// Sidebar Overlay (Mobile)
+// -----------------------------------------------------
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(opacity, 0.3s, ease-in-out);
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include media-up(lg) {
+    display: none;
+  }
+}

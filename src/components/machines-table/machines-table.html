@@ -1,0 +1,207 @@
+<!-- Machines Table Component -->
+<div class="machines-table">
+  <div class="machines-table__header">
+    <h3 class="machines-table__title">Lista de máquinas online</h3>
+    <div class="machines-table__actions">
+      <button class="machines-table__btn-icon" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="machines-table__btn-icon" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="machines-table__btn-icon" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="machines-table__btn-icon machines-table__btn-icon--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="machines-table__body">
+    <div class="machines-table__pagination">
+      <select class="machines-table__rows-select">
+        <option>100</option>
+        <option>50</option>
+        <option>20</option>
+        <option>10</option>
+      </select>
+    </div>
+
+    <div class="machines-table__scroll">
+      <table class="machines-table__table">
+        <thead class="machines-table__thead">
+          <tr>
+            <th class="machines-table__th">
+              N°
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Máquina
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Marca 2
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Modelo
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Juego
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Slot/net
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Estado
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Actividad
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="machines-table__th">
+              Acciones
+              <span class="machines-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="machines-table__tbody">
+          <tr class="machines-table__row">
+            <td class="machines-table__td">1</td>
+            <td class="machines-table__td">732</td>
+            <td class="machines-table__td">ARI</td>
+            <td class="machines-table__td">MKV Serie 1, Serie 1, MKV</td>
+            <td class="machines-table__td">Dolphin Treasure</td>
+            <td class="machines-table__td">1302266</td>
+            <td class="machines-table__td">Slot/net desconectado</td>
+            <td class="machines-table__td">Última conexión: agosto 04:01:18</td>
+            <td class="machines-table__td">
+              <a href="#" class="machines-table__link">Eventos</a>
+            </td>
+          </tr>
+          <tr class="machines-table__row">
+            <td class="machines-table__td">2</td>
+            <td class="machines-table__td">733</td>
+            <td class="machines-table__td">ARI</td>
+            <td class="machines-table__td">MKV Serie 1, Serie 1, MKV</td>
+            <td class="machines-table__td">Queen of the Nile</td>
+            <td class="machines-table__td">1302163</td>
+            <td class="machines-table__td">Slot/net desconectado</td>
+            <td class="machines-table__td">Última conexión: agosto 04:01:18</td>
+            <td class="machines-table__td">
+              <a href="#" class="machines-table__link">Eventos</a>
+            </td>
+          </tr>
+          <tr class="machines-table__row">
+            <td class="machines-table__td">3</td>
+            <td class="machines-table__td">746</td>
+            <td class="machines-table__td">CASINO</td>
+            <td class="machines-table__td">TANGRA TOUCH</td>
+            <td class="machines-table__td">Gamopolis Speedway</td>
+            <td class="machines-table__td">4774</td>
+            <td class="machines-table__td">Slot/net desconectado</td>
+            <td class="machines-table__td">Última conexión: agosto 03:21:16</td>
+            <td class="machines-table__td">
+              <a href="#" class="machines-table__link">Eventos</a>
+            </td>
+          </tr>
+          <tr class="machines-table__row">
+            <td class="machines-table__td">4</td>
+            <td class="machines-table__td">747</td>
+            <td class="machines-table__td">CASINO</td>
+            <td class="machines-table__td">TANGRA TOUCH</td>
+            <td class="machines-table__td">Gamopolis Speedway</td>
+            <td class="machines-table__td">4771</td>
+            <td class="machines-table__td">Transmitiendolo</td>
+            <td class="machines-table__td">Última conexión: agosto 04:01:06</td>
+            <td class="machines-table__td">
+              <a href="#" class="machines-table__link">Eventos</a>
+            </td>
+          </tr>
+          <tr class="machines-table__row">
+            <td class="machines-table__td">5</td>
+            <td class="machines-table__td">748</td>
+            <td class="machines-table__td">CASINO</td>
+            <td class="machines-table__td">TANGRA TOUCH</td>
+            <td class="machines-table__td">Gamopolis Speedway</td>
+            <td class="machines-table__td">1196</td>
+            <td class="machines-table__td">Slot/net desconectado</td>
+            <td class="machines-table__td">Última conexión: agosto 03:23:24</td>
+            <td class="machines-table__td">
+              <a href="#" class="machines-table__link">Eventos</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="machines-table__pagination-nav">
+      <button
+        class="machines-table__pagination-btn"
+        aria-label="Primera página"
+      >
+        <i class="bi bi-chevron-double-left"></i>
+      </button>
+      <button
+        class="machines-table__pagination-btn"
+        aria-label="Página anterior"
+      >
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="machines-table__pagination-info">1</span>
+      <button
+        class="machines-table__pagination-btn"
+        aria-label="Siguiente página"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <button class="machines-table__pagination-btn" aria-label="Última página">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="machines-table__footer">
+    <button class="machines-table__btn machines-table__btn--primary">
+      <i class="bi bi-search"></i> BUSCAR
+    </button>
+    <button class="machines-table__btn machines-table__btn--warning">
+      <i class="bi bi-gift"></i> OTORGAR CUPÓN
+    </button>
+  </div>
+</div>

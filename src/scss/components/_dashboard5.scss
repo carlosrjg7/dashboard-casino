@@ -1,0 +1,502 @@
+// =====================================================
+// DASHBOARD5 SECTION STYLES
+// =====================================================
+
+.dashboard5-section {
+  width: 100%;
+
+  &__title {
+    font-size: rem(16);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0 0 $spacing-lg 0;
+    padding: $spacing-md $spacing-lg;
+    background-color: $dark-color;
+    color: $white;
+    border-radius: $border-radius-md $border-radius-md 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+// =====================================================
+// FILTER EVENTS COMPONENT
+// =====================================================
+
+.filter-events {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-lg;
+  width: 100%;
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $dark-color;
+    border-bottom: 1px solid $border-color;
+    @include flex(row, center, space-between, $spacing-md);
+    height: rem(46);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $white;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $white;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+
+    &--close {
+      border-color: rgba($white, 0.6);
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include media-up(lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: $spacing-md;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    flex: 1;
+
+    @include media-up(lg) {
+      min-width: rem(140);
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    color: $blue-dark;
+    margin: 0;
+  }
+
+  &__date-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: rem(12);
+    font-family: $font-family-base;
+    background-color: $white;
+    color: $dark-color;
+    height: rem(32);
+    @include transition(border-color, 0.2s, ease);
+
+    &:focus {
+      outline: none;
+      border-color: $primary-blue;
+      box-shadow: 0 0 0 0.2rem rgba($primary-blue, 0.25);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  &__date-icon {
+    position: absolute;
+    right: $spacing-md;
+    color: $text-muted;
+    font-size: rem(14);
+    pointer-events: none;
+  }
+
+  &__select {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: rem(12);
+    font-family: $font-family-base;
+    cursor: pointer;
+    background-color: $bg-select;
+    border: none;
+    color: $white;
+    height: rem(32);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFFFFF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-sm center;
+    background-size: rem(16);
+    padding-right: rem(32);
+    appearance: none;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: darken($bg-select, 5%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($bg-select, 0.25);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: $spacing-md;
+    border-top: 1px solid $border-color;
+
+    @include media-down(md) {
+      justify-content: center;
+    }
+  }
+
+  &__filter-btn {
+    background-color: $blue-text;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    @include flex(row, center, center, $spacing-sm);
+    @include transition(background-color, 0.2s, ease);
+    height: rem(32);
+
+    &:hover {
+      background-color: darken($blue-text, 6%);
+    }
+
+    &:active {
+      background-color: $blue-dark;
+    }
+
+    i {
+      font-size: rem(14);
+    }
+  }
+}
+
+// =====================================================
+// EVENTS TABLE COMPONENT
+// =====================================================
+
+.events-table {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: $spacing-lg;
+  width: 100%;
+  overflow: hidden;
+
+  &__header {
+    padding: $spacing-md $spacing-lg;
+    background-color: $bg-head-stats;
+    border-bottom: 1px solid $border-color;
+    @include flex(row, center, space-between, $spacing-md);
+    height: rem(46);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    @include flex(row, center, flex-end, $spacing-xs);
+  }
+
+  &__btn-icon {
+    background: rgba($white, 0.53);
+    border: none;
+    border-radius: 3px;
+    color: $dark-color;
+    font-size: rem(14);
+    cursor: pointer;
+    padding: 0.8rem;
+    width: rem(18);
+    height: rem(18);
+    @include flex-center;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      border-color: rgba($dark-color, 0.7);
+    }
+
+    &--close {
+      border-color: rgba($dark-color, 0.5);
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg;
+    overflow-x: auto;
+  }
+
+  &__pagination {
+    margin-bottom: $spacing-md;
+    @include flex(row, center, flex-start);
+  }
+
+  &__rows-select {
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: $border-radius-sm;
+    font-size: rem(12);
+    font-family: $font-family-base;
+    background-color: $bg-select;
+    color: $white;
+    cursor: pointer;
+    height: rem(32);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFFFFF' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-sm center;
+    background-size: rem(16);
+    padding-right: rem(32);
+    appearance: none;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+
+    @include media-breakpoint-down(md) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        height: rem(6);
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $gray-300;
+        border-radius: rem(8);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $primary-blue;
+        border-radius: rem(8);
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: rem(12);
+    min-width: rem(1000);
+
+    @include media-breakpoint-down(md) {
+      min-width: rem(1100);
+    }
+  }
+
+  &__thead {
+    background-color: $gray-200;
+    text-align: center;
+  }
+
+  &__th {
+    padding: $spacing-md;
+    text-align: center;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    white-space: nowrap;
+    cursor: pointer;
+    @include transition(background-color, 0.2s, ease);
+    border-bottom: 1px solid $border-color;
+
+    &:hover {
+      background-color: darken($gray-200, 3%);
+    }
+  }
+
+  &__sort {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: $spacing-xs;
+    line-height: 1;
+
+    i {
+      font-size: rem(9);
+      color: $blue-text;
+      margin-top: rem(-2);
+    }
+  }
+
+  &__tbody {
+    tr:nth-child(odd) {
+      background-color: $white;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba($gray-100, 0.5);
+    }
+  }
+
+  &__row {
+    border-bottom: 1px solid $border-color;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: rgba($primary-blue, 0.05);
+    }
+  }
+
+  &__td {
+    padding: $spacing-md;
+    color: $dark-color;
+    text-align: center;
+    vertical-align: middle;
+
+    &--alert {
+      padding: $spacing-md 0;
+    }
+  }
+
+  &__alert-icon {
+    font-size: rem(16);
+    color: $warning-color;
+
+    &--info {
+      color: $info-color;
+    }
+  }
+
+  &__link {
+    color: $primary-blue;
+    text-decoration: none;
+    font-weight: $font-weight-bold;
+    @include transition(color, 0.2s, ease);
+
+    &:hover {
+      color: darken($primary-blue, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  &__pagination-nav {
+    margin-top: $spacing-lg;
+    @include flex(row, center, center, $spacing-sm);
+  }
+
+  &__pagination-btn {
+    background-color: $gray-100;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    color: $dark-color;
+    width: rem(32);
+    height: rem(32);
+    cursor: pointer;
+    @include flex-center;
+    @include transition(all, 0.2s, ease);
+
+    &:hover:not(:disabled) {
+      background-color: $primary-blue;
+      border-color: $primary-blue;
+      color: $white;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__pagination-info {
+    padding: 0 $spacing-sm;
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+  }
+
+  &__footer {
+    padding: $spacing-md $spacing-lg;
+    @include flex(row, center, flex-start, $spacing-md);
+    gap: $spacing-md;
+    border-top: 1px solid $border-color;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__btn {
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    @include flex(row, center, center, $spacing-sm);
+    @include transition(background-color, 0.2s, ease);
+    height: rem(32);
+
+    i {
+      font-size: rem(14);
+    }
+
+    &--primary {
+      background-color: $blue-text;
+      color: $white;
+
+      &:hover {
+        background-color: darken($blue-text, 6%);
+      }
+
+      &:active {
+        background-color: $blue-dark;
+      }
+    }
+
+    &--warning {
+      background-color: $warning-color;
+      color: $dark-color;
+
+      &:hover {
+        background-color: darken($warning-color, 5%);
+      }
+
+      &:active {
+        background-color: darken($warning-color, 10%);
+      }
+    }
+  }
+}

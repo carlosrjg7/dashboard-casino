@@ -1,0 +1,105 @@
+<section class="analytics-section">
+  <div class="analytics-section__grid">
+    <div class="analytics-card">
+      <div class="analytics-card__header">
+        <div class="analytics-card__header-content">
+          <h4 class="analytics-card__title">Analítica de Visitantes</h4>
+          <span class="analytics-card__subtitle">
+            Actividad histórica de clientes en salas
+          </span>
+        </div>
+
+        <div class="analytics-card__legend">
+          <div class="analytics-card__legend-item">
+            <span
+              class="analytics-card__legend-color analytics-card__legend-color--blue"
+            ></span>
+            <span class="analytics-card__legend-label">Clientes Únicos</span>
+          </div>
+          <div class="analytics-card__legend-item">
+            <span
+              class="analytics-card__legend-color analytics-card__legend-color--cian"
+            ></span>
+            <span class="analytics-card__legend-label">Visitas en sala</span>
+          </div>
+        </div>
+      </div>
+      <div class="analytics-card__body">
+        <canvas id="chartVisitantes" width="400" height="200"></canvas>
+      </div>
+    </div>
+    <div class="analytics-card">
+      <div class="analytics-card__header">
+        <div class="analytics-card__header-content">
+          <h4 class="analytics-card__title">1,225,729</h4>
+          <span class="analytics-card__subtitle"> Clientes registrados</span>
+        </div>
+      </div>
+      <div class="analytics-card__body">
+        <div class="circle__content">
+          <canvas
+            id="chartAsignacion"
+            width="250"
+            height="250"
+            class="circle"
+          ></canvas>
+        </div>
+      </div>
+      <div class="analytics-card__legend-footer">
+        <div class="analytics-card__legend-item">
+          <span
+            class="analytics-card__legend-color analytics-card__legend-color--blue"
+          ></span>
+          <span class="analytics-card__legend-label"
+            >34.0% Clientes Únicos</span
+          >
+        </div>
+        <div class="analytics-card__legend-item">
+          <span
+            class="analytics-card__legend-color analytics-card__legend-color--cian"
+          ></span>
+          <span class="analytics-card__legend-label"
+            >56.0% Visitas en sala</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="analytics-card analytics-card--map">
+      <div class="analytics-card__body analytics-card__body--map">
+        <div class="analytics-map">
+          <img
+            src="../dist/images/world-map.svg"
+            alt="Mapa de visitantes"
+            class="analytics-map__image"
+          />
+          <span class="analytics-map__pin analytics-map__pin--peru"></span>
+          <span class="analytics-map__pin analytics-map__pin--colombia"></span>
+          <span class="analytics-map__pin analytics-map__pin--usa"></span>
+        </div>
+
+        <div class="analytics-list">
+          <div class="analytics-list__item analytics-list__item--peru">
+            <span class="analytics-list__index">1.</span>
+            <span class="analytics-list__label">Perú</span>
+            <span class="analytics-list__value">65.40%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--colombia">
+            <span class="analytics-list__index">2.</span>
+            <span class="analytics-list__label">Colombia</span>
+            <span class="analytics-list__value">18.75%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--usa">
+            <span class="analytics-list__index">3.</span>
+            <span class="analytics-list__label">Estados unidos</span>
+            <span class="analytics-list__value">10.20%</span>
+          </div>
+          <div class="analytics-list__item analytics-list__item--others">
+            <span class="analytics-list__index">4.</span>
+            <span class="analytics-list__label">Otros</span>
+            <span class="analytics-list__value">5.65%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

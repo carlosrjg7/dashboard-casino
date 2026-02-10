@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    @@include('../components/navbar/navbar.html')
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    @@include('../components/hero-header/hero-header.html')
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        @@include('../components/sidebar/sidebar.html')
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <!-- Dashboard 8 Section -->
+        <section class="dashboard8-section">
+          <!-- Filter Consulta Component -->
+          <div class="filter-consulta">
+            <div class="filter-consulta__header">
+              <h3 class="filter-consulta__title">Filtro de Consulta</h3>
+            </div>
+
+            <div class="filter-consulta__body">
+              <div class="filter-consulta__row">
+                <div class="filter-consulta__group">
+                  <label class="filter-consulta__label">Fecha Desde</label>
+                  <input
+                    type="date"
+                    class="filter-consulta__input"
+                    value="01/01/2025"
+                  />
+                </div>
+
+                <div class="filter-consulta__group">
+                  <label class="filter-consulta__label">Fecha Hasta</label>
+                  <input
+                    type="date"
+                    class="filter-consulta__input"
+                    value="13/12/2025"
+                  />
+                </div>
+
+                <div class="filter-consulta__group">
+                  <label class="filter-consulta__label">Estado</label>
+                  <select class="filter-consulta__select">
+                    <option>ACTIVOS</option>
+                    <option>INACTIVOS</option>
+                    <option>TODOS</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="filter-consulta__row">
+                <div class="filter-consulta__group">
+                  <label class="filter-consulta__label">Cupón</label>
+                  <select class="filter-consulta__select">
+                    <option>Seleccione un cupón</option>
+                  </select>
+                </div>
+
+                <div class="filter-consulta__group">
+                  <label class="filter-consulta__label">Jugador</label>
+                  <select class="filter-consulta__select">
+                    <option>Seleccione un cliente</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-consulta__footer">
+              <button class="filter-consulta__filter-btn">
+                <i class="bi bi-sliders"></i> Filtrar
+              </button>
+            </div>
+          </div>
+
+          <!-- Resumen de Cupones Component -->
+          <div class="resumen-cupones">
+            <div class="resumen-cupones__header">
+              <h3 class="resumen-cupones__title">Resumen de Cupones</h3>
+              <div class="resumen-cupones__actions">
+                <button class="resumen-cupones__btn" aria-label="Expandir">
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button class="resumen-cupones__btn" aria-label="Actualizar">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button class="resumen-cupones__btn" aria-label="Minimizar">
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="resumen-cupones__btn resumen-cupones__btn--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="resumen-cupones__body">
+              <div class="resumen-cupones__items">
+                <div class="resumen-cupones__item">
+                  <div class="resumen-cupones__count">245</div>
+                  <span class="resumen-cupones__label">Cupones Activos</span>
+                </div>
+
+                <div class="resumen-cupones__item">
+                  <div class="resumen-cupones__count">89</div>
+                  <span class="resumen-cupones__label">Cupones Usados</span>
+                </div>
+
+                <div class="resumen-cupones__item">
+                  <div class="resumen-cupones__count">156</div>
+                  <span class="resumen-cupones__label">Cupones Pendientes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detalles de Cupones Table Component -->
+          <div class="detalles-cupones">
+            <div class="detalles-cupones__header">
+              <h3 class="detalles-cupones__title">
+                Detalles de Cupones acumulados por cliente
+              </h3>
+              <div class="detalles-cupones__actions">
+                <button
+                  class="detalles-cupones__btn-icon"
+                  aria-label="Expandir"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="detalles-cupones__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="detalles-cupones__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="detalles-cupones__btn-icon detalles-cupones__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="detalles-cupones__body">
+              <div class="detalles-cupones__pagination">
+                <select class="detalles-cupones__rows-select">
+                  <option>100</option>
+                  <option>50</option>
+                  <option>25</option>
+                  <option>10</option>
+                </select>
+              </div>
+
+              <div class="detalles-cupones__scroll">
+                <table class="detalles-cupones__table">
+                  <thead class="detalles-cupones__thead">
+                    <tr>
+                      <th class="detalles-cupones__th">
+                        N°
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">
+                        Cliente
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">
+                        Documento
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">
+                        Cupón
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">
+                        Tipo
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">
+                        Impresos
+                        <div class="detalles-cupones__sort">
+                          <i class="bi bi-chevron-up"></i>
+                          <i class="bi bi-chevron-down"></i>
+                        </div>
+                      </th>
+                      <th class="detalles-cupones__th">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody class="detalles-cupones__tbody">
+                    <tr class="detalles-cupones__row">
+                      <td class="detalles-cupones__td">195791</td>
+                      <td class="detalles-cupones__td">DELGADO, BRYAN</td>
+                      <td class="detalles-cupones__td">46649156</td>
+                      <td class="detalles-cupones__td">PRUEBA 2</td>
+                      <td class="detalles-cupones__td">AUTOMÁTICA</td>
+                      <td class="detalles-cupones__td">3</td>
+                      <td class="detalles-cupones__td">
+                        <a href="#" class="detalles-cupones__link"
+                          >Ver detalles</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="detalles-cupones__row">
+                      <td class="detalles-cupones__td">195791</td>
+                      <td class="detalles-cupones__td">DELGADO, BRYAN</td>
+                      <td class="detalles-cupones__td">46649156</td>
+                      <td class="detalles-cupones__td">PRUEBA 1</td>
+                      <td class="detalles-cupones__td">AUTOMÁTICA</td>
+                      <td class="detalles-cupones__td">2</td>
+                      <td class="detalles-cupones__td">
+                        <a href="#" class="detalles-cupones__link"
+                          >Ver detalles</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="detalles-cupones__row">
+                      <td class="detalles-cupones__td">195783</td>
+                      <td class="detalles-cupones__td">SALAZAR, JORGE</td>
+                      <td class="detalles-cupones__td">43226148</td>
+                      <td class="detalles-cupones__td">PRUEBA 2</td>
+                      <td class="detalles-cupones__td">MANUAL</td>
+                      <td class="detalles-cupones__td">2</td>
+                      <td class="detalles-cupones__td">
+                        <a href="#" class="detalles-cupones__link"
+                          >Ver detalles</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="detalles-cupones__row">
+                      <td class="detalles-cupones__td">195783</td>
+                      <td class="detalles-cupones__td">DELGADO, BRYAN</td>
+                      <td class="detalles-cupones__td">46649156</td>
+                      <td class="detalles-cupones__td">PRUEBA 1</td>
+                      <td class="detalles-cupones__td">MANUAL</td>
+                      <td class="detalles-cupones__td">1</td>
+                      <td class="detalles-cupones__td">
+                        <a href="#" class="detalles-cupones__link"
+                          >Ver detalles</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <nav class="detalles-cupones__pagination-nav">
+                <button class="detalles-cupones__pagination-btn" disabled>
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <span class="detalles-cupones__pagination-info">1 de 10</span>
+                <button class="detalles-cupones__pagination-btn">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

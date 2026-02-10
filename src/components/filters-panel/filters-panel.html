@@ -1,0 +1,76 @@
+<div class="filters-panel">
+  <div class="filters-panel__header">
+    <h3 class="filters-panel__title">Filtro de Consulta</h3>
+    <div class="filters-panel__actions">
+      <button class="filters-panel__btn" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="filters-panel__btn" aria-label="Expandir">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="filters-panel__btn" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="filters-panel__btn filters-panel__btn--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="filters-panel__body">
+    <div class="filters-panel__group-row">
+      <!-- Fecha Desde -->
+      <div class="filters-panel__group">
+        <label class="filters-panel__label">Fecha Desde</label>
+        <input type="date" class="filters-panel__input" value="01/01/2025" />
+      </div>
+
+      <!-- Fecha Hasta -->
+      <div class="filters-panel__group">
+        <label class="filters-panel__label">Fecha Hasta</label>
+        <input type="date" class="filters-panel__input" value="13/12/2025" />
+      </div>
+    </div>
+
+    <!-- Jugador -->
+    <div class="filters-panel__group">
+      <label class="filters-panel__label">Jugador</label>
+      <select class="filters-panel__select">
+        <option>PRUEBA SISTEMA COLOSSUS (12345678)</option>
+      </select>
+    </div>
+
+    <!-- Cupón -->
+    <div class="filters-panel__group">
+      <label class="filters-panel__label">Cupón</label>
+      <select class="filters-panel__select">
+        <option>Seleccione una máquina</option>
+      </select>
+    </div>
+
+    <!-- Tipo de cupón -->
+    <div class="filters-panel__group filters-panel__group--half">
+      <label class="filters-panel__label">Tipo de cupón</label>
+      <select class="filters-panel__select">
+        <option>Tipo de cupón</option>
+      </select>
+    </div>
+
+    <!-- Pendientes -->
+    <div class="filters-panel__group filters-panel__group--half">
+      <label class="filters-panel__label">Pendientes</label>
+      <select class="filters-panel__select">
+        <option>Pendiente por imprimir</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="filters-panel__footer">
+    <button class="filters-panel__filter-btn">
+      <i class="bi bi-sliders"></i> Filtrar
+    </button>
+  </div>
+</div>

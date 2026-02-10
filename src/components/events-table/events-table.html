@@ -1,0 +1,208 @@
+<!-- Events Table Component -->
+<div class="events-table">
+  <div class="events-table__header">
+    <h3 class="events-table__title">Lista de máquinas online</h3>
+    <div class="events-table__actions">
+      <button class="events-table__btn-icon" aria-label="Expandir">
+        <i class="bi bi-fullscreen"></i>
+      </button>
+      <button class="events-table__btn-icon" aria-label="Actualizar">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+      <button class="events-table__btn-icon" aria-label="Minimizar">
+        <i class="bi bi-dash"></i>
+      </button>
+      <button
+        class="events-table__btn-icon events-table__btn-icon--close"
+        aria-label="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="events-table__body">
+    <div class="events-table__pagination">
+      <select class="events-table__rows-select">
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+      </select>
+    </div>
+
+    <div class="events-table__scroll">
+      <table class="events-table__table">
+        <thead class="events-table__thead">
+          <tr>
+            <th class="events-table__th">
+              N°
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Fecha
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Máquina
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Cod. Evento
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Alerta
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Evento
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Fuente
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+            <th class="events-table__th">
+              Acciones
+              <span class="events-table__sort">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="events-table__tbody">
+          <tr class="events-table__row">
+            <td class="events-table__td">1</td>
+            <td class="events-table__td">2025/11/23 11:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">32</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-exclamation-triangle-fill events-table__alert-icon"
+              ></i>
+            </td>
+            <td class="events-table__td">Puerta principal cerrada</td>
+            <td class="events-table__td">Máquina</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">2</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1002</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot desconectado del sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">3</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1001</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot conectado al sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">4</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">730</td>
+            <td class="events-table__td">1000</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">El contador es cero</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__td">5</td>
+            <td class="events-table__td">2025/11/23 10:00</td>
+            <td class="events-table__td">835</td>
+            <td class="events-table__td">1002</td>
+            <td class="events-table__td events-table__td--alert">
+              <i
+                class="bi bi-info-circle-fill events-table__alert-icon events-table__alert-icon--info"
+              ></i>
+            </td>
+            <td class="events-table__td">Slot desconectado del sistema</td>
+            <td class="events-table__td">Sistema</td>
+            <td class="events-table__td">
+              <a href="#" class="events-table__link">Alertas</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="events-table__pagination-nav">
+      <button class="events-table__pagination-btn" aria-label="Primera página">
+        <i class="bi bi-chevron-double-left"></i>
+      </button>
+      <button class="events-table__pagination-btn" aria-label="Página anterior">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="events-table__pagination-info">1</span>
+      <button
+        class="events-table__pagination-btn"
+        aria-label="Siguiente página"
+      >
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <button class="events-table__pagination-btn" aria-label="Última página">
+        <i class="bi bi-chevron-double-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="events-table__footer">
+    <button class="events-table__btn events-table__btn--primary">
+      <i class="bi bi-search"></i> BUSCAR
+    </button>
+    <button class="events-table__btn events-table__btn--warning">
+      <i class="bi bi-gift"></i> OTORGAR CUPÓN
+    </button>
+  </div>
+</div>

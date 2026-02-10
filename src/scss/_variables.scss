@@ -1,0 +1,145 @@
+// Colors - Dashboard Colossus
+$primary-color: #0066ff;
+$primary-blue: #0066ff;
+$blue-dark: #1e3a5f;
+$blue-darker: #0a283e;
+$blue-sidebar: #2c4a6d;
+$light-blue: #4d79ff;
+$medium-blue: #3366ff;
+$blue-text: #103b5b;
+$bg-gray-soft: #d9d9d980;
+
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$success-light: #4caf50;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+
+$light-color: #f5f6fa;
+$lighter-color: #fafbfc;
+$white: #ffffff;
+$black: #000000;
+$dark-color: #343a40;
+$dark-light: #0a283e;
+$tabs-active: #0141ff;
+$bg-tabs: #0141ff40;
+$bg-select: #3b7baa;
+$bg-head-stats: #99b3ff;
+$bg-darken: #212121;
+$cian-color: #00bdff;
+
+// Grays
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// UI Elements
+$border-color: #dee2e6;
+$bg-input: #e9efff;
+$text-muted: #6c757d;
+$progress-bg: #e9ecef;
+$bg-gray-25: #5a5a5a25;
+// Typography
+$font-family-base:
+  "Nunito Sans",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+$font-family-heading:
+  "Lexend Exa",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  sans-serif;
+$font-size-base: 1rem;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Spacing (REM-based)
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  // 0.25rem = 4px
+  2: (
+      $spacer * 0.5,
+    ),
+  // 0.5rem = 8px
+  3: $spacer,
+  // 1rem = 16px
+  4: (
+      $spacer * 1.5,
+    ),
+  // 1.5rem = 24px
+  5: (
+      $spacer * 2,
+    ),
+  // 2rem = 32px
+  6: (
+      $spacer * 3,
+    ), // 3rem = 48px
+);
+
+// Spacing helpers
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-xxl: 3rem; // 48px
+
+// Border radius (REM-based)
+$border-radius: 0.375rem; // 6px
+$border-radius-sm: 0.25rem; // 4px
+$border-radius-md: 0.5rem; // 8px
+$border-radius-lg: 0.75rem; // 12px
+$border-radius-xl: 1rem; // 16px
+
+// Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 1rem 2rem rgba(0, 0, 0, 0.175);
+
+// Sidebar
+$sidebar-width: 15.625rem; // 250px
+$sidebar-collapsed-width: 4rem; // 64px
+$sidebar-bg: #2c3844;
+$sidebar-text: $white;
+$sidebar-hover: rgba(255, 255, 255, 0.1);
+$sidebar-active: $primary-blue;
+
+// Navbar
+$navbar-height: rem(110);
+$navbar-hero-height: rem(130);
+$navbar-bg: $white;
+$navbar-shadow: $box-shadow-sm;
+// Border radius
+$border-radius: rem(6);
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+
+// Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Transitions
+$transition-base: all 0.3s ease-in-out;
+$transition-fast: all 0.15s ease-in-out;
+$transition-slow: all 0.5s ease-in-out;
