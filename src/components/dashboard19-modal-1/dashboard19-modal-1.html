@@ -1,0 +1,107 @@
+<!-- Dashboard 19 - Modal 1: Editar sesion en la maquina -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal1"
+  >
+    Abrir modal
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal1"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal1Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--edit">
+        <div class="app-modal__header">
+          <h3 class="app-modal__title" id="dashboard19Modal1Label">
+            Editar sesión en la máquina: 835
+          </h3>
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body">
+          <div class="app-modal__section">
+            <span class="app-modal__label">Jugador Actual</span>
+            <div class="app-modal__current">
+              PRUEBA SISTEMA COLOSSUS (12345678)
+            </div>
+          </div>
+
+          <div class="app-modal__section">
+            <label class="app-modal__label" for="d19-jugador">Jugador</label>
+            <select id="d19-jugador" class="app-modal__select">
+              <option>PRUEBA SISTEMA COLOSSUS</option>
+              <option>PRUEBA SISTEMA COLOSSUS (2)</option>
+            </select>
+          </div>
+
+          <div class="app-modal__toggles">
+            <label class="app-modal__toggle">
+              <input type="checkbox" checked />
+              <span class="app-modal__toggle-slider"></span>
+              <span class="app-modal__toggle-text">ACUMULAR CUPONES</span>
+            </label>
+            <div class="app-modal__divider"></div>
+            <label class="app-modal__toggle">
+              <input type="checkbox" />
+              <span class="app-modal__toggle-slider"></span>
+              <span class="app-modal__toggle-text">Cupón Parcial</span>
+            </label>
+          </div>
+
+          <div class="app-modal__divider"></div>
+
+          <div class="app-modal__table">
+            <div class="app-modal__table-head">
+              <div>N°</div>
+              <div>Nombre del Cupón</div>
+              <div>Tipo</div>
+              <div>Cantidad</div>
+            </div>
+            <div class="app-modal__table-row">
+              <div>1</div>
+              <div>PRUEBA 2</div>
+              <div>Físico</div>
+              <div>3</div>
+            </div>
+            <div class="app-modal__table-row app-modal__table-row--alt">
+              <div>2</div>
+              <div>PRUEBA 1</div>
+              <div>Virtual</div>
+              <div>3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-modal__footer">
+          <button class="app-modal__btn app-modal__btn--primary">
+            Agregar jugador
+          </button>
+          <button class="app-modal__btn app-modal__btn--success">
+            Asignar
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

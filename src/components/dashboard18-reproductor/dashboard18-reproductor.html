@@ -1,0 +1,120 @@
+<!-- Dashboard 18 - Reproductor de Videos Component -->
+<div class="dashboard18">
+  <!-- Panel de videos oficiales -->
+  <div class="dashboard18__panel">
+    <div class="dashboard18__toggle">
+      <button class="dashboard18__toggle-btn">Transicion</button>
+      <button class="dashboard18__toggle-btn dashboard18__toggle-btn--active">
+        Desvanecido
+      </button>
+    </div>
+
+    <h3 class="dashboard18__title">Videos oficiales</h3>
+
+    <div class="dashboard18__table-scroll">
+      <table class="dashboard18__table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th class="dashboard18__th-preview">Vista previa</th>
+            <th class="dashboard18__th-actions">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dashboard18__file">inicio.mp4</td>
+            <td class="dashboard18__preview">
+              <input type="radio" name="video-preview" />
+            </td>
+            <td class="dashboard18__actions">
+              <button class="dashboard18__btn dashboard18__btn--replace">
+                Reemplazar
+              </button>
+              <button class="dashboard18__btn dashboard18__btn--view">
+                Visualizar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="dashboard18__file">publicidad.mp4</td>
+            <td class="dashboard18__preview">
+              <input type="radio" name="video-preview" checked />
+            </td>
+            <td class="dashboard18__actions">
+              <button class="dashboard18__btn dashboard18__btn--replace">
+                Reemplazar
+              </button>
+              <button class="dashboard18__btn dashboard18__btn--view">
+                Visualizar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="dashboard18__file">anfora.mp4</td>
+            <td class="dashboard18__preview">
+              <input type="radio" name="video-preview" />
+            </td>
+            <td class="dashboard18__actions">
+              <button class="dashboard18__btn dashboard18__btn--replace">
+                Reemplazar
+              </button>
+              <button class="dashboard18__btn dashboard18__btn--view">
+                Visualizar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="dashboard18__file">regla.mp4</td>
+            <td class="dashboard18__preview">
+              <input type="radio" name="video-preview" />
+            </td>
+            <td class="dashboard18__actions">
+              <button class="dashboard18__btn dashboard18__btn--replace">
+                Reemplazar
+              </button>
+              <button class="dashboard18__btn dashboard18__btn--view">
+                Visualizar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="dashboard18__file">ganador.mp4</td>
+            <td class="dashboard18__preview">
+              <input type="radio" name="video-preview" />
+            </td>
+            <td class="dashboard18__actions">
+              <button class="dashboard18__btn dashboard18__btn--replace">
+                Reemplazar
+              </button>
+              <button class="dashboard18__btn dashboard18__btn--view">
+                Visualizar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="dashboard18__btn-update">Actualizar pantallas</button>
+  </div>
+
+  <!-- Vista previa -->
+  <div class="dashboard18__preview-card">
+    <h3 class="dashboard18__title">Vista previa</h3>
+    <div class="dashboard18__player">
+      <img
+        src="../dist/images/img-reproductor.png"
+        alt="Vista previa"
+        class="dashboard18__player-img"
+      />
+    </div>
+    <div class="dashboard18__controls">
+      <button class="dashboard18__control">▶</button>
+      <button class="dashboard18__control">⏸</button>
+      <button class="dashboard18__control">0.5x</button>
+      <button class="dashboard18__control">1x</button>
+      <button class="dashboard18__control">1.5x</button>
+      <button class="dashboard18__control">2x</button>
+    </div>
+  </div>
+</div>

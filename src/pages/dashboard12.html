@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    @@include('../components/navbar/navbar.html')
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    @@include('../components/hero-header/hero-header.html')
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        @@include('../components/sidebar/sidebar.html')
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <section class="dashboard12-section">
+          <!-- Información del cliente -->
+          <div class="info-cliente-d12">
+            <div class="info-cliente-d12__header">
+              <h2 class="info-cliente-d12__title">Información del cliente</h2>
+              <div class="info-cliente-d12__actions">
+                <button
+                  class="info-cliente-d12__btn-icon"
+                  aria-label="Pantalla completa"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="info-cliente-d12__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="info-cliente-d12__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="info-cliente-d12__btn-icon info-cliente-d12__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="info-cliente-d12__body">
+              <p class="info-cliente-d12__name">PRUEBA SISTEMA COLOSSUS</p>
+              <div class="info-cliente-d12__grid">
+                <div class="info-cliente-d12__item">
+                  <i
+                    class="bi bi-credit-card-2-front info-cliente-d12__icon"
+                  ></i>
+                  <span class="info-cliente-d12__label">Pid:</span>
+                  <span class="info-cliente-d12__value">1</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-geo-alt info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Región:</span>
+                  <span class="info-cliente-d12__value">CUSCO</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-person-badge info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Categoría:</span>
+                  <span class="info-cliente-d12__value">NORMAL</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-map info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Provincia:</span>
+                  <span class="info-cliente-d12__value">ANTA</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-file-text info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Documento:</span>
+                  <span class="info-cliente-d12__value">12345678</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-building info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Distrito:</span>
+                  <span class="info-cliente-d12__value">LIMATAMBO</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-gender-male info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Género:</span>
+                  <span class="info-cliente-d12__value">M</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-telephone info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Teléfono:</span>
+                  <span class="info-cliente-d12__value">301 265 584</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-cake info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Edad:</span>
+                  <span class="info-cliente-d12__value">25</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-envelope info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Email:</span>
+                  <span class="info-cliente-d12__value">jrojas@ygsol.com</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-calendar-check info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Cumpleaños:</span>
+                  <span class="info-cliente-d12__value">2000-07-06</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-star info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Puntos actuales:</span>
+                  <span class="info-cliente-d12__value">1,830</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-geo-alt info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Región:</span>
+                  <span class="info-cliente-d12__value">CUSCO</span>
+                </div>
+                <div class="info-cliente-d12__item">
+                  <i class="bi bi-clock-history info-cliente-d12__icon"></i>
+                  <span class="info-cliente-d12__label">Última visita:</span>
+                  <span class="info-cliente-d12__value"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel de tracking con tabs y gráfica -->
+          <div class="tracking-panel-d12">
+            <div class="tracking-panel-d12__header">
+              <div class="tracking-panel-d12__tabs">
+                <button
+                  class="tracking-panel-d12__tab tracking-panel-d12__tab--active"
+                >
+                  Resumen
+                </button>
+                <button class="tracking-panel-d12__tab">Pagos mensuales</button>
+                <button class="tracking-panel-d12__tab">Pagos tarjeta</button>
+                <button class="tracking-panel-d12__tab">Sorteos</button>
+                <button class="tracking-panel-d12__tab">Sesiones</button>
+                <button class="tracking-panel-d12__tab">Cupones</button>
+                <button class="tracking-panel-d12__tab">Cartas</button>
+                <button class="tracking-panel-d12__tab">Tarjetas club</button>
+                <button class="tracking-panel-d12__tab">
+                  Preferencias por maq.
+                </button>
+                <button class="tracking-panel-d12__tab">Viajes por día</button>
+              </div>
+              <div class="tracking-panel-d12__actions">
+                <button
+                  class="tracking-panel-d12__btn-icon"
+                  aria-label="Pantalla completa"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="tracking-panel-d12__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="tracking-panel-d12__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="tracking-panel-d12__btn-icon tracking-panel-d12__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="tracking-panel-d12__body">
+              <!-- Gráfica -->
+              <div class="tracking-panel-d12__chart-container">
+                <canvas id="apuestaClienteChart"></canvas>
+                <div class="tracking-panel-d12__chart-legend">
+                  <span class="tracking-panel-d12__legend-item">
+                    <span class="tracking-panel-d12__legend-dot"></span>
+                    Apuesta del cliente
+                  </span>
+                </div>
+              </div>
+
+              <!-- Tabla de visitas -->
+              <div class="tracking-panel-d12__table-section">
+                <h3 class="tracking-panel-d12__table-title">
+                  Lista de visitas por día
+                </h3>
+                <div class="tracking-panel-d12__table-wrapper">
+                  <table class="tracking-panel-d12__table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>Apuesta</th>
+                        <th>Ganado</th>
+                        <th>Producción</th>
+                        <th>Aprox</th>
+                        <th>Permanencia</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2025-07-01</td>
+                        <td>82.50</td>
+                        <td>118.20</td>
+                        <td>-35.70</td>
+                        <td>0,50</td>
+                        <td>03h 59 m 59 s</td>
+                      </tr>
+                      <tr>
+                        <td>2025-11-12</td>
+                        <td>765.00</td>
+                        <td>1,965.00</td>
+                        <td>-1,255.00</td>
+                        <td>0,00</td>
+                        <td>24h 02 m 01 s</td>
+                      </tr>
+                      <tr>
+                        <td>2025-11-15</td>
+                        <td>100.00</td>
+                        <td>100.00</td>
+                        <td>-10.00</td>
+                        <td>0,00</td>
+                        <td>32h 35 m 64 s</td>
+                      </tr>
+                      <tr>
+                        <td>2025-11-16</td>
+                        <td>50.00</td>
+                        <td>50.00</td>
+                        <td>-5.00</td>
+                        <td>0,00</td>
+                        <td>89h 56m 54 s</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

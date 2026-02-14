@@ -1,0 +1,178 @@
+// ============================================================================
+// Dashboard 16 - Roles Table
+// ============================================================================
+
+.dashboard16-section {
+  padding: $spacing-lg;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-md;
+  }
+}
+
+.dashboard16-roles {
+  background-color: $white;
+  border-radius: rem(12);
+  padding: $spacing-lg;
+  box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.06);
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-md;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: $spacing-md;
+  }
+
+  &__btn-add {
+    background-color: #43a047;
+    color: $white;
+    border: none;
+    border-radius: rem(6);
+    padding: rem(8) $spacing-md;
+    font-size: rem(13);
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: darken(#43a047, 8%);
+    }
+
+    i {
+      font-size: rem(14);
+    }
+  }
+
+  &__table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: rem(8);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: rem(6);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #0a4cff;
+      border-radius: rem(6);
+    }
+
+    @include media-breakpoint-down(md) {
+      &::-webkit-scrollbar {
+        height: rem(10);
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.12);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #0a4cff;
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    min-width: rem(720);
+    border-collapse: collapse;
+
+    thead {
+      background-color: #9db6ff;
+
+      th {
+        padding: $spacing-sm $spacing-md;
+        font-size: rem(13);
+        font-weight: 600;
+        color: $dark-color;
+        border-right: rem(1) solid rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: rem(1) solid #d0d0d0;
+      }
+
+      td {
+        padding: rem(6) $spacing-md;
+        font-size: rem(12);
+        color: $dark-color;
+        border-right: rem(1) solid #d0d0d0;
+        white-space: nowrap;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  &__th-id,
+  &__td-id {
+    width: rem(60);
+    text-align: center;
+  }
+
+  &__th-actions,
+  &__td-actions {
+    width: rem(220);
+    text-align: center;
+  }
+
+  &__td-actions {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xs;
+  }
+
+  &__btn-action {
+    border: none;
+    border-radius: rem(4);
+    padding: rem(3) $spacing-sm;
+    font-size: rem(11);
+    font-weight: 600;
+    cursor: pointer;
+    color: $white;
+    transition: all $transition-base;
+
+    &--edit {
+      background-color: #7cc67c;
+
+      &:hover {
+        background-color: darken(#7cc67c, 10%);
+      }
+    }
+
+    &--delete {
+      background-color: #f16a6a;
+
+      &:hover {
+        background-color: darken(#f16a6a, 10%);
+      }
+    }
+
+    &--menu {
+      background-color: #5bc0de;
+
+      &:hover {
+        background-color: darken(#5bc0de, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    @@include('../components/navbar/navbar.html')
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    @@include('../components/hero-header/hero-header.html')
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        @@include('../components/sidebar/sidebar.html')
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <div class="dashboard17-section">
+          @@include('../components/dashboard17-analytics/dashboard17-analytics.html')
+        </div>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

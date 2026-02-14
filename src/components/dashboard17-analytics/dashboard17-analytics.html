@@ -1,0 +1,203 @@
+<!-- Dashboard 17 - Analitica Maquinas Component -->
+<div class="dashboard17">
+  <!-- Filtro de consulta -->
+  <div class="dashboard17__card dashboard17__card--filter">
+    <div class="dashboard17__card-header dashboard17__card-header--dark">
+      <h3 class="dashboard17__card-title">Filtro de consulta</h3>
+    </div>
+    <div class="dashboard17__card-body">
+      <div class="dashboard17__filter-grid">
+        <div class="dashboard17__field">
+          <label class="dashboard17__label" for="d17-maquina">Máquina</label>
+          <select id="d17-maquina" class="dashboard17__select">
+            <option>Máquina</option>
+          </select>
+        </div>
+        <div class="dashboard17__field">
+          <label class="dashboard17__label" for="d17-marca">Marca</label>
+          <select id="d17-marca" class="dashboard17__select">
+            <option>Marca</option>
+          </select>
+        </div>
+        <div class="dashboard17__field">
+          <label class="dashboard17__label" for="d17-modelo">Modelo</label>
+          <select id="d17-modelo" class="dashboard17__select">
+            <option>Modelo</option>
+          </select>
+        </div>
+        <button class="dashboard17__btn-filter">
+          <i class="bi bi-sliders"></i> Filtrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen de maquinas por marca -->
+  <div class="dashboard17__card">
+    <div class="dashboard17__card-header">
+      <h3 class="dashboard17__card-title">Resumen de máquinas por marca</h3>
+      <div class="dashboard17__card-actions">
+        <button class="dashboard17__icon-btn" aria-label="Expandir">
+          <i class="bi bi-fullscreen"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Actualizar">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="dashboard17__card-body dashboard17__chart-body">
+      <div class="dashboard17__chart">
+        <canvas
+          id="d17ChartMarca"
+          class="dashboard17__chart-canvas"
+          aria-label="Grafica de marcas"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen de maquinas por modelos -->
+  <div class="dashboard17__card">
+    <div class="dashboard17__card-header">
+      <h3 class="dashboard17__card-title">Resumen de máquinas por modelos</h3>
+      <div class="dashboard17__card-actions">
+        <button class="dashboard17__icon-btn" aria-label="Expandir">
+          <i class="bi bi-fullscreen"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Actualizar">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="dashboard17__card-body dashboard17__chart-body">
+      <div class="dashboard17__chart">
+        <canvas
+          id="d17ChartModelo"
+          class="dashboard17__chart-canvas"
+          aria-label="Grafica de modelos"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listado de maquinas activas -->
+  <div class="dashboard17__card">
+    <div class="dashboard17__card-header dashboard17__card-header--blue">
+      <h3 class="dashboard17__card-title">Listado de máquinas activas</h3>
+      <div class="dashboard17__card-actions">
+        <button class="dashboard17__icon-btn" aria-label="Expandir">
+          <i class="bi bi-fullscreen"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Actualizar">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="dashboard17__icon-btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    </div>
+    <div class="dashboard17__card-body">
+      <div class="dashboard17__table-toolbar">
+        <select class="dashboard17__rows-select" aria-label="Filas por pagina">
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select>
+      </div>
+      <div class="dashboard17__table-scroll">
+        <table class="dashboard17__table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Máquina</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Juego</th>
+              <th>Serie</th>
+              <th>N° Registro</th>
+              <th>Acciones</th>
+            </tr>
+            <tr class="dashboard17__filters-row">
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+              <th><input class="dashboard17__filter-input" type="text" /></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>43</td>
+              <td>732</td>
+              <td>ARI</td>
+              <td>MKV Serie I, Serie I, MKV</td>
+              <td>Dolphin Treasure</td>
+              <td>XAW024551</td>
+              <td>11279</td>
+              <td class="dashboard17__table-actions">
+                <button class="dashboard17__tag dashboard17__tag--qr">
+                  QR
+                </button>
+                <button class="dashboard17__tag dashboard17__tag--events">
+                  Eventos
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>89</td>
+              <td>733</td>
+              <td>ARI</td>
+              <td>MKV Serie I, Serie I, MKV</td>
+              <td>Queen of the Nile</td>
+              <td>XAW211731</td>
+              <td>11280</td>
+              <td class="dashboard17__table-actions">
+                <button class="dashboard17__tag dashboard17__tag--qr">
+                  QR
+                </button>
+                <button class="dashboard17__tag dashboard17__tag--events">
+                  Eventos
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>90</td>
+              <td>734</td>
+              <td>ARI</td>
+              <td>MKV Serie I, Serie I, MKV</td>
+              <td>Riches of Ra</td>
+              <td>XAW211732</td>
+              <td>11281</td>
+              <td class="dashboard17__table-actions">
+                <button class="dashboard17__tag dashboard17__tag--qr">
+                  QR
+                </button>
+                <button class="dashboard17__tag dashboard17__tag--events">
+                  Eventos
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

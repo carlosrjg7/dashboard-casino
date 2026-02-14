@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    <!-- Navbar Component -->
+<header class="navbar">
+  <div class="navbar__container">
+    <!-- Mobile Menu Toggle -->
+    <div class="navbar__container-brand">
+      <button
+        class="navbar__menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menú"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <img
+          src="../dist/images/logo-nav.png"
+          alt="COLOSSUS"
+          class="navbar__logo-img"
+        />
+        <span class="navbar__logo-text">COLOSSUS<sub>v.2</sub></span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="navbar__search">
+        <i class="bi bi-search navbar__search-icon"></i>
+        <input
+          type="text"
+          class="navbar__search-input"
+          placeholder="Búsqueda general"
+        />
+      </div>
+
+      <!-- Right Section -->
+      <div class="navbar__actions">
+        <!-- Notifications -->
+        <button class="navbar__notification" aria-label="Notificaciones">
+          <i class="bi bi-bell"></i>
+          <span class="navbar__notification-badge">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- User Dropdown -->
+    <div class="navbar__container-user">
+      <button class="navbar__user-button" aria-label="Menú de usuario">
+        <div class="navbar__user-avatar">A</div>
+        <span class="navbar__user-name">Admin. Rodas/ISG</span>
+        <i class="bi bi-chevron-down navbar__user-arrow"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    <!-- Hero Header Component -->
+<section class="hero-header">
+  <div class="hero-header__container">
+    <!-- Left: Game Info -->
+    <div class="hero-header__game">
+      <div class="hero-header__game-icon">
+        <i class="bi bi-controller"></i>
+      </div>
+      <div class="hero-header__game-info">
+        <div class="hero-header__game-title">Latin Games</div>
+        <div class="hero-header__game-subtitle">Madgalena</div>
+      </div>
+    </div>
+
+    <!-- Center: Page Info -->
+    <div class="hero-header__page">
+      <div class="hero-header__page-image">
+        <img src="../dist/images/img-cupons.png" alt="Cupones" />
+      </div>
+      <div class="hero-header__page-info">
+        <div>
+          <h1 class="hero-header__page-title">Cupones</h1>
+          <p class="hero-header__page-subtitle">Asignación manual</p>
+          <button class="hero-header__tutorial-btn">Tutorial</button>
+        </div>
+
+        <!-- Right: Breadcrumb -->
+        <nav class="hero-header__breadcrumb" aria-label="Breadcrumb">
+          <ol class="hero-header__breadcrumb-list">
+            <li
+              class="hero-header__breadcrumb-item hero-header__breadcrumb-item--active"
+            >
+              <a href="#" class="hero-header__breadcrumb-link">Inicio</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link">Cupones</a>
+            </li>
+            <li class="hero-header__breadcrumb-item">
+              <a href="#" class="hero-header__breadcrumb-link"
+                >Asignación manual</a
+              >
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        <!-- Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+  <!-- Sidebar Header -->
+  <div class="sidebar__header">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">L</div>
+      <div class="sidebar__logo-text">
+        <span class="sidebar__logo-title">Latin Games</span>
+        <span class="sidebar__logo-subtitle">Madgalena</span>
+      </div>
+    </div>
+    <button class="sidebar__toggle" id="sidebarToggle" aria-label="Cerrar menú">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar__nav">
+    <h3 class="sidebar__nav-title">Menú de Navegación</h3>
+
+    <ul class="sidebar__menu">
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-people"></i>
+          <span>Clientes</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-printer"></i>
+          <span>Configuración de impresión</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item sidebar__menu-item--active">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-gift"></i>
+          <span>Cupones</span>
+        </a>
+
+        <!-- Submenu -->
+        <ul class="sidebar__submenu">
+          <li class="sidebar__submenu-item sidebar__submenu-item--active">
+            <a href="#" class="sidebar__submenu-link">
+              <i class="bi bi-circle-fill"></i>
+              <span>Asignación manual de cupones</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span>Otorgar cupones</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-basket"></i>
+          <span>Cupones virtuales</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-globe"></i>
+          <span>En línea</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-grid"></i>
+          <span>Layout</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-file-text"></i>
+          <span>Reporte de cupones</span>
+        </a>
+      </li>
+
+      <li class="sidebar__menu-item">
+        <a href="#" class="sidebar__menu-link">
+          <i class="bi bi-shield-check"></i>
+          <span>Super Administrador</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--   <!-- Sidebar Collapse Button 
+  <button class="sidebar__collapse" aria-label="Colapsar sidebar">
+    <i class="bi bi-chevron-left"></i>
+  </button> -->
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <div class="dashboard19-section">
+          <!-- Dashboard 19 - Modal 1: Editar sesion en la maquina -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal1"
+  >
+    Abrir modal
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal1"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal1Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--edit">
+        <div class="app-modal__header">
+          <h3 class="app-modal__title" id="dashboard19Modal1Label">
+            Editar sesión en la máquina: 835
+          </h3>
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body">
+          <div class="app-modal__section">
+            <span class="app-modal__label">Jugador Actual</span>
+            <div class="app-modal__current">
+              PRUEBA SISTEMA COLOSSUS (12345678)
+            </div>
+          </div>
+
+          <div class="app-modal__section">
+            <label class="app-modal__label" for="d19-jugador">Jugador</label>
+            <select id="d19-jugador" class="app-modal__select">
+              <option>PRUEBA SISTEMA COLOSSUS</option>
+              <option>PRUEBA SISTEMA COLOSSUS (2)</option>
+            </select>
+          </div>
+
+          <div class="app-modal__toggles">
+            <label class="app-modal__toggle">
+              <input type="checkbox" checked />
+              <span class="app-modal__toggle-slider"></span>
+              <span class="app-modal__toggle-text">ACUMULAR CUPONES</span>
+            </label>
+            <div class="app-modal__divider"></div>
+            <label class="app-modal__toggle">
+              <input type="checkbox" />
+              <span class="app-modal__toggle-slider"></span>
+              <span class="app-modal__toggle-text">Cupón Parcial</span>
+            </label>
+          </div>
+
+          <div class="app-modal__divider"></div>
+
+          <div class="app-modal__table">
+            <div class="app-modal__table-head">
+              <div>N°</div>
+              <div>Nombre del Cupón</div>
+              <div>Tipo</div>
+              <div>Cantidad</div>
+            </div>
+            <div class="app-modal__table-row">
+              <div>1</div>
+              <div>PRUEBA 2</div>
+              <div>Físico</div>
+              <div>3</div>
+            </div>
+            <div class="app-modal__table-row app-modal__table-row--alt">
+              <div>2</div>
+              <div>PRUEBA 1</div>
+              <div>Virtual</div>
+              <div>3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-modal__footer">
+          <button class="app-modal__btn app-modal__btn--primary">
+            Agregar jugador
+          </button>
+          <button class="app-modal__btn app-modal__btn--success">
+            Asignar
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Dashboard 19 - Modal 2: Confirmar cierre de sesion -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal2"
+  >
+    Abrir modal 2
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal2"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal2Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--confirm">
+        <div class="app-modal__header app-modal__header--minimal">
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body app-modal__body--center">
+          <div class="app-modal__icon">
+            <i class="bi bi-question-circle"></i>
+          </div>
+          <h3
+            class="app-modal__title app-modal__title--center"
+            id="dashboard19Modal2Label"
+          >
+            Confirmar
+          </h3>
+          <p class="app-modal__text">
+            ¿Seguro que desea cerrar la sesión de la máquina 835?
+          </p>
+          <div class="app-modal__divider"></div>
+        </div>
+
+        <div class="app-modal__footer app-modal__footer--center">
+          <button class="app-modal__btn app-modal__btn--primary">
+            Cerrar Sesión
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Dashboard 19 - Modal 3: Actualizar jugador -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal3"
+  >
+    Abrir modal 3
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal3"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal3Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--form">
+        <div class="app-modal__header">
+          <h3 class="app-modal__title" id="dashboard19Modal3Label">
+            Actualizar jugador
+          </h3>
+        </div>
+
+        <div class="app-modal__body">
+          <div class="app-modal__form">
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-doc">Documento</label>
+              <input
+                id="d19-doc"
+                class="app-modal__input"
+                type="text"
+                value="12345678"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-tipo"
+                >Tipo de documento</label
+              >
+              <input
+                id="d19-tipo"
+                class="app-modal__input"
+                type="text"
+                value="DNI"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-nombre"
+                >Nombre completo</label
+              >
+              <input
+                id="d19-nombre"
+                class="app-modal__input"
+                type="text"
+                value="PRUEBA"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-ap"
+                >Apellido Paterno</label
+              >
+              <input
+                id="d19-ap"
+                class="app-modal__input"
+                type="text"
+                value="SISTEMA"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-am"
+                >Apellido Materno</label
+              >
+              <input
+                id="d19-am"
+                class="app-modal__input"
+                type="text"
+                value="COLOSSUS"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-fecha"
+                >Fecha de Nacimiento</label
+              >
+              <input
+                id="d19-fecha"
+                class="app-modal__input"
+                type="text"
+                value="06/06/2000"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-genero">Género</label>
+              <input
+                id="d19-genero"
+                class="app-modal__input"
+                type="text"
+                value="MASCULINO"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-pref"
+                >Preferencias</label
+              >
+              <input
+                id="d19-pref"
+                class="app-modal__input"
+                type="text"
+                value="preferencias"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-act"
+                >Actividad y/o Oficio</label
+              >
+              <input
+                id="d19-act"
+                class="app-modal__input"
+                type="text"
+                value="ACTIVIDAD"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-cel"
+                >Número de Celular</label
+              >
+              <input
+                id="d19-cel"
+                class="app-modal__input"
+                type="text"
+                value="30122655484"
+              />
+            </div>
+            <div class="app-modal__row">
+              <label class="app-modal__label" for="d19-mail"
+                >Correo Electrónico</label
+              >
+              <input
+                id="d19-mail"
+                class="app-modal__input"
+                type="text"
+                value="j.rojas@rysgol.com"
+              />
+            </div>
+          </div>
+
+          <div class="app-modal__divider"></div>
+        </div>
+
+        <div class="app-modal__footer app-modal__footer--center">
+          <button class="app-modal__btn app-modal__btn--success">
+            Guardar datos
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Dashboard 19 - Modal 4: Sorteo y programacion -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal4"
+  >
+    Abrir modal 4
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal4"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal4Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--large">
+        <div class="app-modal__header">
+          <h3 class="app-modal__title" id="dashboard19Modal4Label">
+            Actualizar jugador
+          </h3>
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body app-modal__body--scroll">
+          <div class="app-modal__grid">
+            <div class="app-modal__field">
+              <label class="app-modal__label">Cupón</label>
+              <select class="app-modal__select">
+                <option>Seleccione</option>
+              </select>
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label">Automático</label>
+              <select class="app-modal__select">
+                <option>NO</option>
+              </select>
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label">Nombre del sorteo</label>
+              <input
+                class="app-modal__input"
+                type="text"
+                value="Ej. SORTEO NAVIDEÑO"
+              />
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label"
+                >Días para no repetir ganador</label
+              >
+              <input class="app-modal__input" type="text" value="0" />
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label">Minutos para el sorteo</label>
+              <input class="app-modal__input" type="text" value="0" />
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label"
+                >Cupones Mínimos por jugador</label
+              >
+              <input class="app-modal__input" type="text" value="0" />
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label">Ver regla del cupón</label>
+              <input class="app-modal__input" type="text" value="0" />
+            </div>
+            <div class="app-modal__field">
+              <label class="app-modal__label">Ver fecha del cupón</label>
+              <select class="app-modal__select">
+                <option>NO</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="app-modal__field app-modal__field--full">
+            <label class="app-modal__label">Reglas del sorteo</label>
+            <textarea class="app-modal__textarea" rows="4">
+Escribe las reglas del juego.</textarea
+            >
+          </div>
+
+          <div class="app-modal__toggle-group">
+            <button class="app-modal__pill app-modal__pill--active">DNI</button>
+            <button class="app-modal__pill">PRESENCIAL</button>
+          </div>
+
+          <p class="app-modal__hint">
+            Seleccione las fechas que desea programar
+          </p>
+
+          <div class="app-modal__calendar">
+            <div class="app-modal__calendar-header">
+              <div class="app-modal__calendar-left">
+                <button class="app-modal__calendar-nav">&#8249;</button>
+                <button class="app-modal__calendar-nav">&#8250;</button>
+                <span class="app-modal__calendar-chip">HOY</span>
+              </div>
+              <div class="app-modal__calendar-title">DICIEMBRE de 2025</div>
+            </div>
+            <div class="app-modal__calendar-grid">
+              <div class="app-modal__calendar-day">LUNES</div>
+              <div class="app-modal__calendar-day">MARTES</div>
+              <div class="app-modal__calendar-day">MIERCOLES</div>
+              <div class="app-modal__calendar-day">JUEVES</div>
+              <div class="app-modal__calendar-day">VIERNES</div>
+              <div class="app-modal__calendar-day">SABADO</div>
+              <div class="app-modal__calendar-day">DOMINGO</div>
+
+              <div class="app-modal__calendar-cell"></div>
+              <div class="app-modal__calendar-cell">1</div>
+              <div class="app-modal__calendar-cell">2</div>
+              <div class="app-modal__calendar-cell">3</div>
+              <div class="app-modal__calendar-cell">4</div>
+              <div class="app-modal__calendar-cell">5</div>
+              <div class="app-modal__calendar-cell">6</div>
+              <div class="app-modal__calendar-cell">7</div>
+              <div class="app-modal__calendar-cell">8</div>
+              <div class="app-modal__calendar-cell">9</div>
+              <div class="app-modal__calendar-cell">10</div>
+              <div class="app-modal__calendar-cell">11</div>
+              <div class="app-modal__calendar-cell">12</div>
+              <div class="app-modal__calendar-cell">13</div>
+              <div class="app-modal__calendar-cell">14</div>
+              <div class="app-modal__calendar-cell">15</div>
+              <div class="app-modal__calendar-cell">16</div>
+              <div class="app-modal__calendar-cell">17</div>
+              <div class="app-modal__calendar-cell">18</div>
+              <div class="app-modal__calendar-cell">19</div>
+              <div class="app-modal__calendar-cell">20</div>
+              <div class="app-modal__calendar-cell">21</div>
+              <div class="app-modal__calendar-cell">22</div>
+              <div class="app-modal__calendar-cell">23</div>
+              <div class="app-modal__calendar-cell">24</div>
+              <div class="app-modal__calendar-cell">25</div>
+              <div class="app-modal__calendar-cell">26</div>
+              <div class="app-modal__calendar-cell">27</div>
+              <div class="app-modal__calendar-cell">28</div>
+              <div class="app-modal__calendar-cell">29</div>
+              <div class="app-modal__calendar-cell">30</div>
+              <div class="app-modal__calendar-cell">31</div>
+              <div class="app-modal__calendar-cell"></div>
+              <div class="app-modal__calendar-cell"></div>
+              <div class="app-modal__calendar-cell"></div>
+              <div class="app-modal__calendar-cell"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-modal__footer app-modal__footer--center">
+          <button class="app-modal__btn app-modal__btn--primary">
+            Agregar Hora
+          </button>
+          <button class="app-modal__btn app-modal__btn--success">
+            Guardar Sorteo
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!-- Dashboard 19 - Modal 6: Menus, Submenus y Acciones del Rol -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal6"
+  >
+    Abrir modal 6
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal6"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal6Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--tree">
+        <div class="app-modal__header">
+          <h3 class="app-modal__title" id="dashboard19Modal6Label">
+            Menús, Submenus y Acciones del Rol
+          </h3>
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body app-modal__body--scroll">
+          <div class="app-modal__section">
+            <span class="app-modal__label">Rol Seleccionado: ADMIN</span>
+          </div>
+
+          <div class="app-modal__actions-row">
+            <label class="app-modal__action-btn app-modal__action-btn--primary">
+              <input type="checkbox" checked />
+              <span>Seleccionar Todos</span>
+            </label>
+            <label class="app-modal__action-btn app-modal__action-btn--muted">
+              <input type="checkbox" />
+              <span>Deseleccionar Todos</span>
+            </label>
+          </div>
+
+          <div class="app-modal__tree">
+            <div class="app-modal__tree-item">
+              <input type="checkbox" checked />
+              <span class="app-modal__tree-folder">
+                <i class="bi bi-folder"></i>
+                impresión
+              </span>
+              <div class="app-modal__tree-children">
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  configurar
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  eliminar
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  qr
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" />
+                  solicitud
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" />
+                  imprimir
+                </label>
+              </div>
+            </div>
+
+            <div class="app-modal__tree-item">
+              <input type="checkbox" checked />
+              <span class="app-modal__tree-folder">
+                <i class="bi bi-folder"></i>
+                asignación
+              </span>
+              <div class="app-modal__tree-children">
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  manual
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  listar
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  asignar
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  cerrar
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  noasignar
+                </label>
+              </div>
+            </div>
+
+            <div class="app-modal__tree-item">
+              <input type="checkbox" checked />
+              <span class="app-modal__tree-folder">
+                <i class="bi bi-folder"></i>
+                superadmin
+              </span>
+              <div class="app-modal__tree-children">
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  rol
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  usuarios
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  menus
+                </label>
+              </div>
+            </div>
+
+            <div class="app-modal__tree-item">
+              <input type="checkbox" />
+              <span class="app-modal__tree-folder">
+                <i class="bi bi-folder"></i>
+                testing
+              </span>
+              <div class="app-modal__tree-children">
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" />
+                  incidencias
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" />
+                  pruebas
+                </label>
+              </div>
+            </div>
+
+            <div class="app-modal__tree-item">
+              <input type="checkbox" checked />
+              <span class="app-modal__tree-folder">
+                <i class="bi bi-folder"></i>
+                cupones
+              </span>
+              <div class="app-modal__tree-children">
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  sorteo
+                </label>
+                <label class="app-modal__tree-leaf">
+                  <input type="checkbox" checked />
+                  editarSorteo
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-modal__footer app-modal__footer--center">
+          <button class="app-modal__btn app-modal__btn--muted">Cerrar</button>
+          <button class="app-modal__btn app-modal__btn--primary">
+            Guardar Cambios
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

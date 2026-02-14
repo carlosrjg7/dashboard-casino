@@ -1,0 +1,107 @@
+<!-- Dashboard 15 - Monitor de Máquinas Component -->
+<div class="dashboard15-monitor">
+  <!-- Columna izquierda: Paneles Conexión y Sesiones -->
+  <div class="dashboard15-monitor__sidebars">
+    <!-- Panel 1: Conexión -->
+    <div class="dashboard15-monitor__panel">
+      <div class="dashboard15-monitor__panel-header">
+        <h3 class="dashboard15-monitor__panel-title">Conexión</h3>
+      </div>
+      <div class="dashboard15-monitor__panel-body">
+        <!-- Leyenda de conexión -->
+        <div class="dashboard15-monitor__legend">
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--blue"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">Desconectado</span>
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--red"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">Desenlazado</span>
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--green"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">Transmitiendo</span>
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--yellow"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">Jugando</span>
+          </div>
+        </div>
+        <button class="dashboard15-monitor__btn-update">Actualizar</button>
+      </div>
+    </div>
+
+    <!-- Panel 2: Sesiones -->
+    <div class="dashboard15-monitor__panel">
+      <div class="dashboard15-monitor__panel-header">
+        <h3 class="dashboard15-monitor__panel-title">Sesiones</h3>
+      </div>
+      <div class="dashboard15-monitor__panel-body">
+        <!-- Leyenda de sesiones -->
+        <div class="dashboard15-monitor__legend">
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--light-gray"
+            ></span>
+            <span class="dashboard15-monitor__legend-label"
+              >Asignada Jugando</span
+            >
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--gray"
+            ></span>
+            <span class="dashboard15-monitor__legend-label"
+              >Asignada en Pausa</span
+            >
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--cyan"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">Incognitas</span>
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--light-blue"
+            ></span>
+            <span class="dashboard15-monitor__legend-label">No Asignar</span>
+          </div>
+          <div class="dashboard15-monitor__legend-item">
+            <span
+              class="dashboard15-monitor__legend-color dashboard15-monitor__legend-color--dark-blue"
+            ></span>
+            <span class="dashboard15-monitor__legend-label"
+              >Sesión cerrada</span
+            >
+          </div>
+        </div>
+        <button class="dashboard15-monitor__btn-update">Actualizar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas con el plano -->
+  <div class="dashboard15-monitor__canvas">
+    <div class="dashboard15-monitor__canvas-header">
+      <h3 class="dashboard15-monitor__canvas-title">Conexión</h3>
+    </div>
+    <div class="dashboard15-monitor__canvas-body">
+      <div class="dashboard15-monitor__canvas-wrapper">
+        <img
+          src="../dist/images/plano4.png"
+          alt="Monitor de Máquinas"
+          class="dashboard15-monitor__plano-img"
+        />
+      </div>
+    </div>
+  </div>
+</div>

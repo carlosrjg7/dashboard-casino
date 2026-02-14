@@ -1,0 +1,187 @@
+// ============================================================================
+// Vínculo Máquinas Component - Dashboard 14 Tab 3
+// ============================================================================
+
+.vinculo-maquinas {
+  display: flex;
+  gap: 0;
+  min-height: rem(600);
+  background-color: #f5f5f5;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    min-height: rem(800);
+  }
+
+  // ============================================================================
+  // Sidebar izquierdo con controles
+  // ============================================================================
+
+  &__sidebar {
+    width: rem(240);
+    background-color: $white;
+    border-right: rem(1) solid #e0e0e0;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      border-right: none;
+      border-bottom: rem(1) solid #e0e0e0;
+      padding: $spacing-md;
+    }
+  }
+
+  // ============================================================================
+  // Controles (botones azules)
+  // ============================================================================
+
+  &__controls {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-down(md) {
+      gap: $spacing-sm;
+    }
+  }
+
+  &__btn-control {
+    width: rem(48);
+    height: rem(48);
+    border: none;
+    background-color: $primary-color;
+    color: $white;
+    cursor: pointer;
+    border-radius: rem(6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(18);
+    transition: all $transition-base;
+    box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(rem(-2));
+      box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.15);
+    }
+
+    i {
+      font-size: rem(20);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(60);
+      height: rem(60);
+      font-size: rem(22);
+
+      i {
+        font-size: rem(24);
+      }
+    }
+  }
+
+  // ============================================================================
+  // Botones de guardar
+  // ============================================================================
+
+  &__save-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+
+  &__btn-save {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: rem(2) solid #d9d9d9;
+    background-color: #d9d9d9;
+    color: $dark-color;
+    font-size: rem(13);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: rem(6);
+    transition: all $transition-base;
+    text-align: center;
+
+    &:hover {
+      background-color: darken(#d9d9d9, 10%);
+      border-color: darken(#d9d9d9, 10%);
+    }
+
+    &--primary {
+      background-color: $white;
+      border-color: $primary-color;
+      color: $dark-color;
+
+      &:hover {
+        background-color: rgba($primary-color, 0.05);
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: $spacing-md;
+      font-size: rem(14);
+    }
+  }
+
+  // ============================================================================
+  // Canvas del plano (derecha)
+  // ============================================================================
+
+  &__canvas {
+    flex: 1;
+    padding: $spacing-lg;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(md) {
+      padding: $spacing-md;
+      min-height: rem(500);
+    }
+  }
+
+  &__canvas-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__canvas-border {
+    border: rem(2) solid #00bcd4;
+    border-radius: rem(8);
+    padding: $spacing-lg;
+    background-color: $white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      border: rem(1) solid #00bcd4;
+      padding: $spacing-md;
+      width: 100%;
+    }
+  }
+
+  &__plano-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

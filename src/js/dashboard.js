@@ -91,6 +91,66 @@ tabButtons.forEach((button) => {
 });
 
 // ----------------
+// Dashboard 13 Tabs
+// ----------------
+const d13Tabs = document.querySelectorAll(".d13-listado-tabs");
+
+d13Tabs.forEach((tabsContainer) => {
+  const buttons = tabsContainer.querySelectorAll(".d13-listado-tabs__tab");
+  const contents = tabsContainer.querySelectorAll(".d13-listado-tabs__content");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabName = button.getAttribute("data-tab");
+
+      buttons.forEach((btn) =>
+        btn.classList.remove("d13-listado-tabs__tab--active"),
+      );
+      contents.forEach((content) =>
+        content.classList.remove("d13-listado-tabs__content--active"),
+      );
+
+      button.classList.add("d13-listado-tabs__tab--active");
+
+      const target = tabsContainer.querySelector(`#${tabName}`);
+      if (target) {
+        target.classList.add("d13-listado-tabs__content--active");
+      }
+    });
+  });
+});
+
+// ----------------
+// Dashboard 14 Tabs
+// ----------------
+const d14Tabs = document.querySelectorAll(".dashboard14-tabs");
+
+d14Tabs.forEach((tabsContainer) => {
+  const buttons = tabsContainer.querySelectorAll(".dashboard14-tabs__tab");
+  const contents = tabsContainer.querySelectorAll(".dashboard14-tabs__content");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const tabName = button.getAttribute("data-tab");
+
+      buttons.forEach((btn) =>
+        btn.classList.remove("dashboard14-tabs__tab--active"),
+      );
+      contents.forEach((content) =>
+        content.classList.remove("dashboard14-tabs__content--active"),
+      );
+
+      button.classList.add("dashboard14-tabs__tab--active");
+
+      const target = tabsContainer.querySelector(`#${tabName}`);
+      if (target) {
+        target.classList.add("dashboard14-tabs__content--active");
+      }
+    });
+  });
+});
+
+// ----------------
 // Charts
 // ----------------
 const chartColors = {
@@ -480,6 +540,126 @@ if (chartSummary) {
   });
 }
 
+// Chart 7: Dashboard 17 - Resumen de máquinas por marca
+const d17ChartMarca = document.getElementById("d17ChartMarca");
+if (d17ChartMarca) {
+  new Chart(d17ChartMarca, {
+    type: "bar",
+    data: {
+      labels: [
+        "ARI",
+        "CASINO",
+        "AGI",
+        "IGT",
+        "EGT LTD",
+        "MERKUR ADP",
+        "ANSWORTH",
+        "WIN SISTEM D.O.O",
+      ],
+      datasets: [
+        {
+          label: "Cantidad",
+          data: [2, 5, 12, 7, 8, 6, 3, 4],
+          backgroundColor: [
+            "#4cb6e8",
+            "#173b5b",
+            "#4cb6e8",
+            "#173b5b",
+            "#4cb6e8",
+            "#173b5b",
+            "#4cb6e8",
+            "#173b5b",
+          ],
+          borderRadius: 4,
+          borderSkipped: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 2,
+            font: { size: 11 },
+            color: "rgba(0, 0, 0, 0.6)",
+          },
+          grid: {
+            color: "rgba(0, 0, 0, 0.1)",
+          },
+        },
+        x: {
+          grid: {
+            display: false,
+          },
+          ticks: {
+            font: { size: 11 },
+            color: "rgba(0, 0, 0, 0.6)",
+          },
+        },
+      },
+    },
+  });
+}
+
+// Chart 8: Dashboard 17 - Resumen de máquinas por modelos
+const d17ChartModelo = document.getElementById("d17ChartModelo");
+if (d17ChartModelo) {
+  new Chart(d17ChartModelo, {
+    type: "bar",
+    data: {
+      labels: ["MKV Serie I", "MKV Serie II", "Helix", "Tito", "FX", "Duo"],
+      datasets: [
+        {
+          label: "Cantidad",
+          data: [10, 6, 8, 4, 3, 5],
+          backgroundColor: "#173b5b",
+          borderRadius: 4,
+          borderSkipped: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 2,
+            font: { size: 11 },
+            color: "rgba(0, 0, 0, 0.6)",
+          },
+          grid: {
+            color: "rgba(0, 0, 0, 0.1)",
+          },
+        },
+        x: {
+          grid: {
+            display: false,
+          },
+          ticks: {
+            font: { size: 11 },
+            color: "rgba(0, 0, 0, 0.6)",
+          },
+        },
+      },
+    },
+  });
+}
+
 // ====================================
 // DASHBOARD 7: Cupones
 // ====================================
@@ -626,4 +806,83 @@ if (ctxResumenCupones) {
   });
 }
 
-console.log("Dashboard loaded successfully!");
+// ----------------
+// Dashboard 12 - Gráfica de Apuesta del Cliente
+// ----------------
+const apuestaClienteChart = document.getElementById("apuestaClienteChart");
+if (apuestaClienteChart) {
+  new Chart(apuestaClienteChart, {
+    type: "line",
+    data: {
+      labels: ["2025-07-01", "2025-11-12", "2025-11-15", "2025-11-16"],
+      datasets: [
+        {
+          label: "Apuesta del cliente",
+          data: [82.5, 765.0, 100.0, 50.0],
+          borderColor: "#0066ff",
+          backgroundColor: "rgba(0, 102, 255, 0.1)",
+          borderWidth: 3,
+          fill: false,
+          tension: 0.4,
+          pointRadius: 6,
+          pointBackgroundColor: "#0066ff",
+          pointBorderColor: "#fff",
+          pointBorderWidth: 2,
+          pointHoverRadius: 8,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 2.5,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
+          padding: 12,
+          titleFont: {
+            size: 13,
+          },
+          bodyFont: {
+            size: 12,
+          },
+          displayColors: false,
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1000,
+          grid: {
+            display: true,
+            color: "rgba(0, 0, 0, 0.1)",
+            drawBorder: false,
+          },
+          ticks: {
+            stepSize: 200,
+            font: {
+              size: 11,
+            },
+            color: "#666",
+          },
+        },
+        x: {
+          grid: {
+            display: true,
+            color: "rgba(0, 0, 0, 0.1)",
+            drawBorder: false,
+          },
+          ticks: {
+            font: {
+              size: 11,
+            },
+            color: "#666",
+          },
+        },
+      },
+    },
+  });
+}

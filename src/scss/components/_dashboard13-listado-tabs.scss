@@ -1,0 +1,572 @@
+// ============================================================================
+// Dashboard 13 - Listado Tabs Component
+// ============================================================================
+// This is a specific component for Dashboard 13 that displays a tabbed interface
+// with navigation tabs and a data table showing sorteo listings.
+
+.d13-listado-tabs {
+  background-color: $white;
+  border-radius: rem(8);
+  overflow: hidden;
+  box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.05);
+
+  // ========================================================================
+  // Header Section (Tabs + Actions)
+  // ========================================================================
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: $dark-color;
+    border-bottom: rem(2) solid $border-color;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+    background-color: $dark-color;
+
+    @include media-breakpoint-down(md) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        height: rem(6);
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: rem(3);
+      }
+    }
+  }
+
+  &__tab {
+    flex: 1;
+    min-width: rem(120);
+    padding: $spacing-md $spacing-lg;
+    background-color: $white;
+    border: none;
+    border-bottom: rem(3) solid transparent;
+    color: $dark-color;
+    font-size: rem(14);
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all $transition-base;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &--active {
+      background-color: $dark-color;
+      color: $white;
+      border-bottom-color: $dark-color;
+
+      &:hover {
+        background-color: darken($dark-color, 5%);
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: $spacing-sm $spacing-md;
+      font-size: rem(12);
+    }
+  }
+
+  // ========================================================================
+  // Content Section (Tables)
+  // ========================================================================
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: none;
+    animation: fadeIn $transition-base;
+
+    &--active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: rem(8);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray-100;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: rem(4);
+
+      &:hover {
+        background: darken(#c0c0c0, 10%);
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      &::-webkit-scrollbar {
+        height: rem(6);
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $white;
+
+    // Header styling
+    thead {
+      background-color: $bg-head-stats;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      th {
+        padding: $spacing-md $spacing-sm;
+        text-align: left;
+        font-size: rem(12);
+        font-weight: $font-weight-bold;
+        color: $dark-color;
+        white-space: nowrap;
+        border-right: rem(1) solid rgba(0, 0, 0, 0.05);
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    // Body styling
+    tbody {
+      tr {
+        background-color: $white;
+        border-bottom: rem(1) solid $border-color;
+        transition: background-color $transition-base;
+
+        &:nth-child(even) {
+          background-color: #f0f0f0;
+        }
+
+        &:hover {
+          background-color: #e8f0ff;
+        }
+
+        td {
+          padding: $spacing-md $spacing-sm;
+          font-size: rem(12);
+          color: #7f7f7f;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  // ========================================================================
+  // Checkbox Cells
+  // ========================================================================
+
+  &__th-checkbox,
+  &__td-checkbox {
+    width: rem(40);
+    text-align: center;
+    padding: $spacing-md;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+  }
+
+  // ========================================================================
+  // Edit Button
+  // ========================================================================
+
+  &__btn-editar {
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: rem(4);
+    padding: rem(4) rem(12);
+    font-size: rem(11);
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+    transition: all $transition-base;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(rem(-1));
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: rem(3) rem(8);
+      font-size: rem(10);
+    }
+  }
+
+  // ========================================================================
+  // Responsive Design
+  // ========================================================================
+
+  @include media-breakpoint-down(md) {
+    &__header {
+      flex-direction: column;
+      gap: rem(8);
+      align-items: flex-start;
+    }
+
+    &__nav {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &__tab {
+      flex: 0 0 auto;
+      min-width: rem(100);
+      padding: $spacing-sm rem(12);
+      font-size: rem(12);
+    }
+
+    &__table-scroll {
+      font-size: rem(11);
+
+      &::-webkit-scrollbar {
+        height: rem(6);
+      }
+    }
+
+    &__table {
+      font-size: rem(11);
+
+      thead th {
+        padding: $spacing-sm rem(4);
+        font-size: rem(10);
+      }
+
+      tbody td {
+        padding: $spacing-sm rem(4);
+        font-size: rem(11);
+      }
+    }
+
+    &__th-checkbox,
+    &__td-checkbox {
+      width: rem(36);
+      padding: $spacing-sm;
+    }
+
+    &__btn-editar {
+      padding: rem(2) rem(6);
+      font-size: rem(9);
+    }
+  }
+}
+
+// ============================================================================
+// Calendar Component Styles (Dashboard 13)
+// ============================================================================
+
+.d13-calendario {
+  padding: $spacing-lg;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__nav-group {
+    display: inline-flex;
+    background-color: $primary-color;
+    border-radius: rem(6);
+    overflow: hidden;
+  }
+
+  &__nav-btn {
+    width: rem(36);
+    height: rem(32);
+    border: none;
+    background-color: transparent;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color $transition-base;
+
+    &:hover {
+      background-color: darken($primary-color, 8%);
+    }
+
+    &:not(:last-child) {
+      border-right: rem(1) solid rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  &__btn-today {
+    padding: rem(6) rem(16);
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: rem(6);
+    font-size: rem(12);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    cursor: pointer;
+    transition: background-color $transition-base;
+
+    &:hover {
+      background-color: darken(#e0e0e0, 6%);
+    }
+  }
+
+  &__title {
+    font-size: rem(20);
+    font-weight: $font-weight-bold;
+    color: $blue-text;
+    text-align: center;
+    margin: 0 0 $spacing-sm 0;
+    letter-spacing: 0.04em;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: rem(6);
+
+    &::-webkit-scrollbar {
+      height: rem(8);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: rem(6);
+    }
+  }
+
+  .calendar-widget {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .calendar-widget__weekdays {
+    gap: 0;
+    margin-bottom: 0;
+    background-color: $bg-head-stats;
+    border: rem(1) solid $border-color;
+    border-bottom: none;
+  }
+
+  .calendar-widget__weekday {
+    padding: rem(8) rem(6);
+    font-size: rem(11);
+    color: $dark-color;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-right: rem(1) solid rgba(0, 0, 0, 0.08);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .calendar-widget__days {
+    gap: 0;
+    border: rem(1) solid $border-color;
+    border-top: none;
+    background-color: $white;
+  }
+
+  .calendar-widget__day {
+    aspect-ratio: auto;
+    min-height: rem(56);
+    border-radius: 0;
+    border-right: rem(1) solid $border-color;
+    border-bottom: rem(1) solid $border-color;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: rem(6);
+    position: relative;
+    background-color: $white;
+
+    &:hover {
+      background-color: $gray-100;
+      border-color: $border-color;
+    }
+
+    &:nth-child(7n) {
+      border-right: none;
+    }
+  }
+
+  .calendar-widget__day:nth-child(1),
+  .calendar-widget__day:nth-child(2),
+  .calendar-widget__day:nth-child(n + 32) {
+    color: $dark-color;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $border-color;
+      background-color: $gray-100;
+    }
+  }
+
+  .calendar-widget__day--today {
+    background-color: #e0e0e0;
+  }
+
+  .calendar-widget__day--event {
+    background-color: $white;
+  }
+
+  .calendar-widget__day--muted {
+    background-color: $gray-100;
+    color: $gray-400;
+    cursor: default;
+
+    &:hover {
+      background-color: $gray-100;
+      border-color: $border-color;
+    }
+
+    .d13-calendario__day-number {
+      color: $gray-400;
+    }
+  }
+
+  &__day-number {
+    font-size: rem(11);
+    font-weight: $font-weight-bold;
+    color: $dark-color;
+    position: absolute;
+    right: rem(6);
+    bottom: rem(6);
+  }
+
+  &__event-badge {
+    font-size: rem(10);
+    background-color: #5b7dd6;
+    color: $white;
+    padding: rem(4) rem(6);
+    border-radius: rem(4);
+    line-height: 1.3;
+    font-weight: 500;
+    max-width: rem(90);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $spacing-sm;
+    padding-top: $spacing-sm;
+  }
+
+  &__footer-btn {
+    width: rem(36);
+    height: rem(36);
+    border: none;
+    border-radius: rem(4);
+    font-size: rem(16);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+
+    &--share {
+      background-color: #3b5bff;
+      color: $white;
+    }
+
+    &--copy {
+      background-color: #2fb344;
+      color: $white;
+    }
+
+    &--delete {
+      background-color: #fa5252;
+      color: $white;
+    }
+
+    &:hover {
+      transform: translateY(rem(-1));
+      filter: brightness(0.95);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-md;
+
+    &__controls {
+      gap: $spacing-sm;
+    }
+
+    &__title {
+      font-size: rem(16);
+    }
+
+    &__scroll {
+      padding-bottom: rem(8);
+    }
+
+    .calendar-widget {
+      min-width: rem(680);
+    }
+
+    .calendar-widget__weekday {
+      font-size: rem(9);
+      padding: rem(6) rem(4);
+    }
+
+    .calendar-widget__day {
+      min-height: rem(48);
+      padding: rem(4);
+    }
+
+    &__day-number {
+      font-size: rem(10);
+    }
+
+    &__event-badge {
+      font-size: rem(9);
+      padding: rem(3) rem(4);
+      max-width: rem(76);
+    }
+  }
+}

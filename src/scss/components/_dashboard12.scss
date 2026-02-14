@@ -1,0 +1,341 @@
+// Dashboard 12 - Player Tracking con Gráfica
+// ============================================================
+
+.dashboard12-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: $spacing-md;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-sm;
+    gap: $spacing-md;
+  }
+}
+
+// ===== INFO CLIENTE D12 =====
+.info-cliente-d12 {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 $spacing-md;
+    background: #b8c4cf;
+    border-bottom: 1px solid rgba(#333, 0.1);
+  }
+
+  &__title {
+    font-size: rem(13);
+    font-weight: 700;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-xs;
+    align-items: center;
+  }
+
+  &__btn-icon {
+    width: rem(18);
+    height: rem(18);
+    padding: 0;
+    border: none;
+    background: rgba($white, 0.53);
+    color: $dark-color;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    font-size: rem(12);
+
+    &:hover {
+      background: rgba($white, 0.7);
+      transform: scale(1.05);
+    }
+
+    &--close:hover {
+      background: #ffdbcc;
+      color: $warning-color;
+    }
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  &__name {
+    text-align: center;
+    color: $primary-color;
+    font-weight: 700;
+    font-size: rem(12);
+    margin-bottom: $spacing-lg;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $spacing-lg;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 18px 110px 1fr;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: rem(12);
+    color: $dark-color;
+  }
+
+  &__icon {
+    color: $primary-color;
+    font-size: rem(14);
+  }
+
+  &__label {
+    font-weight: 600;
+  }
+
+  &__value {
+    color: #666;
+  }
+}
+
+// ===== TRACKING PANEL D12 =====
+.tracking-panel-d12 {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 $spacing-md;
+    background: $bg-head-stats;
+    border-bottom: 1px solid rgba(#333, 0.1);
+    gap: $spacing-md;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding: 6px 0;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c0c0c0;
+      border-radius: 10px;
+    }
+  }
+
+  &__tab {
+    border: none;
+    background: #e9eef6;
+    color: $dark-color;
+    font-size: rem(11);
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: darken(#e9eef6, 5%);
+    }
+
+    &--active {
+      background: #103b5b;
+      color: $white;
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-xs;
+    align-items: center;
+  }
+
+  &__btn-icon {
+    width: rem(18);
+    height: rem(18);
+    padding: 0;
+    border: none;
+    background: rgba($white, 0.53);
+    color: $dark-color;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    font-size: rem(12);
+
+    &:hover {
+      background: rgba($white, 0.7);
+      transform: scale(1.05);
+    }
+
+    &--close:hover {
+      background: #ffdbcc;
+      color: $warning-color;
+    }
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  &__body {
+    padding: $spacing-md;
+  }
+
+  // Gráfica
+  &__chart-container {
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+    background: $white;
+    border-radius: $border-radius-sm;
+  }
+
+  &__chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-md;
+    gap: $spacing-lg;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: rem(12);
+    color: $dark-color;
+    font-weight: 600;
+  }
+
+  &__legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0066ff;
+  }
+
+  // Tabla
+  &__table-section {
+    margin-top: $spacing-lg;
+  }
+
+  &__table-title {
+    font-size: rem(14);
+    font-weight: 700;
+    color: $dark-color;
+    margin-bottom: $spacing-md;
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #c0c0c0 transparent;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #c0c0c0;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #a0a0a0;
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: rem(12);
+    min-width: 600px;
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(11);
+    }
+
+    thead {
+      background-color: #99b3ff;
+
+      th {
+        padding: $spacing-sm $spacing-md;
+        text-align: center;
+        font-weight: 600;
+        color: $dark-color;
+        white-space: nowrap;
+
+        @include media-breakpoint-down(md) {
+          padding: $spacing-xs $spacing-sm;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: $white;
+
+        &:nth-child(even) {
+          background-color: #e8e8e8;
+        }
+
+        td {
+          padding: $spacing-sm $spacing-md;
+          color: #7f7f7f;
+          text-align: center;
+          white-space: nowrap;
+          font-weight: 400;
+
+          @include media-breakpoint-down(md) {
+            padding: $spacing-xs $spacing-sm;
+          }
+        }
+      }
+    }
+  }
+}

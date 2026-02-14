@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Dashboard Vania</title>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../dist/css/main.css" />
+  </head>
+  <body>
+    <!-- 1. Navbar (Logo, búsqueda, usuario) -->
+    @@include('../components/navbar/navbar.html')
+
+    <!-- 2. Hero Header (Latin Games, Cupones, breadcrumb) -->
+    @@include('../components/hero-header/hero-header.html')
+
+    <!-- 3. Dashboard Layout (Sidebar + Contenido) -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <div class="dashboard-layout__sidebar">
+        @@include('../components/sidebar/sidebar.html')
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-layout__content">
+        <section class="dashboard11-section">
+          <!-- Filtro de consulta -->
+          <div class="filter-consulta-d11">
+            <div class="filter-consulta-d11__header">
+              <h2 class="filter-consulta-d11__title">Filtro de consulta</h2>
+              <div class="filter-consulta-d11__actions">
+                <button
+                  class="filter-consulta-d11__btn-icon"
+                  aria-label="Pantalla completa"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="filter-consulta-d11__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="filter-consulta-d11__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="filter-consulta-d11__btn-icon filter-consulta-d11__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="filter-consulta-d11__body">
+              <div class="filter-consulta-d11__row">
+                <div
+                  class="filter-consulta-d11__field filter-consulta-d11__field--wide"
+                >
+                  <label for="jugador-d11" class="filter-consulta-d11__label"
+                    >Jugador</label
+                  >
+                  <select id="jugador-d11" class="filter-consulta-d11__select">
+                    <option value="">PRUEBA SISTEMA COLOSSUS (12345678)</option>
+                  </select>
+                </div>
+                <div class="filter-consulta-d11__field">
+                  <label
+                    for="fecha-desde-d11"
+                    class="filter-consulta-d11__label"
+                    >Fecha Desde</label
+                  >
+                  <input
+                    type="text"
+                    id="fecha-desde-d11"
+                    class="filter-consulta-d11__input"
+                    value="03/01/2025"
+                    placeholder="dd/mm/aaaa"
+                  />
+                </div>
+                <div class="filter-consulta-d11__field">
+                  <label
+                    for="fecha-hasta-d11"
+                    class="filter-consulta-d11__label"
+                    >Fecha Hasta</label
+                  >
+                  <input
+                    type="text"
+                    id="fecha-hasta-d11"
+                    class="filter-consulta-d11__input"
+                    value="13/12/2025"
+                    placeholder="dd/mm/aaaa"
+                  />
+                </div>
+                <button class="filter-consulta-d11__btn-buscar">
+                  <i class="bi bi-funnel-fill"></i>
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Información del cliente -->
+          <div class="info-cliente-d11">
+            <div class="info-cliente-d11__header">
+              <h2 class="info-cliente-d11__title">Información del cliente</h2>
+              <div class="info-cliente-d11__actions">
+                <button
+                  class="info-cliente-d11__btn-icon"
+                  aria-label="Pantalla completa"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="info-cliente-d11__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="info-cliente-d11__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="info-cliente-d11__btn-icon info-cliente-d11__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="info-cliente-d11__body">
+              <p class="info-cliente-d11__name">PRUEBA SISTEMA COLOSSUS</p>
+              <div class="info-cliente-d11__grid">
+                <div class="info-cliente-d11__item">
+                  <i
+                    class="bi bi-credit-card-2-front info-cliente-d11__icon"
+                  ></i>
+                  <span class="info-cliente-d11__label">Pid:</span>
+                  <span class="info-cliente-d11__value">1</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-geo-alt info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Región:</span>
+                  <span class="info-cliente-d11__value">CUSCO</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-person-badge info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Categoría:</span>
+                  <span class="info-cliente-d11__value">NORMAL</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-map info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Provincia:</span>
+                  <span class="info-cliente-d11__value">ANTA</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-file-text info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Documento:</span>
+                  <span class="info-cliente-d11__value">12345678</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-building info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Distrito:</span>
+                  <span class="info-cliente-d11__value">LIMATAMBO</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-gender-male info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Género:</span>
+                  <span class="info-cliente-d11__value">M</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-telephone info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Teléfono:</span>
+                  <span class="info-cliente-d11__value">301 265 584</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-cake info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Edad:</span>
+                  <span class="info-cliente-d11__value">25</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-envelope info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Email:</span>
+                  <span class="info-cliente-d11__value">jrojasi@ygsol.com</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-calendar-check info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Cumpleaños:</span>
+                  <span class="info-cliente-d11__value">2000-07-06</span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-clock-history info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Última visita:</span>
+                  <span class="info-cliente-d11__value"></span>
+                </div>
+                <div class="info-cliente-d11__item">
+                  <i class="bi bi-star info-cliente-d11__icon"></i>
+                  <span class="info-cliente-d11__label">Puntos actuales:</span>
+                  <span class="info-cliente-d11__value">1,830</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel de tracking con tabs -->
+          <div class="tracking-panel-d11">
+            <div class="tracking-panel-d11__header">
+              <div class="tracking-panel-d11__tabs">
+                <button
+                  class="tracking-panel-d11__tab tracking-panel-d11__tab--active"
+                >
+                  Resumen
+                </button>
+                <button class="tracking-panel-d11__tab">
+                  Pagos realizados
+                </button>
+                <button class="tracking-panel-d11__tab">Pagos tarjetas</button>
+                <button class="tracking-panel-d11__tab">Sorteos</button>
+                <button class="tracking-panel-d11__tab">Sesiones</button>
+                <button class="tracking-panel-d11__tab">Cupones</button>
+                <button class="tracking-panel-d11__tab">Cartas</button>
+                <button class="tracking-panel-d11__tab">Tarjetas club</button>
+                <button class="tracking-panel-d11__tab">
+                  Preferencias por maq.
+                </button>
+                <button class="tracking-panel-d11__tab">Viajes por día</button>
+              </div>
+              <div class="tracking-panel-d11__actions">
+                <button
+                  class="tracking-panel-d11__btn-icon"
+                  aria-label="Pantalla completa"
+                >
+                  <i class="bi bi-fullscreen"></i>
+                </button>
+                <button
+                  class="tracking-panel-d11__btn-icon"
+                  aria-label="Actualizar"
+                >
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button
+                  class="tracking-panel-d11__btn-icon"
+                  aria-label="Minimizar"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <button
+                  class="tracking-panel-d11__btn-icon tracking-panel-d11__btn-icon--close"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="tracking-panel-d11__body">
+              <!-- Tabla de operaciones -->
+              <div class="tracking-panel-d11__table-wrapper">
+                <table class="tracking-panel-d11__table">
+                  <thead>
+                    <tr>
+                      <th>Sesión</th>
+                      <th>Máquina</th>
+                      <th>Juego</th>
+                      <th>Apostado</th>
+                      <th>Ganado</th>
+                      <th>Balance (Prod)</th>
+                      <th>Ap. Prom</th>
+                      <th>Jackpot</th>
+                      <th>Inicio</th>
+                      <th>Duración</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="tracking-panel-d11__period-row">
+                      <td colspan="10">
+                        <button class="tracking-panel-d11__toggle-btn">
+                          <i class="bi bi-play-circle"></i>
+                          <span>PERIODO: 2025-07-02</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>503267</td>
+                      <td>835</td>
+                      <td>USWITCH</td>
+                      <td>82.50</td>
+                      <td>118.20</td>
+                      <td>165.00</td>
+                      <td>0,00</td>
+                      <td>0.00</td>
+                      <td>2025/07/02 01:38</td>
+                      <td>320h 37m</td>
+                    </tr>
+                    <tr class="tracking-panel-d11__period-row">
+                      <td colspan="10">
+                        <button class="tracking-panel-d11__toggle-btn">
+                          <i class="bi bi-play-circle"></i>
+                          <span>PERIODO: 2025-11-12</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>503329</td>
+                      <td>835</td>
+                      <td>USWITCH</td>
+                      <td>82.50</td>
+                      <td>755.00</td>
+                      <td>1,955.00</td>
+                      <td>0,00</td>
+                      <td>0.53</td>
+                      <td>2025/11/22 15:59</td>
+                      <td>23h 56m</td>
+                    </tr>
+                    <tr class="tracking-panel-d11__period-row">
+                      <td colspan="10">
+                        <button class="tracking-panel-d11__toggle-btn">
+                          <i class="bi bi-play-circle"></i>
+                          <span>PERIODO: 2025-11-13</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Dashboard JS -->
+    <script src="../dist/js/dashboard.js"></script>
+  </body>
+</html>

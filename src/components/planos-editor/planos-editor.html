@@ -1,0 +1,84 @@
+<!-- Planos Editor Component -->
+<div class="planos-editor">
+  <!-- Sidebar con herramientas -->
+  <div class="planos-editor__sidebar">
+    <!-- Herramientas -->
+    <div class="planos-editor__section">
+      <h3 class="planos-editor__section-title">Herramientas</h3>
+      <p class="planos-editor__section-subtitle">Subir archivo</p>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        Cargar SVG real
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        Imagen - SVG(solo visual)
+      </button>
+    </div>
+
+    <!-- Componentes de planos -->
+    <div class="planos-editor__section">
+      <h3 class="planos-editor__section-title">Componentes de planos</h3>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-plus-lg"></i> Línea
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-door-open"></i> Puerta
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-droplet"></i> Baño
+      </button>
+    </div>
+
+    <!-- Controles -->
+    <div class="planos-editor__section">
+      <h3 class="planos-editor__section-title">Controles</h3>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-plus-lg"></i> Agrandar
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-dash-lg"></i> Reducir
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-arrow-clockwise"></i> Rotar 90°
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--primary">
+        <i class="bi bi-arrow-left-right"></i> Invertir
+      </button>
+    </div>
+
+    <!-- Guardar -->
+    <div class="planos-editor__section">
+      <h3 class="planos-editor__section-title">Guardar</h3>
+      <button class="planos-editor__btn planos-editor__btn--success">
+        <i class="bi bi-save"></i> Guardar componentes creados
+      </button>
+      <button class="planos-editor__btn planos-editor__btn--success">
+        Refactorizar plano
+      </button>
+    </div>
+  </div>
+
+  <!-- Canvas del plano -->
+  <div class="planos-editor__canvas">
+    <div class="planos-editor__canvas-wrapper">
+      <div class="planos-editor__canvas-controls">
+        <button class="planos-editor__canvas-btn" aria-label="Minimizar">
+          <i class="bi bi-dash"></i>
+        </button>
+        <button class="planos-editor__canvas-btn" aria-label="Maximizar">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+        <button class="planos-editor__canvas-btn" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+      <div class="planos-editor__canvas-content">
+        <img
+          src="../dist/images/plano1.png"
+          alt="Plano Referencial"
+          class="planos-editor__plano-img"
+        />
+        <div class="planos-editor__canvas-dimensions">1054 × 572</div>
+      </div>
+    </div>
+  </div>
+</div>

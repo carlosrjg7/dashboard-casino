@@ -1,0 +1,74 @@
+// ============================================================================
+// Dashboard 14 - Tabs Component
+// ============================================================================
+
+.dashboard14-tabs {
+  background-color: $white;
+  border-radius: rem(8);
+  overflow: hidden;
+  box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.05);
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: rem(1) solid #e0e0e0;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__tab {
+    background-color: #d9d9d9;
+    border: none;
+    padding: $spacing-md $spacing-lg;
+    font-size: rem(14);
+    font-weight: 500;
+    color: $dark-color;
+    cursor: pointer;
+    transition: all $transition-base;
+    text-align: center;
+    border-right: rem(1) solid #e0e0e0;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover:not(&--active) {
+      background-color: #c0c0c0;
+    }
+
+    &--active {
+      background-color: $primary-color;
+      color: $white;
+    }
+
+    @include media-breakpoint-down(md) {
+      border-right: none;
+      border-bottom: rem(1) solid #e0e0e0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    position: relative;
+  }
+
+  &__content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__placeholder {
+    padding: $spacing-xl;
+    text-align: center;
+    color: $text-muted;
+    font-size: rem(16);
+  }
+}

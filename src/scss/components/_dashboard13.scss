@@ -1,0 +1,166 @@
+// ============================================================================
+// Dashboard 13 Components
+// ============================================================================
+// Search Panel and Section Layout Styles (Dashboard 13 specific)
+// Tabs and Table components are imported separately from their own files:
+// @import "components/dashboard13-listado-tabs"
+
+// ============================================================================
+// Main Section
+// ============================================================================
+
+.dashboard13-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-md;
+    gap: $spacing-md;
+  }
+}
+
+// ============================================================================
+// Search Panel - Dashboard 13 Specific
+// ============================================================================
+
+.search-panel-d13 {
+  background-color: $white;
+  border-radius: rem(8);
+  overflow: hidden;
+  box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, 0.05);
+
+  &__header {
+    background-color: #b0bec9;
+    padding: $spacing-md $spacing-lg;
+  }
+
+  &__title {
+    font-size: rem(16);
+    font-weight: 600;
+    color: $dark-color;
+    margin: 0;
+  }
+
+  &__body {
+    padding: $spacing-lg;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: $spacing-md;
+    align-items: flex-end;
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__label {
+    font-size: rem(13);
+    font-weight: 500;
+    color: $dark-color;
+  }
+
+  &__input {
+    height: rem(32);
+    border: rem(1) solid #ddd;
+    border-radius: rem(4);
+    padding: rem(6) $spacing-sm;
+    font-size: rem(13);
+    font-family: inherit;
+    color: $dark-color;
+    background-color: $white;
+    transition:
+      border-color $transition-base,
+      box-shadow $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 rem(2) rgba(0, 102, 255, 0.1);
+    }
+  }
+
+  &__select {
+    height: rem(32);
+    border: rem(1) solid #ddd;
+    border-radius: rem(4);
+    padding: rem(6) $spacing-sm;
+    font-size: rem(13);
+    font-family: inherit;
+    color: $white;
+    background-color: #3b7baa;
+    transition:
+      border-color $transition-base,
+      box-shadow $transition-base;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 rem(2) rgba(0, 102, 255, 0.1);
+    }
+
+    option {
+      background-color: $white;
+      color: $dark-color;
+    }
+  }
+
+  &__btn-search {
+    height: rem(32);
+    background-color: #103b5b;
+    color: $white;
+    border: none;
+    border-radius: rem(4);
+    padding: 0 $spacing-md;
+    font-size: rem(13);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    transition: all $transition-base;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: darken(#103b5b, 10%);
+    }
+
+    i {
+      font-size: rem(14);
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Design
+// ============================================================================
+
+@include media-breakpoint-down(md) {
+  .search-panel-d13 {
+    &__row {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm;
+    }
+
+    &__btn-search {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

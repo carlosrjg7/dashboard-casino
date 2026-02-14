@@ -1,0 +1,17 @@
+// ============================================================================
+// Dashboard 14 Section
+// ============================================================================
+// Main container for Dashboard 14 layout
+// Components imported separately:
+// @import "components/dashboard14-tabs"
+// @import "components/planos-editor"
+
+.dashboard14-section {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-lg;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacing-md;
+  }
+}

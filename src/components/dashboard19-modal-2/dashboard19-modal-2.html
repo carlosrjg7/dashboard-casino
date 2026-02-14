@@ -1,0 +1,63 @@
+<!-- Dashboard 19 - Modal 2: Confirmar cierre de sesion -->
+<div class="app-modal">
+  <button
+    class="app-modal__trigger"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#dashboard19Modal2"
+  >
+    Abrir modal 2
+  </button>
+
+  <div
+    class="modal fade"
+    id="dashboard19Modal2"
+    tabindex="-1"
+    aria-labelledby="dashboard19Modal2Label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content app-modal__card app-modal__card--confirm">
+        <div class="app-modal__header app-modal__header--minimal">
+          <button
+            class="app-modal__close"
+            aria-label="Cerrar"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="app-modal__body app-modal__body--center">
+          <div class="app-modal__icon">
+            <i class="bi bi-question-circle"></i>
+          </div>
+          <h3
+            class="app-modal__title app-modal__title--center"
+            id="dashboard19Modal2Label"
+          >
+            Confirmar
+          </h3>
+          <p class="app-modal__text">
+            ¿Seguro que desea cerrar la sesión de la máquina 835?
+          </p>
+          <div class="app-modal__divider"></div>
+        </div>
+
+        <div class="app-modal__footer app-modal__footer--center">
+          <button class="app-modal__btn app-modal__btn--primary">
+            Cerrar Sesión
+          </button>
+          <button
+            class="app-modal__btn app-modal__btn--danger"
+            data-bs-dismiss="modal"
+            type="button"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
