@@ -19,14 +19,6 @@
   <div class="navbar__container">
     <!-- Mobile Menu Toggle -->
     <div class="navbar__container-brand">
-      <button
-        class="navbar__menu-toggle"
-        id="menuToggle"
-        aria-label="Abrir menú"
-      >
-        <i class="bi bi-list"></i>
-      </button>
-
       <!-- Logo -->
       <div class="navbar__logo">
         <img
@@ -39,12 +31,15 @@
 
       <!-- Search Bar -->
       <div class="navbar__search">
-        <i class="bi bi-search navbar__search-icon"></i>
-        <input
-          type="text"
-          class="navbar__search-input"
-          placeholder="Búsqueda general"
-        />
+        <h2 class="navbar__search-title">COLOSSUS<sub>v.2</sub></h2>
+        <div class="navbar__search-container">
+          <i class="bi bi-search navbar__search-icon"></i>
+          <input
+            type="text"
+            class="navbar__search-input"
+            placeholder="Búsqueda general"
+          />
+        </div>
       </div>
 
       <!-- Right Section -->
@@ -65,6 +60,10 @@
         <i class="bi bi-chevron-down navbar__user-arrow"></i>
       </button>
     </div>
+
+    <button class="navbar__menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <i class="icon-menu"></i>
+    </button>
   </div>
 </header>
 

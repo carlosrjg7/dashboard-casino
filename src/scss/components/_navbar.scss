@@ -22,6 +22,10 @@
     padding: 0 $spacing-xxl;
     @include flex(row, center, space-between, $spacing-md);
 
+    @include media-down(lg) {
+      padding: 0 $spacing-lg;
+    }
+
     &-brand {
       flex: 1;
       padding: 0 $spacing-md;
@@ -30,12 +34,20 @@
       @include media-up(lg) {
         padding: 0 $spacing-xl;
       }
+
+      @include media-down(lg) {
+        align-items: flex-end;
+      }
     }
 
     &-user {
       padding: 0 $spacing-md;
       @include media-up(lg) {
         padding: 0 $spacing-xl;
+      }
+
+      @include media-down(lg) {
+        display: none;
       }
     }
   }
@@ -60,6 +72,25 @@
     @include media-up(lg) {
       display: none;
     }
+
+    .icon-menu {
+      display: block;
+      width: rem(50);
+      height: rem(8);
+      background-color: $blue-text;
+      border-radius: rem(5);
+
+      &::after {
+        content: "";
+        display: block;
+        width: rem(50);
+        height: rem(8);
+        background-color: $blue-text;
+        border-radius: rem(5);
+        margin-top: rem(10);
+        margin-left: rem(-5);
+      }
+    }
   }
 
   // -----------------------------------------------------
@@ -70,6 +101,10 @@
 
     @include media-down(lg) {
       flex: 1;
+    }
+
+    @include media-down(lg) {
+      display: none;
     }
   }
 
@@ -103,7 +138,23 @@
     // max-width: 25rem;
     max-width: rem(221);
 
-    @include media-down(md) {
+    /*  @include media-down(md) {
+      display: none;
+    } */
+  }
+
+  &__search-container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__search-title {
+    font-size: rem(14);
+    font-weight: $font-weight-bold;
+    color: $tabs-active;
+    margin-bottom: $spacing-md;
+
+    @include media-up(lg) {
       display: none;
     }
   }

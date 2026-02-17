@@ -245,8 +245,12 @@
 
   &__footer {
     padding: $spacing-md $spacing-lg;
-    border-top: 1px solid $border-color;
+    // border-top: 1px solid $border-color;
     @include flex(row, center, flex-end);
+
+    @include media-down(lg) {
+      justify-content: center;
+    }
   }
 
   &__filter-btn {
